@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOP 1536</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+#top1536-pro, #top1536-pro * { box-sizing: border-box; }
+
+#top1536-pro {
+  --bg-dark: #0f1115;
+  --bg-card: rgba(30, 33, 40, .6);
+  --bg-card-hover: rgba(40, 44, 53, .8);
+  --text-main: #f0f2f5;
+  --text-muted: #a0a8b5;
+  --accent-gold: #d4af37;
+  --accent-gold-hover: #e5c158;
+  --success-green: #25D366;
+  --success-hover: #128C7E;
+  --pink-light: #FF85B3;
+  --pink-dark: #E03C7A;
+  --error-red: #ff4b4b;
+  --error-bg: rgba(255, 75, 75, .1);
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --blur-strength: 16px;
+  --border-subtle: 1px solid rgba(255, 255, 255, .08);
+  --shadow-soft: 0 8px 32px rgba(0, 0, 0, .4);
+  --shadow-glow: 0 0 20px rgba(212, 175, 55, .2);
+  --border-radius: 16px;
+  --transition: all .3s cubic-bezier(.25, .8, .25, 1);
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-family: var(--font-body);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Language switcher */
+#top1536-pro .lang-switcher {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  gap: .5rem;
+  padding: .75rem 1.5rem .25rem;
+}
+#top1536-pro .lang-btn {
+  background: rgba(212, 175, 55, .1);
+  border: 1px solid rgba(212, 175, 55, .25);
+  color: var(--text-muted);
+  padding: .35rem .75rem;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+}
+#top1536-pro .lang-btn:hover,
+#top1536-pro .lang-btn.active {
+  background: rgba(212, 175, 55, .25);
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
+/* Page wrapper */
+#top1536-pro .page {
+  position: relative;
+  background: var(--bg-dark);
+  padding: 20px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* Orbs */
+#top1536-pro .background-elements {
+  position: absolute; inset: 0;
+  z-index: 0; overflow: hidden; pointer-events: none;
+}
+#top1536-pro .glow {
+  position: absolute; border-radius: 50%;
+  filter: blur(80px); opacity: .15;
+}
+#top1536-pro .glow-1 { top: -10%; left: -10%; width: 500px; height: 500px; background: var(--accent-gold); }
+#top1536-pro .glow-2 { bottom: 20%; right: -5%; width: 400px; height: 400px; background: #4a5b82; }
+#top1536-pro .glow-3 { top: 40%; left: 40%; width: 600px; height: 600px; background: rgba(255, 133, 179, .3); opacity: .08; }
+
+/* Container */
+#top1536-pro .container {
+  position: relative; z-index: 1;
+  max-width: 860px; margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex; flex-direction: column; gap: 2rem;
+}
+
+/* Typography */
+#top1536-pro h1, #top1536-pro h2, #top1536-pro h3, #top1536-pro h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+#top1536-pro p { margin: 0; }
+#top1536-pro .text-accent { color: var(--accent-gold); }
+#top1536-pro .text-muted { color: var(--text-muted); }
+#top1536-pro .text-pink { color: var(--pink-light); }
+#top1536-pro .text-center { text-align: center; }
+
+/* Cards */
+#top1536-pro .glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--blur-strength));
+  -webkit-backdrop-filter: blur(var(--blur-strength));
+  border: var(--border-subtle);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+#top1536-pro .glass-card:hover {
+  transform: translateY(-2px);
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-glow);
+}
+#top1536-pro .glass-card.minimal { padding: 1.5rem; }
+
+/* Buttons */
+#top1536-pro .btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: .75rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  user-select: none;
+}
+#top1536-pro .btn:active { transform: scale(.98); }
+
+#top1536-pro .btn-primary {
+  background: linear-gradient(135deg, var(--accent-gold), #b8912b);
+  color: #111;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, .3);
+}
+#top1536-pro .btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(212, 175, 55, .5);
+  transform: translateY(-2px);
+}
+#top1536-pro .btn-outline {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--accent-gold);
+}
+#top1536-pro .btn-outline:hover {
+  background: rgba(212, 175, 55, .1);
+  color: var(--accent-gold);
+}
+#top1536-pro .btn-success {
+  background: var(--success-green);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, .3);
+}
+#top1536-pro .btn-success:hover {
+  background: var(--success-hover);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, .5);
+  transform: translateY(-2px);
+}
+#top1536-pro .btn-pink {
+  background: linear-gradient(135deg, var(--pink-dark), var(--pink-light));
+  color: #fff;
+}
+#top1536-pro .btn-pink:hover {
+  box-shadow: 0 6px 20px rgba(224, 60, 122, .4);
+  transform: translateY(-2px);
+}
+#top1536-pro .block { display: block; width: 100%; }
+
+/* Disabled buttons */
+#top1536-pro .btn.is-disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: .55;
+  filter: grayscale(.25) saturate(.85);
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Hero */
+#top1536-pro .section-hero {
+  text-align: center;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+#top1536-pro .section-hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+}
+#top1536-pro .badge {
+  display: inline-block;
+  background: rgba(212, 175, 55, .1);
+  color: var(--accent-gold);
+  padding: .5rem 1rem;
+  border-radius: 20px;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(212, 175, 55, .3);
+}
+#top1536-pro .hero-title {
+  font-size: 2.5rem;
+  margin-bottom: .5rem;
+  text-transform: uppercase;
+}
+#top1536-pro .hero-title .highlight {
+  background: linear-gradient(to right, var(--accent-gold), #eee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#top1536-pro .hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  margin-bottom: 2rem;
+}
+#top1536-pro .hero-content {
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, .2);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+/* Grid */
+#top1536-pro .info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+@media (max-width: 768px) {
+  #top1536-pro .info-grid { grid-template-columns: 1fr; }
+  #top1536-pro .hero-title { font-size: 2rem; }
+}
+
+/* Headers */
+#top1536-pro .card-header {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+#top1536-pro .card-header.align-center { justify-content: center; }
+#top1536-pro .card-header h2 { font-size: 1.25rem; letter-spacing: .5px; }
+#top1536-pro .icon { font-size: 1.5rem; color: var(--accent-gold); }
+
+/* Details */
+#top1536-pro .details-list {
+  list-style: none;
+  display: flex; flex-direction: column;
+  gap: .75rem;
+  margin: 0; padding: 0;
+}
+#top1536-pro .details-list li {
+  font-size: .95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+}
+#top1536-pro .label {
+  font-weight: 600;
+  color: var(--text-muted);
+  min-width: 80px;
+}
+
+/* Checklist */
+#top1536-pro .checklist {
+  list-style: none;
+  display: flex; flex-direction: column;
+  gap: 1rem;
+  margin: 0; padding: 0;
+}
+#top1536-pro .checklist li {
+  background: rgba(0, 0, 0, .2);
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: .95rem;
+  display: flex; align-items: center;
+  gap: 1rem;
+  transition: var(--transition);
+}
+#top1536-pro .checklist li:hover {
+  background: rgba(255, 255, 255, .05);
+  transform: translateX(5px);
+}
+#top1536-pro .checklist li i {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+/* Alerts */
+#top1536-pro .alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: rgba(212, 175, 55, .1);
+  border-left: 4px solid var(--accent-gold);
+  font-size: .95rem;
+}
+#top1536-pro .alert i {
+  color: var(--accent-gold);
+  font-size: 1.25rem;
+  margin-top: 2px;
+}
+#top1536-pro .error-box {
+  background: var(--error-bg);
+  border-left-color: var(--error-red);
+}
+#top1536-pro .error-box i { color: var(--error-red); }
+
+/* Sections */
+#top1536-pro .section-full {
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--blur-strength));
+  border: var(--border-subtle);
+  border-radius: var(--border-radius);
+  padding: 2.5rem 2rem;
+}
+#top1536-pro .highlight-card {
+  background: linear-gradient(145deg, rgba(37, 211, 102, .1), rgba(30, 33, 40, .6));
+  border: 1px solid rgba(37, 211, 102, .3);
+}
+#top1536-pro .secondary-card {
+  background: linear-gradient(145deg, rgba(224, 60, 122, .1), rgba(30, 33, 40, .6));
+  border: 1px solid rgba(224, 60, 122, .3);
+}
+
+/* WhatsApp layout */
+#top1536-pro .whatsapp-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+@media (max-width: 600px) {
+  #top1536-pro .whatsapp-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+}
+#top1536-pro .whatsapp-icon {
+  font-size: 3rem;
+  color: var(--success-green);
+  background: rgba(37, 211, 102, .15);
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#top1536-pro .whatsapp-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+/* Policies */
+#top1536-pro .policy-list {
+  margin: 0 0 0 1.5rem;
+  color: var(--text-muted);
+  padding: 0;
+}
+#top1536-pro .policy-list li { margin-bottom: .5rem; }
+#top1536-pro .policy-list strong { color: var(--text-main); }
+
+/* Contact */
+#top1536-pro .contact-box {
+  background: rgba(0, 0, 0, .3);
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-size: .95rem;
+}
+#top1536-pro .contact-box a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--accent-gold);
+}
+
+/* Footer */
+#top1536-pro .footer {
+  text-align: center;
+  padding: 3rem 1rem 1rem;
+}
+#top1536-pro .quote-box {
+  margin-bottom: 2rem;
+  position: relative;
+  padding: 1.5rem;
+}
+#top1536-pro .quote-box::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  color: rgba(255, 255, 255, .05);
+  font-family: serif;
+  line-height: 1;
+}
+#top1536-pro blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin: 0 0 .5rem 0;
+  position: relative;
+  z-index: 1;
+}
+#top1536-pro cite {
+  font-size: .9rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+#top1536-pro .final-words {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+#top1536-pro .brand {
+  font-family: var(--font-heading);
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: .85rem;
+  margin-top: .5rem;
+}
+
+/* Utils */
+#top1536-pro .mt-2 { margin-top: .5rem; }
+#top1536-pro .mt-3 { margin-top: 1rem; }
+#top1536-pro .mt-4 { margin-top: 1.5rem; }
+#top1536-pro .mb-4 { margin-bottom: 1.5rem; }
+
+/* Animations */
+@keyframes top1536FadeIn { from{opacity:0} to{opacity:1} }
+@keyframes top1536SlideUp { from{opacity:0; transform:translateY(30px)} to{opacity:1; transform:translateY(0)} }
+
+#top1536-pro .animate-fade-in { animation: top1536FadeIn 1s cubic-bezier(.25, .8, .25, 1) forwards; }
+#top1536-pro .animate-slide-up { opacity: 0; animation: top1536SlideUp .8s cubic-bezier(.25, .8, .25, 1) forwards; }
+
+/* Link focus */
+#top1536-pro a { color: inherit; }
+#top1536-pro a:focus { outline: 2px solid rgba(212, 175, 55, .4); outline-offset: 3px; }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#0f1115;">
+
+<!-- Language Switcher -->
+<div id="top1536-pro">
+  <div class="lang-switcher">
+    <button class="lang-btn" data-lang="pt" onclick="setLang('pt')">🇧🇷 PT</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">🇺🇸 EN</button>
+    <button class="lang-btn" data-lang="es" onclick="setLang('es')">🇪🇸 ES</button>
+  </div>
+
+  <div class="page">
+    <div class="background-elements" aria-hidden="true">
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="glow glow-3"></div>
+    </div>
+    <div class="container">
+      
+      <header class="section-hero glass-card animate-fade-in">
+        <div class="badge" data-i18n="badge">Registration Confirmed!</div>
+        <h1 class="hero-title">
+          <span data-i18n="hero_welcome">WELCOME TO</span> <span class="highlight">TOP 1536</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">It's a privilege to have you with us.</p>
+        <div class="hero-content">
+          <p data-i18n="hero_body">To have a truly transformative experience, follow these instructions carefully.</p>
+          <p class="mt-2"><strong data-i18n="hero_cta">Your success starts today — with clarity and action!</strong></p>
+        </div>
+      </header>
+
+      <div class="info-grid">
+        <section class="info-card glass-card animate-slide-up" style="animation-delay: 0.1s;">
+          <div class="card-header">
+            <i class="fa-regular fa-calendar-check icon"></i>
+            <h2 data-i18n="event_info_title">Event Information</h2>
+          </div>
+          <ul class="details-list">
+            <li><span class="label">TOP:</span> 1536</li>
+            <li><span class="label" data-i18n="label_dates">Dates:</span> <span data-i18n="event_dates">Apr 30 – May 03, 2026</span></li>
+            <li><span class="label" data-i18n="label_checkin">Check-in:</span> <span data-i18n="event_checkin">Apr 30, 2026 at 3:00 PM</span></li>
+            <li><span class="label" data-i18n="label_checkout">Check-out:</span> <span data-i18n="event_checkout">May 03, 2026 at 4:00 PM</span></li>
+            <li><span class="label" data-i18n="label_location">Location:</span> Videira Atlanta Church, 1296 Gresham Rd NE, Marietta, GA 30062 📍</li>
+          </ul>
+        </section>
+
+        <section class="info-card glass-card animate-slide-up" style="animation-delay: 0.2s;">
+          <div class="card-header">
+            <i class="fa-regular fa-id-card icon"></i>
+            <h2 data-i18n="checkin_day_title">On Check-in Day</h2>
+          </div>
+          <ul class="checklist alt-checklist">
+            <li><i class="fa-solid fa-file-signature text-accent"></i> <span data-i18n="checkin_item1">Signed waiver (liability form)</span></li>
+            <li><i class="fa-solid fa-money-bill-wave text-accent"></i> $20 cash</li>
+            <li><i class="fa-solid fa-id-badge text-accent"></i> <span data-i18n="checkin_item3">Copy of an official ID document</span></li>
+            <li><i class="fa-solid fa-qrcode text-accent"></i> <span data-i18n="checkin_item4">Printed registration form with QR Code</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="section-full glass-card animate-slide-up" style="animation-delay: 0.3s;">
+        <div class="card-header align-center">
+          <i class="fa-solid fa-backpack icon"></i>
+          <h2 data-i18n="packing_title">What to bring</h2>
+        </div>
+
+        <div class="alert box">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <div>
+            <strong data-i18n="attention_label">Attention:</strong> <span data-i18n="packing_alert">Double-check the required items.</span><br>
+            <small data-i18n="packing_alert_small">Images in the list (when applicable) are ILLUSTRATIVE.</small>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <p data-i18n="packing_body">Everything you need is on the official list.</p>
+          <a class="btn btn-primary mt-2"
+             href="https://www.subir.top/list-sen-en.html"
+             target="_blank"
+             rel="noopener">
+            <i class="fa-solid fa-download"></i> <span data-i18n="packing_btn">View packing list</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section-full highlight-card animate-slide-up" style="animation-delay: 0.4s;">
+        <div class="whatsapp-content">
+          <div class="whatsapp-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <div class="whatsapp-text">
+            <h2 data-i18n="whatsapp_title">Official Group (WhatsApp)</h2>
+            <p data-i18n="whatsapp_body">Participation is mandatory to receive announcements.</p>
+          </div>
+          <a class="btn btn-success" href="https://chat.whatsapp.com/CsfIUCuBnZr4PP3rT2s8F4?mode=gi_t" target="_blank" rel="noopener" data-i18n="whatsapp_btn">Join the Group</a>
+        </div>
+      </section>
+
+      <section class="section-full secondary-card animate-slide-up" style="animation-delay: 0.5s;">
+        <div class="card-header">
+          <i class="fa-solid fa-heart icon text-pink"></i>
+          <h2 data-i18n="wives_title">Wives Group</h2>
+        </div>
+        <p data-i18n="wives_body">Share the link with your wife, fiancée, or mother.</p>
+        <div class="alert box error-box mt-3 mb-4">
+          <i class="fa-solid fa-ban"></i>
+          <div><strong data-i18n="notice_label">Notice:</strong> <span data-i18n="wives_notice">Women only (men cannot join).</span></div>
+        </div>
+        <a class="btn btn-pink block text-center" href="https://chat.whatsapp.com/JwZgPbOqAGx0wS4STw7Ume?mode=gi_t" target="_blank" rel="noopener" data-i18n="wives_btn">Women's Group</a>
+      </section>
+
+      <section class="info-card glass-card minimal animate-slide-up" style="animation-delay: 0.6s;">
+        <div class="card-header">
+          <i class="fa-solid fa-circle-xmark icon"></i>
+          <h2 data-i18n="cancel_title">Cancellations & Transfers</h2>
+        </div>
+        <ul class="policy-list mt-3">
+          <li><strong data-i18n="cancel_health_label">Health reasons:</strong> <span data-i18n="cancel_health">Accepted with a medical note up to 20 days before the event.</span></li>
+          <li><strong data-i18n="cancel_transfer_label">Transfer/change edition:</strong> <span data-i18n="cancel_transfer">Only if 30+ days remain.</span></li>
+          <li><strong data-i18n="cancel_less_label">Less than 30 days:</strong> <span data-i18n="cancel_less">No changes or refunds.</span></li>
+        </ul>
+        <div class="contact-box mt-4">
+          <p><i class="fa-regular fa-envelope"></i> <span data-i18n="contact_email_label">All requests must be handled by email:</span><br>
+          <a class="text-accent" href="mailto:legendariosatl@gmail.com">legendariosatl@gmail.com</a></p>
+          <p class="mt-2"><i class="fa-brands fa-instagram"></i> <span data-i18n="contact_next">Next editions:</span> 
+          <a class="text-accent" href="https://instagram.com/legendariosatl" target="_blank" rel="noopener">@legendariosatl</a></p>
+        </div>
+      </section>
+
+      <footer class="footer animate-fade-in" style="animation-delay: 0.8s;">
+        <div class="quote-box">
+          <blockquote data-i18n="quote1">"Greater love has no one than this: to lay down one's life for one's friends."</blockquote>
+          <cite>— <span data-i18n="quote1_ref">John 15:13</span></cite>
+        </div>
+        <div class="quote-box">
+          <blockquote data-i18n="quote2">"But we have this treasure in jars of clay to show that this all-surpassing power is from God and not from us."</blockquote>
+          <cite>— <span data-i18n="quote2_ref">2 Corinthians 4:7</span></cite>
+        </div>
+        <div class="final-words">
+          <p><i class="fa-solid fa-sparkles text-accent"></i> <span data-i18n="final_msg">We are fragile vessels, but Jesus will be glorified through us.</span></p>
+          <h3 class="mt-4" data-i18n="see_you">See you soon!</h3>
+          <p class="brand" data-i18n="team_name">Eagle Path Team</p>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+
+  /* ─── Translations ─── */
+  const i18n = {
+    en: {
+      badge: "Registration Confirmed!",
+      hero_welcome: "WELCOME TO",
+      hero_subtitle: "It's a privilege to have you with us.",
+      hero_body: "To have a truly transformative experience, follow these instructions carefully.",
+      hero_cta: "Your success starts today — with clarity and action!",
+      event_info_title: "Event Information",
+      label_dates: "Dates:",
+      label_checkin: "Check-in:",
+      label_checkout: "Check-out:",
+      label_location: "Location:",
+      event_dates: "Apr 30 – May 03, 2026",
+      event_checkin: "Apr 30, 2026 at 3:00 PM",
+      event_checkout: "May 03, 2026 at 4:00 PM",
+      checkin_day_title: "On Check-in Day",
+      checkin_item1: "Signed waiver (liability form)",
+      checkin_item3: "Copy of an official ID document",
+      checkin_item4: "Printed registration form with QR Code",
+      packing_title: "What to bring",
+      attention_label: "Attention:",
+      packing_alert: "Double-check the required items.",
+      packing_alert_small: "Images in the list (when applicable) are ILLUSTRATIVE.",
+      packing_body: "Everything you need is on the official list.",
+      packing_btn: "View packing list",
+      whatsapp_title: "Official Group (WhatsApp)",
+      whatsapp_body: "Participation is mandatory to receive announcements.",
+      whatsapp_btn: "Join the Group",
+      wives_title: "Wives Group",
+      wives_body: "Share the link with your wife, fiancée, or mother.",
+      notice_label: "Notice:",
+      wives_notice: "Women only (men cannot join).",
+      wives_btn: "Women's Group",
+      cancel_title: "Cancellations & Transfers",
+      cancel_health_label: "Health reasons:",
+      cancel_health: "Accepted with a medical note up to 20 days before the event.",
+      cancel_transfer_label: "Transfer/change edition:",
+      cancel_transfer: "Only if 30+ days remain.",
+      cancel_less_label: "Less than 30 days:",
+      cancel_less: "No changes or refunds.",
+      contact_email_label: "All requests must be handled by email:",
+      contact_next: "Next editions:",
+      quote1: '"Greater love has no one than this: to lay down one\'s life for one\'s friends."',
+      quote1_ref: "John 15:13",
+      quote2: '"But we have this treasure in jars of clay to show that this all-surpassing power is from God and not from us."',
+      quote2_ref: "2 Corinthians 4:7",
+      final_msg: "We are fragile vessels, but Jesus will be glorified through us.",
+      see_you: "See you soon!",
+      team_name: "Eagle Path Team"
+    },
+    pt: {
+      badge: "Inscrição Confirmada!",
+      hero_welcome: "BEM-VINDO AO",
+      hero_subtitle: "É um privilégio ter você conosco.",
+      hero_body: "Para ter uma experiência verdadeiramente transformadora, siga estas instruções com atenção.",
+      hero_cta: "Seu sucesso começa hoje — com clareza e ação!",
+      event_info_title: "Informações do Evento",
+      label_dates: "Datas:",
+      label_checkin: "Check-in:",
+      label_checkout: "Check-out:",
+      label_location: "Local:",
+      event_dates: "30 de Abr – 03 de Mai, 2026",
+      event_checkin: "30 de Abr, 2026 às 15h00",
+      event_checkout: "03 de Mai, 2026 às 16h00",
+      checkin_day_title: "No Dia do Check-in",
+      checkin_item1: "Termo assinado (formulário de responsabilidade)",
+      checkin_item3: "Cópia de um documento de identificação oficial",
+      checkin_item4: "Formulário de inscrição impresso com QR Code",
+      packing_title: "O que trazer",
+      attention_label: "Atenção:",
+      packing_alert: "Verifique os itens obrigatórios.",
+      packing_alert_small: "As imagens na lista (quando aplicável) são ILUSTRATIVAS.",
+      packing_body: "Tudo o que você precisa está na lista oficial.",
+      packing_btn: "Ver lista de itens",
+      whatsapp_title: "Grupo Oficial (WhatsApp)",
+      whatsapp_body: "A participação é obrigatória para receber avisos.",
+      whatsapp_btn: "Entrar no Grupo",
+      wives_title: "Grupo das Esposas",
+      wives_body: "Compartilhe o link com sua esposa, noiva ou mãe.",
+      notice_label: "Aviso:",
+      wives_notice: "Somente mulheres (homens não podem entrar).",
+      wives_btn: "Grupo Feminino",
+      cancel_title: "Cancelamentos e Transferências",
+      cancel_health_label: "Motivos de saúde:",
+      cancel_health: "Aceito com atestado médico até 20 dias antes do evento.",
+      cancel_transfer_label: "Transferência/troca de edição:",
+      cancel_transfer: "Somente se restar mais de 30 dias.",
+      cancel_less_label: "Menos de 30 dias:",
+      cancel_less: "Sem alterações ou reembolsos.",
+      contact_email_label: "Todas as solicitações devem ser feitas por e-mail:",
+      contact_next: "Próximas edições:",
+      quote1: '"Ninguém tem amor maior do que este: dar a própria vida pelos seus amigos."',
+      quote1_ref: "João 15:13",
+      quote2: '"Mas temos este tesouro em vasos de barro, para mostrar que a supremacia do poder vem de Deus e não de nós."',
+      quote2_ref: "2 Coríntios 4:7",
+      final_msg: "Somos vasos frágeis, mas Jesus será glorificado através de nós.",
+      see_you: "Até breve!",
+      team_name: "Equipe Eagle Path"
+    },
+    es: {
+      badge: "¡Inscripción Confirmada!",
+      hero_welcome: "BIENVENIDO AL",
+      hero_subtitle: "Es un privilegio tenerte con nosotros.",
+      hero_body: "Para tener una experiencia verdaderamente transformadora, sigue estas instrucciones con atención.",
+      hero_cta: "¡Tu éxito comienza hoy — con claridad y acción!",
+      event_info_title: "Información del Evento",
+      label_dates: "Fechas:",
+      label_checkin: "Check-in:",
+      label_checkout: "Check-out:",
+      label_location: "Lugar:",
+      event_dates: "30 Abr – 03 May, 2026",
+      event_checkin: "30 Abr, 2026 a las 3:00 PM",
+      event_checkout: "03 May, 2026 a las 4:00 PM",
+      checkin_day_title: "En el Día del Check-in",
+      checkin_item1: "Formulario de exención firmado (responsabilidad)",
+      checkin_item3: "Copia de un documento de identificación oficial",
+      checkin_item4: "Formulario de inscripción impreso con Código QR",
+      packing_title: "Qué traer",
+      attention_label: "Atención:",
+      packing_alert: "Verifica los artículos requeridos.",
+      packing_alert_small: "Las imágenes de la lista (cuando aplique) son ILUSTRATIVAS.",
+      packing_body: "Todo lo que necesitas está en la lista oficial.",
+      packing_btn: "Ver lista de artículos",
+      whatsapp_title: "Grupo Oficial (WhatsApp)",
+      whatsapp_body: "La participación es obligatoria para recibir avisos.",
+      whatsapp_btn: "Unirse al Grupo",
+      wives_title: "Grupo de Esposas",
+      wives_body: "Comparte el enlace con tu esposa, novia o madre.",
+      notice_label: "Aviso:",
+      wives_notice: "Solo mujeres (los hombres no pueden unirse).",
+      wives_btn: "Grupo Femenino",
+      cancel_title: "Cancelaciones y Transferencias",
+      cancel_health_label: "Motivos de salud:",
+      cancel_health: "Aceptado con certificado médico hasta 20 días antes del evento.",
+      cancel_transfer_label: "Transferencia/cambio de edición:",
+      cancel_transfer: "Solo si quedan más de 30 días.",
+      cancel_less_label: "Menos de 30 días:",
+      cancel_less: "Sin cambios ni reembolsos.",
+      contact_email_label: "Todas las solicitudes deben hacerse por correo electrónico:",
+      contact_next: "Próximas ediciones:",
+      quote1: '"Nadie tiene amor más grande que este: dar la vida por sus amigos."',
+      quote1_ref: "Juan 15:13",
+      quote2: '"Pero tenemos este tesoro en vasos de barro, para que la excelencia del poder sea de Dios y no de nosotros."',
+      quote2_ref: "2 Corintios 4:7",
+      final_msg: "Somos vasijas frágiles, pero Jesús será glorificado a través de nosotros.",
+      see_you: "¡Hasta pronto!",
+      team_name: "Equipo Eagle Path"
+    }
+  };
+
+  /* ─── Apply translations ─── */
+  function applyLang(lang) {
+    const dict = i18n[lang] || i18n['en'];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+    // update active button
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+    localStorage.setItem('top1536_lang', lang);
+  }
+
+  /* ─── Detect browser language ─── */
+  function detectLang() {
+    const saved = localStorage.getItem('top1536_lang');
+    if (saved && i18n[saved]) return saved;
+    const nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    if (nav.startsWith('pt')) return 'pt';
+    if (nav.startsWith('es')) return 'es';
+    return 'en';
+  }
+
+  /* ─── Expose global setter ─── */
+  window.setLang = function(lang) { applyLang(lang); };
+
+  /* ─── Scroll reveal ─── */
+  function scrollReveal(){
+    const root = document.getElementById('top1536-pro');
+    if(!root) return;
+    const targets = root.querySelectorAll('.animate-slide-up, .animate-fade-in');
+    if(!('IntersectionObserver' in window)){
+      targets.forEach(el => { el.style.opacity = 1; });
+      return;
+    }
+    targets.forEach(el => { el.style.animationPlayState = 'paused'; });
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.animationPlayState = 'running';
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    targets.forEach(el => observer.observe(el));
+  }
+
+  /* ─── Init ─── */
+  applyLang(detectLang());
+  scrollReveal();
+
+})();
+</script>
+</body>
+</html>
