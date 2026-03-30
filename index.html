@@ -1,743 +1,964 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legendários - TOP 1526 - Track Eagle Path | "THE LEGENDARY"</title>
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap"
-        rel="stylesheet">
-    <style>
-        #top1526-sales,
-        #top1526-sales * {
-            box-sizing: border-box;
-        }
-
-        #top1526-sales {
-            --bg-dark: #0f1115;
-            --bg-card: rgba(30, 33, 40, .6);
-            --bg-card-hover: rgba(40, 44, 53, .8);
-            --text-main: #f0f2f5;
-            --text-muted: #a0a8b5;
-            --accent-gold: #d4af37;
-            --accent-gold-hover: #e5c158;
-            --success-green: #25D366;
-            --success-hover: #128C7E;
-            --pink-light: #FF85B3;
-            --pink-dark: #E03C7A;
-            --error-red: #ff4b4b;
-            --error-bg: rgba(255, 75, 75, .1);
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --blur-strength: 16px;
-            --border-subtle: 1px solid rgba(255, 255, 255, .08);
-            --shadow-soft: 0 8px 32px rgba(0, 0, 0, .4);
-            --shadow-glow: 0 0 20px rgba(212, 175, 55, .2);
-            --border-radius: 16px;
-            --transition: all .3s cubic-bezier(.25, .8, .25, 1);
-
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            font-family: var(--font-body);
-            color: var(--text-main);
-            -webkit-font-smoothing: antialiased;
-            background: var(--bg-dark);
-            /* Fallback body bg */
-        }
-
-        /* Page wrapper */
-        #top1526-sales .page {
-            position: relative;
-            background: var(--bg-dark);
-            padding: 20px;
-            /* Remove border radius if full page */
-            /* border-radius: 18px; */
-            overflow: hidden;
-            min-height: 100vh;
-        }
-
-        /* Orbs */
-        #top1526-sales .background-elements {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        #top1526-sales .glow {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: .15;
-        }
-
-        #top1526-sales .glow-1 {
-            top: -10%;
-            left: -10%;
-            width: 500px;
-            height: 500px;
-            background: var(--accent-gold);
-        }
-
-        #top1526-sales .glow-2 {
-            bottom: 20%;
-            right: -5%;
-            width: 400px;
-            height: 400px;
-            background: #4a5b82;
-        }
-
-        #top1526-sales .glow-3 {
-            top: 40%;
-            left: 40%;
-            width: 600px;
-            height: 600px;
-            background: rgba(255, 133, 179, .3);
-            opacity: .08;
-        }
-
-        /* Container */
-        #top1526-sales .container {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-        }
-
-        /* Typography */
-        #top1526-sales h1,
-        #top1526-sales h2,
-        #top1526-sales h3,
-        #top1526-sales h4 {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            line-height: 1.2;
-            margin: 0;
-        }
-
-        #top1526-sales p {
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        #top1526-sales .text-accent {
-            color: var(--accent-gold);
-        }
-
-        #top1526-sales .text-muted {
-            color: var(--text-muted);
-        }
-
-        #top1526-sales .text-success {
-            color: #25D366;
-        }
-
-        #top1526-sales .text-center {
-            text-align: center;
-        }
-
-        /* Cards */
-        #top1526-sales .glass-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(var(--blur-strength));
-            -webkit-backdrop-filter: blur(var(--blur-strength));
-            border: var(--border-subtle);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition);
-        }
-
-        #top1526-sales .glass-card:hover {
-            transform: translateY(-2px);
-            background: var(--bg-card-hover);
-            box-shadow: var(--shadow-glow);
-        }
-
-        #top1526-sales .glass-card.minimal {
-            padding: 1.5rem;
-        }
-
-        /* Buttons */
-        #top1526-sales .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: .75rem;
-            padding: 1.2rem 2rem;
-            border-radius: 12px;
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 1.1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-            cursor: pointer;
-            border: none;
-            user-select: none;
-            width: 100%;
-        }
-
-        @media (min-width: 600px) {
-            #top1526-sales .btn {
-                width: auto;
-                min-width: 250px;
-            }
-        }
-
-        #top1526-sales .btn:active {
-            transform: scale(.98);
-        }
-
-        #top1526-sales .btn-primary {
-            background: linear-gradient(135deg, var(--accent-gold), #b8912b);
-            color: #111;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, .4);
-        }
-
-        #top1526-sales .btn-primary:hover {
-            box-shadow: 0 8px 25px rgba(212, 175, 55, .6);
-            transform: translateY(-3px);
-            background: linear-gradient(135deg, #e5c158, var(--accent-gold));
-        }
-
-        /* Hero */
-        #top1526-sales .section-hero {
-            text-align: center;
-            padding: 4rem 2rem;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-top: 4px solid var(--accent-gold);
-        }
-
-        #top1526-sales .badge {
-            display: inline-block;
-            background: rgba(212, 175, 55, .15);
-            color: var(--accent-gold);
-            padding: .6rem 1.2rem;
-            border-radius: 30px;
-            font-size: .95rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(212, 175, 55, .4);
-            box-shadow: inset 0 0 10px rgba(212, 175, 55, .1);
-        }
-
-        #top1526-sales .hero-title {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            line-height: 1.1;
-        }
-
-        #top1526-sales .hero-title .highlight {
-            background: linear-gradient(to right, var(--accent-gold), #fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        #top1526-sales .hero-subtitle {
-            font-size: 1.4rem;
-            color: var(--text-muted);
-            font-family: var(--font-heading);
-            margin-bottom: 2.5rem;
-            font-weight: 500;
-        }
-
-        /* Price Tag */
-        #top1526-sales .price-tag {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        #top1526-sales .price-tax {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            font-weight: normal;
-            font-family: var(--font-body);
-        }
-
-        /* Mission alert block */
-        #top1526-sales .mission-block {
-            background: linear-gradient(145deg, rgba(212, 175, 55, .05), rgba(30, 33, 40, .8));
-            border-radius: 12px;
-            padding: 1.5rem;
-            border-left: 4px solid var(--accent-gold);
-            text-align: left;
-            margin-top: 2rem;
-            font-size: 1.1rem;
-        }
-
-        /* Grid */
-        #top1526-sales .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        @media (max-width: 768px) {
-            #top1526-sales .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            #top1526-sales .hero-title {
-                font-size: 2.2rem;
-            }
-
-            #top1526-sales .section-hero {
-                padding: 3rem 1.5rem;
-            }
-        }
-
-        /* Headers */
-        #top1526-sales .card-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, .1);
-        }
-
-        #top1526-sales .card-header.align-center {
-            justify-content: center;
-            text-align: center;
-        }
-
-        #top1526-sales .card-header h2 {
-            font-size: 1.4rem;
-            letter-spacing: .5px;
-        }
-
-        #top1526-sales .icon {
-            font-size: 1.6rem;
-            color: var(--accent-gold);
-        }
-
-        /* Details */
-        #top1526-sales .details-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin: 0;
-            padding: 0;
-        }
-
-        #top1526-sales .details-list li {
-            font-size: 1.05rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        #top1526-sales .details-list li i {
-            margin-top: 4px;
-            width: 20px;
-            text-align: center;
-        }
-
-        #top1526-sales .label {
-            font-weight: 600;
-            color: var(--text-muted);
-            min-width: 85px;
-            display: inline-block;
-        }
-
-        /* Sections */
-        #top1526-sales .section-full {
-            background: var(--bg-card);
-            backdrop-filter: blur(var(--blur-strength));
-            -webkit-backdrop-filter: blur(var(--blur-strength));
-            border: var(--border-subtle);
-            border-radius: var(--border-radius);
-            padding: 3rem 2rem;
-        }
-
-        #top1526-sales .highlight-card {
-            background: linear-gradient(145deg, rgba(212, 175, 55, .05), rgba(30, 33, 40, .6));
-            border: 1px solid rgba(212, 175, 55, .2);
-        }
-
-        #top1526-sales .secondary-card {
-            background: linear-gradient(145deg, rgba(255, 255, 255, .02), rgba(30, 33, 40, .6));
-            border: 1px solid rgba(255, 255, 255, .08);
-            text-align: center;
-        }
-
-        /* Video Container */
-        #top1526-sales .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            border-radius: 8px;
-            overflow: hidden;
-            background: #000;
-        }
-
-        #top1526-sales .video-container iframe,
-        #top1526-sales .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Checkmarks Grid */
-        #top1526-sales .check-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        #top1526-sales .check-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 1rem;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 500;
-        }
-
-        /* Policies */
-        #top1526-sales .policy-list {
-            margin: 0 0 0 1.5rem;
-            color: var(--text-muted);
-            padding: 0;
-            line-height: 1.7;
-        }
-
-        #top1526-sales .policy-list li {
-            margin-bottom: .8rem;
-        }
-
-        #top1526-sales .policy-list strong {
-            color: var(--text-main);
-        }
-
-        /* Utils */
-        #top1526-sales .mt-2 {
-            margin-top: .5rem;
-        }
-
-        #top1526-sales .mt-3 {
-            margin-top: 1rem;
-        }
-
-        #top1526-sales .mt-4 {
-            margin-top: 1.5rem;
-        }
-
-        #top1526-sales .mb-2 {
-            margin-bottom: .5rem;
-        }
-
-        #top1526-sales .mb-3 {
-            margin-bottom: 1rem;
-        }
-
-        #top1526-sales .mb-4 {
-            margin-bottom: 1.5rem;
-        }
-
-        #top1526-sales .w-full {
-            width: 100%;
-        }
-
-        /* Animations */
-        @keyframes top1526FadeIn {
-            from {
-                opacity: 0
-            }
-
-            to {
-                opacity: 1
-            }
-        }
-
-        @keyframes top1526SlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px)
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0)
-            }
-        }
-
-        @keyframes pulseGlow {
-            0% {
-                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
-            }
-
-            70% {
-                box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
-            }
-        }
-
-        #top1526-sales .animate-fade-in {
-            animation: top1526FadeIn 1s cubic-bezier(.25, .8, .25, 1) forwards;
-        }
-
-        #top1526-sales .animate-slide-up {
-            opacity: 0;
-            animation: top1526SlideUp .8s cubic-bezier(.25, .8, .25, 1) forwards;
-        }
-
-        #top1526-sales .pulse-btn {
-            animation: pulseGlow 2s infinite;
-        }
-
-        /* Link focus */
-        #top1526-sales a {
-            color: inherit;
-        }
-
-        #top1526-sales a:focus {
-            outline: 2px solid rgba(212, 175, 55, .4);
-            outline-offset: 3px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legendários - TOP 1536 - Track Eagle Path | 1 YEAR</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    #top1536-sales,
+    #top1536-sales * {
+      box-sizing: border-box;
+    }
+
+    #top1536-sales {
+      --bg-dark: #0f1115;
+      --bg-card: rgba(30, 33, 40, .6);
+      --bg-card-hover: rgba(40, 44, 53, .8);
+      --text-main: #f0f2f5;
+      --text-muted: #a0a8b5;
+      --accent-gold: #d4af37;
+      --accent-gold-hover: #e5c158;
+      --success-green: #25D366;
+      --pink-light: #FF85B3;
+      --pink-dark: #E03C7A;
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --blur-strength: 16px;
+      --border-subtle: 1px solid rgba(255, 255, 255, .08);
+      --shadow-soft: 0 8px 32px rgba(0, 0, 0, .4);
+      --shadow-glow: 0 0 20px rgba(212, 175, 55, .2);
+      --border-radius: 16px;
+      --transition: all .3s cubic-bezier(.25, .8, .25, 1);
+
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      font-family: var(--font-body);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      background: var(--bg-dark);
+    }
+
+    #top1536-sales .page {
+      position: relative;
+      background: var(--bg-dark);
+      padding: 20px;
+      overflow: hidden;
+      min-height: 100vh;
+    }
+
+    #top1536-sales .background-elements {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    #top1536-sales .glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: .15;
+    }
+
+    #top1536-sales .glow-1 {
+      top: -10%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: var(--accent-gold);
+    }
+
+    #top1536-sales .glow-2 {
+      bottom: 20%;
+      right: -5%;
+      width: 400px;
+      height: 400px;
+      background: #4a5b82;
+    }
+
+    #top1536-sales .glow-3 {
+      top: 40%;
+      left: 40%;
+      width: 600px;
+      height: 600px;
+      background: rgba(255, 133, 179, .3);
+      opacity: .08;
+    }
+
+    #top1536-sales .container {
+      position: relative;
+      z-index: 1;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    #top1536-sales h1,
+    #top1536-sales h2,
+    #top1536-sales h3,
+    #top1536-sales h4 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    #top1536-sales p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    #top1536-sales .text-accent {
+      color: var(--accent-gold);
+    }
+
+    #top1536-sales .text-muted {
+      color: var(--text-muted);
+    }
+
+    #top1536-sales .text-success {
+      color: var(--success-green);
+    }
+
+    #top1536-sales .text-center {
+      text-align: center;
+    }
+
+    #top1536-sales .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(var(--blur-strength));
+      -webkit-backdrop-filter: blur(var(--blur-strength));
+      border: var(--border-subtle);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    #top1536-sales .glass-card:hover {
+      transform: translateY(-2px);
+      background: var(--bg-card-hover);
+      box-shadow: var(--shadow-glow);
+    }
+
+    #top1536-sales .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      user-select: none;
+      width: 100%;
+      min-height: 56px;
+    }
+
+    #top1536-sales .btn:active {
+      transform: scale(.98);
+    }
+
+    #top1536-sales .btn-primary {
+      background: linear-gradient(135deg, var(--accent-gold), #b8912b);
+      color: #111;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, .4);
+    }
+
+    #top1536-sales .btn-primary:hover {
+      box-shadow: 0 8px 25px rgba(212, 175, 55, .6);
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, #e5c158, var(--accent-gold));
+    }
+
+    #top1536-sales .section-hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top: 4px solid var(--accent-gold);
+    }
+
+    #top1536-sales .badge {
+      display: inline-block;
+      background: rgba(212, 175, 55, .15);
+      color: var(--accent-gold);
+      padding: .6rem 1.2rem;
+      border-radius: 30px;
+      font-size: .95rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(212, 175, 55, .4);
+      box-shadow: inset 0 0 10px rgba(212, 175, 55, .1);
+    }
+
+    #top1536-sales .hero-title {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    #top1536-sales .hero-title .highlight {
+      background: linear-gradient(to right, var(--accent-gold), #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #top1536-sales .hero-subtitle {
+      font-size: 1.4rem;
+      color: var(--text-muted);
+      font-family: var(--font-heading);
+      margin-bottom: 2.5rem;
+      font-weight: 500;
+    }
+
+    #top1536-sales .price-tag {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: .5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    #top1536-sales .price-tax {
+      font-size: .9rem;
+      color: var(--text-muted);
+      font-weight: normal;
+      font-family: var(--font-body);
+    }
+
+    #top1536-sales .mission-block {
+      background: linear-gradient(145deg, rgba(212, 175, 55, .05), rgba(30, 33, 40, .8));
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-left: 4px solid var(--accent-gold);
+      text-align: left;
+      margin-top: 2rem;
+      font-size: 1.1rem;
+    }
+
+    #top1536-sales .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    #top1536-sales .card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    #top1536-sales .card-header.align-center {
+      justify-content: center;
+      text-align: center;
+    }
+
+    #top1536-sales .card-header h2 {
+      font-size: 1.4rem;
+      letter-spacing: .5px;
+    }
+
+    #top1536-sales .icon {
+      font-size: 1.6rem;
+      color: var(--accent-gold);
+    }
+
+    #top1536-sales .details-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    #top1536-sales .details-list li {
+      font-size: 1.05rem;
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      line-height: 1.5;
+    }
+
+    #top1536-sales .label {
+      font-weight: 600;
+      color: var(--text-muted);
+      min-width: 95px;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    #top1536-sales .section-full {
+      background: var(--bg-card);
+      backdrop-filter: blur(var(--blur-strength));
+      -webkit-backdrop-filter: blur(var(--blur-strength));
+      border: var(--border-subtle);
+      border-radius: var(--border-radius);
+      padding: 3rem 2rem;
+    }
+
+    #top1536-sales .highlight-card {
+      background: linear-gradient(145deg, rgba(212, 175, 55, .05), rgba(30, 33, 40, .6));
+      border: 1px solid rgba(212, 175, 55, .2);
+    }
+
+    #top1536-sales .secondary-card {
+      background: linear-gradient(145deg, rgba(255, 255, 255, .02), rgba(30, 33, 40, .6));
+      border: 1px solid rgba(255, 255, 255, .08);
+      text-align: center;
+    }
+
+    #top1536-sales .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    #top1536-sales .video-container iframe,
+    #top1536-sales .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    #top1536-sales .check-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    #top1536-sales .check-item {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    #top1536-sales .policy-list {
+      margin: 0 0 0 1.5rem;
+      color: var(--text-muted);
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    #top1536-sales .policy-list li {
+      margin-bottom: .8rem;
+    }
+
+    #top1536-sales .policy-list strong {
+      color: var(--text-main);
+    }
+
+    #top1536-sales .checkout-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    #top1536-sales .lang-switcher {
+      position: sticky;
+      top: 12px;
+      z-index: 10;
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: -1rem;
+    }
+
+    #top1536-sales .lang-switcher-inner {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      background: rgba(20, 23, 29, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      padding: .75rem 1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    #top1536-sales .lang-switcher label {
+      color: var(--text-muted);
+      font-size: .92rem;
+      font-weight: 600;
+    }
+
+    #top1536-sales .lang-switcher select {
+      background: #171a20;
+      color: var(--text-main);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px;
+      padding: .6rem .85rem;
+      font-size: .95rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    #top1536-sales .mb-2 { margin-bottom: .5rem; }
+    #top1536-sales .mb-4 { margin-bottom: 1.5rem; }
+    #top1536-sales .mt-2 { margin-top: .5rem; }
+    #top1536-sales .mt-4 { margin-top: 1.5rem; }
+    #top1536-sales .w-full { width: 100%; }
+
+    @keyframes top1536FadeIn {
+      from { opacity: 0 }
+      to { opacity: 1 }
+    }
+
+    @keyframes top1536SlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px)
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+      70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+    }
+
+    #top1536-sales .animate-fade-in {
+      animation: top1536FadeIn 1s cubic-bezier(.25, .8, .25, 1) forwards;
+    }
+
+    #top1536-sales .animate-slide-up {
+      opacity: 0;
+      animation: top1536SlideUp .8s cubic-bezier(.25, .8, .25, 1) forwards;
+    }
+
+    #top1536-sales .pulse-btn {
+      animation: pulseGlow 2s infinite;
+    }
+
+    #top1536-sales a {
+      color: inherit;
+    }
+
+    #top1536-sales a:focus,
+    #top1536-sales button:focus,
+    #top1536-sales select:focus {
+      outline: 2px solid rgba(212, 175, 55, .4);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      #top1536-sales .checkout-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #top1536-sales .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #top1536-sales .hero-title {
+        font-size: 2.2rem;
+      }
+
+      #top1536-sales .section-hero {
+        padding: 3rem 1.5rem;
+      }
+
+      #top1536-sales .lang-switcher {
+        position: relative;
+        top: 0;
+        margin-bottom: 0;
+      }
+
+      #top1536-sales .lang-switcher-inner {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  </style>
 </head>
 
 <body style="margin: 0; padding: 0; background: #0f1115;">
 
-    <div id="top1526-sales">
-        <div class="page">
-            <!-- Background Orbs -->
-            <div class="background-elements" aria-hidden="true">
-                <div class="glow glow-1"></div>
-                <div class="glow glow-2"></div>
-                <div class="glow glow-3"></div>
-            </div>
+  <div id="top1536-sales">
+    <div class="page">
+      <div class="background-elements" aria-hidden="true">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glow glow-3"></div>
+      </div>
 
-            <div class="container">
+      <div class="container">
 
-                <!-- HERO & PRICING -->
-                <header class="section-hero glass-card animate-fade-in">
-                    <div class="badge mb-4">Track Eagle Path | "THE LEGENDARY"</div>
-
-                    <img src="logo.png" alt="Lgnd Logo"
-                        style="max-width: 350px; width: 100%; height: auto; margin: 0 auto 1.5rem auto; display: block;">
-
-                    <h1 class="hero-title"><span class="highlight">TOP 1526</span></h1>
-                </header>
-
-                <!-- MISSION STATEMENT -->
-                <section class="section-full highlight-card animate-slide-up" style="animation-delay: 0.1s;">
-                    <h2 class="hero-title" style="font-size: 2.2rem; text-align: center;">GOD DID NOT CREATE <span
-                            class="highlight">WEAK MEN</span></h2>
-                    <p class="hero-subtitle text-center mt-2">He created <strong class="text-accent">warriors</strong>.
-                    </p>
-
-                    <div class="text-center" style="font-size: 1.15rem; max-width: 700px; margin: 0 auto;">
-                        <p>Men were designed to lead, to protect, and to walk with purpose.<br>
-                            But when a man loses himself, he loses more than direction &mdash; he loses his fire, his
-                            leadership, and his identity.</p>
-                    </div>
-
-                    <div class="mission-block">
-                        <i class="fa-solid fa-fire text-accent mb-2" style="font-size: 1.5rem;"></i>
-                        <div>
-                            <strong class="text-main">Legendários exists to restore what the world is stealing from
-                                men:</strong><br>
-                            faith, strength, purpose, and true identity.
-                        </div>
-                    </div>
-                </section>
-
-                <!-- VIDEO SECTION ADDED HERE -->
-                <section class="glass-card animate-slide-up" style="animation-delay: 0.15s; padding: 1rem;">
-                    <div class="video-container">
-                        <!-- COLOQUE O CÓDIGO DO SEU VÍDEO (IFRAME DO YOUTUBE/VIMEO) AQUI -->
-                        <iframe src="video.mp4" title="Vídeo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </section>
-
-                <!-- EVENT DETAILS -->
-                <div class="info-grid">
-                    <section class="info-card glass-card animate-slide-up" style="animation-delay: 0.2s;">
-                        <div class="card-header">
-                            <i class="fa-regular fa-calendar-check icon"></i>
-                            <h2>Event Information</h2>
-                        </div>
-                        <ul class="details-list">
-                            <li><span class="label">Dates:</span> 03/26/2026 to 03/29/2026</li>
-                            <li><span class="label">Time:</span> 3:00PM</li>
-                            <li><span class="label">Location:</span> 1296 Gresham Rd NE, Marietta, GA - 30062</li>
-                        </ul>
-                    </section>
-
-                    <section class="info-card glass-card animate-slide-up" style="animation-delay: 0.3s;">
-                        <div class="card-header">
-                            <i class="fa-solid fa-mountain icon"></i>
-                            <h2>What is it?</h2>
-                        </div>
-                        <p style="font-size: 1.1rem; font-weight: 600;" class="text-accent mb-2">TOP is not an event.
-                            It&rsquo;s an awakening.</p>
-                        <p>It is a <strong>4-day immersive experience</strong> designed to confront what&rsquo;s been
-                            broken, dismantle old patterns, and rebuild the man God created you to be.</p>
-                    </section>
-                </div>
-
-                <!-- WHO YOU BECOME -->
-                <section class="section-full glass-card animate-slide-up" style="animation-delay: 0.4s;">
-                    <div class="card-header align-center">
-                        <i class="fa-solid fa-shield-halved icon"></i>
-                        <h2>Who You Become</h2>
-                    </div>
-                    <p class="text-center mb-4" style="font-size: 1.15rem;">When God restores a man, everything around
-                        him changes.</p>
-
-                    <div class="info-grid" style="align-items: center;">
-                        <div>
-                            <ul class="details-list">
-                                <li><i class="fa-solid fa-ring text-accent"></i>
-                                    <div>His marriage grows stronger.</div>
-                                </li>
-                                <li><i class="fa-solid fa-house-chimney-window text-accent"></i>
-                                    <div>His family feels safer.</div>
-                                </li>
-                                <li><i class="fa-solid fa-bullseye text-accent"></i>
-                                    <div>His purpose becomes clear.</div>
-                                </li>
-                                <li><i class="fa-solid fa-bolt text-accent"></i>
-                                    <div>His inner strength is reignited.</div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div class="check-grid mt-0">
-                                <div class="check-item"><i class="fa-solid fa-check text-success"></i> Spiritual leader
-                                </div>
-                                <div class="check-item"><i class="fa-solid fa-check text-success"></i> Protector</div>
-                                <div class="check-item"><i class="fa-solid fa-check text-success"></i> Disciplined man
-                                </div>
-                                <div class="check-item"><i class="fa-solid fa-check text-success"></i> Man of God</div>
-                                <div class="check-item"><i class="fa-solid fa-check text-success"></i> Better husband
-                                </div>
-                                <div class="check-item"><i class="fa-solid fa-check text-success"></i> Better father
-                                </div>
-                                <div class="check-item"><i class="fa-solid fa-check text-success"></i> Man of purpose
-                                </div>
-                                <div class="check-item"><i class="fa-solid fa-check text-success"></i> Warrior</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- REBIRTH BANNER -->
-                <section class="section-full secondary-card animate-slide-up"
-                    style="animation-delay: 0.5s; padding: 3rem 2rem;">
-                    <h2 style="font-size: 1.6rem; margin-bottom: 1.5rem; letter-spacing: 1px;">
-                        <em style="font-weight: 400;">This Is Not a Retreat</em><br>
-                        <span class="text-accent mt-2" style="display:inline-block; font-size: 2.2rem;"><em>This is
-                                rebirth.</em></span>
-                    </h2>
-                    <div style="font-size: 1.15rem; line-height: 1.8; color: var(--text-muted);">
-                        <em>Real men. Real stories. Real transformations.</em>
-                    </div>
-                </section>
-
-                <!-- FINAL CTA & POLICIES -->
-                <section class="section-full glass-card animate-slide-up" style="animation-delay: 0.6s;">
-                    <h2 class="hero-title text-center" style="font-size: 2rem; line-height: 1.3;">Are You Ready?</h2>
-                    <p class="text-center text-muted mb-4" style="font-size: 1.1rem;">Your family needs a stronger man.
-                        Your brothers are waiting for you. <br><strong class="text-main">God is calling you
-                            forward.</strong></p>
-
-                    <div class="price-tag mt-4" style="color: var(--accent-gold);">
-                        $395.00
-                    </div>
-                    <div class="price-tax text-center mb-4">(+ $29.56 Tax)</div>
-
-                    <div class="text-center mt-4 w-full" style="max-width: 400px; margin: 0 auto;">
-                        <a href="https://ticketandgo.com.br/1526?id=0c16895e-d001-4360-bf3d-24fb7bfa4849"
-                            class="btn btn-primary pulse-btn w-full mb-4">
-                            <i class="fa-solid fa-ticket"></i> Proceed to Checkout
-                        </a>
-                    </div>
-
-                    <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.1); margin: 3rem 0 2rem;">
-
-                    <div class="card-header" style="border: none; padding: 0; margin-bottom: 1rem;">
-                        <i class="fa-solid fa-circle-info icon" style="font-size: 1.2rem;"></i>
-                        <h3 style="font-size: 1.1rem;">Important Policies</h3>
-                    </div>
-                    <ul class="policy-list" style="font-size: 0.95rem;">
-                        <li><strong>Cancellations:</strong> Orders can be canceled up to 7 days after purchase, provided
-                            it is at least 48 hours before the event starts.</li>
-                        <li><strong>Access:</strong> Tickets are sent directly via email and are also available in the
-                            "My Purchases" area of your Ticket and Go account.</li>
-                    </ul>
-                </section>
-
-            </div>
+        <!-- Language selector -->
+        <div class="lang-switcher animate-fade-in">
+          <div class="lang-switcher-inner">
+            <label for="language-select" id="language-select-label">Language</label>
+            <select id="language-select" aria-labelledby="language-select-label">
+              <option value="pt-BR">Português (Brasil)</option>
+              <option value="en">English</option>
+              <option value="es">Español</option>
+            </select>
+          </div>
         </div>
+
+        <!-- HERO -->
+        <header class="section-hero glass-card animate-fade-in">
+          <div class="badge mb-4" data-i18n="badge">Track Eagle Path | "THE LEGENDARY"</div>
+
+          <img src="logo.png" alt="Lgnd Logo"
+            style="max-width: 350px; width: 100%; height: auto; margin: 0 auto 1.5rem auto; display: block;">
+
+          <h1 class="hero-title"><span class="highlight">TOP 1536</span></h1>
+        </header>
+
+        <!-- MISSION -->
+        <section class="section-full highlight-card animate-slide-up" style="animation-delay: 0.1s;">
+          <h2 class="hero-title" style="font-size: 2.2rem; text-align: center;">
+            <span data-i18n="missionTitle1">GOD DID NOT CREATE</span>
+            <span class="highlight" data-i18n="missionTitle2">WEAK MEN</span>
+          </h2>
+
+          <p class="hero-subtitle text-center mt-2">
+            <span data-i18n="missionSubtitleBefore">He created</span>
+            <strong class="text-accent" data-i18n="missionSubtitleAccent">warriors</strong>.
+          </p>
+
+          <div class="text-center" style="font-size: 1.15rem; max-width: 700px; margin: 0 auto;">
+            <p data-i18n="missionParagraph">
+              Men were designed to lead, to protect, and to walk with purpose.<br>
+              But when a man loses himself, he loses more than direction — he loses his fire, his leadership, and his identity.
+            </p>
+          </div>
+
+          <div class="mission-block">
+            <i class="fa-solid fa-fire text-accent mb-2" style="font-size: 1.5rem;"></i>
+            <div>
+              <strong class="text-main" data-i18n="missionBlockStrong">
+                Legendários exists to restore what the world is stealing from men:
+              </strong>
+              <br>
+              <span data-i18n="missionBlockText">faith, strength, purpose, and true identity.</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIDEO -->
+        <section class="glass-card animate-slide-up" style="animation-delay: 0.15s; padding: 1rem;">
+          <div class="video-container">
+            <!-- Substitua pelo iframe do YouTube/Vimeo se desejar -->
+            <iframe src="video.mp4" title="Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <!-- EVENT DETAILS -->
+        <div class="info-grid">
+          <section class="info-card glass-card animate-slide-up" style="animation-delay: 0.2s;">
+            <div class="card-header">
+              <i class="fa-regular fa-calendar-check icon"></i>
+              <h2 data-i18n="eventInfoTitle">Event Information</h2>
+            </div>
+
+            <ul class="details-list">
+              <li><span class="label" data-i18n="labelTop">TOP:</span> <span>1536</span></li>
+              <li><span class="label" data-i18n="labelDates">Dates:</span> <span data-i18n="eventDates">Apr 30 – May 03, 2026</span></li>
+              <li><span class="label" data-i18n="labelCheckin">Check-in:</span> <span data-i18n="eventCheckin">Apr 30, 2026 at 3:00 PM</span></li>
+              <li><span class="label" data-i18n="labelCheckout">Check-out:</span> <span data-i18n="eventCheckout">May 03, 2026 at 4:00 PM</span></li>
+              <li>
+                <span class="label" data-i18n="labelLocation">Location:</span>
+                <span data-i18n="eventLocation">Videira Atlanta Church, 1296 Gresham Rd NE, Marietta, GA 30062 📍</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="info-card glass-card animate-slide-up" style="animation-delay: 0.3s;">
+            <div class="card-header">
+              <i class="fa-solid fa-mountain icon"></i>
+              <h2 data-i18n="whatIsItTitle">What is it?</h2>
+            </div>
+            <p style="font-size: 1.1rem; font-weight: 600;" class="text-accent mb-2" data-i18n="whatIsItLead">
+              TOP is not an event. It’s an awakening.
+            </p>
+            <p data-i18n="whatIsItText">
+              It is a 4-day immersive experience designed to confront what’s been broken, dismantle old patterns, and rebuild the man God created you to be.
+            </p>
+          </section>
+        </div>
+
+        <!-- WHO YOU BECOME -->
+        <section class="section-full glass-card animate-slide-up" style="animation-delay: 0.4s;">
+          <div class="card-header align-center">
+            <i class="fa-solid fa-shield-halved icon"></i>
+            <h2 data-i18n="whoYouBecomeTitle">Who You Become</h2>
+          </div>
+
+          <p class="text-center mb-4" style="font-size: 1.15rem;" data-i18n="whoYouBecomeSubtitle">
+            When God restores a man, everything around him changes.
+          </p>
+
+          <div class="info-grid" style="align-items: center;">
+            <div>
+              <ul class="details-list">
+                <li><i class="fa-solid fa-ring text-accent"></i><div data-i18n="benefit1">His marriage grows stronger.</div></li>
+                <li><i class="fa-solid fa-house-chimney-window text-accent"></i><div data-i18n="benefit2">His family feels safer.</div></li>
+                <li><i class="fa-solid fa-bullseye text-accent"></i><div data-i18n="benefit3">His purpose becomes clear.</div></li>
+                <li><i class="fa-solid fa-bolt text-accent"></i><div data-i18n="benefit4">His inner strength is reignited.</div></li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="check-grid" style="margin-top:0;">
+                <div class="check-item"><i class="fa-solid fa-check text-success"></i><span data-i18n="check1">Spiritual leader</span></div>
+                <div class="check-item"><i class="fa-solid fa-check text-success"></i><span data-i18n="check2">Protector</span></div>
+                <div class="check-item"><i class="fa-solid fa-check text-success"></i><span data-i18n="check3">Disciplined man</span></div>
+                <div class="check-item"><i class="fa-solid fa-check text-success"></i><span data-i18n="check4">Man of God</span></div>
+                <div class="check-item"><i class="fa-solid fa-check text-success"></i><span data-i18n="check5">Better husband</span></div>
+                <div class="check-item"><i class="fa-solid fa-check text-success"></i><span data-i18n="check6">Better father</span></div>
+                <div class="check-item"><i class="fa-solid fa-check text-success"></i><span data-i18n="check7">Man of purpose</span></div>
+                <div class="check-item"><i class="fa-solid fa-check text-success"></i><span data-i18n="check8">Warrior</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- REBIRTH -->
+        <section class="section-full secondary-card animate-slide-up" style="animation-delay: 0.5s; padding: 3rem 2rem;">
+          <h2 style="font-size: 1.6rem; margin-bottom: 1.5rem; letter-spacing: 1px;">
+            <em style="font-weight: 400;" data-i18n="rebirthLine1">This Is Not a Retreat</em><br>
+            <span class="text-accent mt-2" style="display:inline-block; font-size: 2.2rem;"><em data-i18n="rebirthLine2">This is rebirth.</em></span>
+          </h2>
+
+          <div style="font-size: 1.15rem; line-height: 1.8; color: var(--text-muted);">
+            <em data-i18n="rebirthText">Real men. Real stories. Real transformations.</em>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section-full glass-card animate-slide-up" style="animation-delay: 0.6s;">
+          <h2 class="hero-title text-center" style="font-size: 2rem; line-height: 1.3;" data-i18n="ctaTitle">Are You Ready?</h2>
+
+          <p class="text-center text-muted mb-4" style="font-size: 1.1rem;" data-i18n="ctaText">
+            Your family needs a stronger man. Your brothers are waiting for you. <br><strong class="text-main">God is calling you forward.</strong>
+          </p>
+
+          <div class="price-tag mt-4" style="color: var(--accent-gold);">$395.00</div>
+          <div class="price-tax text-center mb-4">(+ $29.56 Tax)</div>
+
+          <div class="checkout-grid">
+            <a href="https://ticketandgo.com.br/legendarios-top-1536-track-eagle-path-1-year?id=3f0eda6f-39d1-43dd-9e67-9240d5f835eb"
+               class="btn btn-primary pulse-btn"
+               target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-ticket"></i>
+              <span data-i18n="checkoutEnglish">English Registration</span>
+            </a>
+
+            <a href="https://ticketandgo.com.br/legendarios-top-1536-track-eagle-path-1-year?id=b784c0c4-64f1-45cf-b01b-8ed9517da8c8"
+               class="btn btn-primary pulse-btn"
+               target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-ticket"></i>
+              <span data-i18n="checkoutPortuguese">Inscrição em Português</span>
+            </a>
+
+            <a href="https://ticketandgo.com.br/legendarios-top-1536-track-eagle-path-1-year?id=a9b37806-5cfd-4764-9ce6-1651f4c5c368"
+               class="btn btn-primary pulse-btn"
+               target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-ticket"></i>
+              <span data-i18n="checkoutSpanish">Registro en Español</span>
+            </a>
+          </div>
+
+          <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.1); margin: 3rem 0 2rem;">
+
+          <div class="card-header" style="border: none; padding: 0; margin-bottom: 1rem;">
+            <i class="fa-solid fa-circle-info icon" style="font-size: 1.2rem;"></i>
+            <h3 style="font-size: 1.1rem;" data-i18n="policiesTitle">Important Policies</h3>
+          </div>
+
+          <ul class="policy-list" style="font-size: 0.95rem;">
+            <li data-i18n="policy1">
+              <strong>Cancellations:</strong> Orders can be canceled up to 7 days after purchase, provided it is at least 48 hours before the event starts.
+            </li>
+            <li data-i18n="policy2">
+              <strong>Access:</strong> Tickets are sent directly via email and are also available in the "My Purchases" area of your Ticket and Go account.
+            </li>
+          </ul>
+        </section>
+      </div>
     </div>
+  </div>
 
-    <script>
-        (function () {
-            const root = document.getElementById('top1526-sales');
-            if (!root) return;
+  <script>
+    (function () {
+      const root = document.getElementById('top1536-sales');
+      if (!root) return;
 
-            function scrollReveal() {
-                const targets = root.querySelectorAll('.animate-slide-up, .animate-fade-in');
-                if (!('IntersectionObserver' in window)) {
-                    targets.forEach(el => { el.style.opacity = 1; });
-                    return;
-                }
-                targets.forEach(el => { el.style.animationPlayState = 'paused'; });
-                const observer = new IntersectionObserver((entries, obs) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.animationPlayState = 'running';
-                            obs.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
-                targets.forEach(el => observer.observe(el));
+      const translations = {
+        'pt-BR': {
+          pageTitle: 'Legendários - TOP 1536 - Track Eagle Path | "THE LEGENDARY"',
+          languageLabel: 'Idioma',
+          badge: 'Track Eagle Path | "THE LEGENDARY"',
+          missionTitle1: 'DEUS NÃO CRIOU',
+          missionTitle2: 'HOMENS FRACOS',
+          missionSubtitleBefore: 'Ele criou',
+          missionSubtitleAccent: 'guerreiros',
+          missionParagraph: 'Os homens foram criados para liderar, proteger e caminhar com propósito.<br>Mas quando um homem se perde, ele perde mais do que a direção — ele perde seu fogo, sua liderança e sua identidade.',
+          missionBlockStrong: 'Legendários existe para restaurar o que o mundo está roubando dos homens:',
+          missionBlockText: 'fé, força, propósito e verdadeira identidade.',
+          eventInfoTitle: 'Informações do Evento',
+          labelTop: 'TOP:',
+          labelDates: 'Datas:',
+          labelCheckin: 'Check-in:',
+          labelCheckout: 'Check-out:',
+          labelLocation: 'Local:',
+          eventDates: '30 de abril – 03 de maio de 2026',
+          eventCheckin: '30 de abril de 2026 às 3:00 PM',
+          eventCheckout: '03 de maio de 2026 às 4:00 PM',
+          eventLocation: 'Videira Atlanta Church, 1296 Gresham Rd NE, Marietta, GA 30062 📍',
+          whatIsItTitle: 'O que é?',
+          whatIsItLead: 'TOP não é um evento. É um despertar.',
+          whatIsItText: 'É uma experiência imersiva de 4 dias projetada para confrontar o que foi quebrado, desmontar velhos padrões e reconstruir o homem que Deus criou você para ser.',
+          whoYouBecomeTitle: 'Quem Você se Torna',
+          whoYouBecomeSubtitle: 'Quando Deus restaura um homem, tudo ao redor dele muda.',
+          benefit1: 'Seu casamento se fortalece.',
+          benefit2: 'Sua família se sente mais segura.',
+          benefit3: 'Seu propósito se torna claro.',
+          benefit4: 'Sua força interior é reacendida.',
+          check1: 'Líder espiritual',
+          check2: 'Protetor',
+          check3: 'Homem disciplinado',
+          check4: 'Homem de Deus',
+          check5: 'Melhor marido',
+          check6: 'Melhor pai',
+          check7: 'Homem de propósito',
+          check8: 'Guerreiro',
+          rebirthLine1: 'Isto Não É um Retiro',
+          rebirthLine2: 'Isto é renascimento.',
+          rebirthText: 'Homens reais. Histórias reais. Transformações reais.',
+          ctaTitle: 'Você Está Pronto?',
+          ctaText: 'Sua família precisa de um homem mais forte. Seus irmãos estão esperando por você. <br><strong class="text-main">Deus está chamando você para avançar.</strong>',
+          checkoutEnglish: 'Inscrição em Inglês',
+          checkoutPortuguese: 'Inscrição em Português',
+          checkoutSpanish: 'Inscrição em Espanhol',
+          policiesTitle: 'Políticas Importantes',
+          policy1: '<strong>Cancelamentos:</strong> Os pedidos podem ser cancelados em até 7 dias após a compra, desde que ainda faltem pelo menos 48 horas para o início do evento.',
+          policy2: '<strong>Acesso:</strong> Os ingressos são enviados diretamente por e-mail e também ficam disponíveis na área "Minhas Compras" da sua conta Ticket and Go.'
+        },
+
+        'en': {
+          pageTitle: 'Legendários - TOP 1536 - Track Eagle Path | "THE LEGENDARY"',
+          languageLabel: 'Language',
+          badge: 'Track Eagle Path | "THE LEGENDARY"',
+          missionTitle1: 'GOD DID NOT CREATE',
+          missionTitle2: 'WEAK MEN',
+          missionSubtitleBefore: 'He created',
+          missionSubtitleAccent: 'warriors',
+          missionParagraph: 'Men were designed to lead, to protect, and to walk with purpose.<br>But when a man loses himself, he loses more than direction — he loses his fire, his leadership, and his identity.',
+          missionBlockStrong: 'Legendários exists to restore what the world is stealing from men:',
+          missionBlockText: 'faith, strength, purpose, and true identity.',
+          eventInfoTitle: 'Event Information',
+          labelTop: 'TOP:',
+          labelDates: 'Dates:',
+          labelCheckin: 'Check-in:',
+          labelCheckout: 'Check-out:',
+          labelLocation: 'Location:',
+          eventDates: 'Apr 30 – May 03, 2026',
+          eventCheckin: 'Apr 30, 2026 at 3:00 PM',
+          eventCheckout: 'May 03, 2026 at 4:00 PM',
+          eventLocation: 'Videira Atlanta Church, 1296 Gresham Rd NE, Marietta, GA 30062 📍',
+          whatIsItTitle: 'What is it?',
+          whatIsItLead: 'TOP is not an event. It’s an awakening.',
+          whatIsItText: 'It is a 4-day immersive experience designed to confront what’s been broken, dismantle old patterns, and rebuild the man God created you to be.',
+          whoYouBecomeTitle: 'Who You Become',
+          whoYouBecomeSubtitle: 'When God restores a man, everything around him changes.',
+          benefit1: 'His marriage grows stronger.',
+          benefit2: 'His family feels safer.',
+          benefit3: 'His purpose becomes clear.',
+          benefit4: 'His inner strength is reignited.',
+          check1: 'Spiritual leader',
+          check2: 'Protector',
+          check3: 'Disciplined man',
+          check4: 'Man of God',
+          check5: 'Better husband',
+          check6: 'Better father',
+          check7: 'Man of purpose',
+          check8: 'Warrior',
+          rebirthLine1: 'This Is Not a Retreat',
+          rebirthLine2: 'This is rebirth.',
+          rebirthText: 'Real men. Real stories. Real transformations.',
+          ctaTitle: 'Are You Ready?',
+          ctaText: 'Your family needs a stronger man. Your brothers are waiting for you. <br><strong class="text-main">God is calling you forward.</strong>',
+          checkoutEnglish: 'English Registration',
+          checkoutPortuguese: 'Portuguese Registration',
+          checkoutSpanish: 'Spanish Registration',
+          policiesTitle: 'Important Policies',
+          policy1: '<strong>Cancellations:</strong> Orders can be canceled up to 7 days after purchase, provided it is at least 48 hours before the event starts.',
+          policy2: '<strong>Access:</strong> Tickets are sent directly via email and are also available in the "My Purchases" area of your Ticket and Go account.'
+        },
+
+        'es': {
+          pageTitle: 'Legendários - TOP 1536 - Track Eagle Path | "THE LEGENDARY"',
+          languageLabel: 'Idioma',
+          badge: 'Track Eagle Path | "THE LEGENDARY"',
+          missionTitle1: 'DIOS NO CREÓ',
+          missionTitle2: 'HOMBRES DÉBILES',
+          missionSubtitleBefore: 'Él creó',
+          missionSubtitleAccent: 'guerreros',
+          missionParagraph: 'Los hombres fueron diseñados para liderar, proteger y caminar con propósito.<br>Pero cuando un hombre se pierde a sí mismo, pierde más que el rumbo — pierde su fuego, su liderazgo y su identidad.',
+          missionBlockStrong: 'Legendários existe para restaurar lo que el mundo está robando de los hombres:',
+          missionBlockText: 'fe, fuerza, propósito y verdadera identidad.',
+          eventInfoTitle: 'Información del Evento',
+          labelTop: 'TOP:',
+          labelDates: 'Fechas:',
+          labelCheckin: 'Check-in:',
+          labelCheckout: 'Check-out:',
+          labelLocation: 'Lugar:',
+          eventDates: '30 de abril – 03 de mayo de 2026',
+          eventCheckin: '30 de abril de 2026 a las 3:00 PM',
+          eventCheckout: '03 de mayo de 2026 a las 4:00 PM',
+          eventLocation: 'Videira Atlanta Church, 1296 Gresham Rd NE, Marietta, GA 30062 📍',
+          whatIsItTitle: '¿Qué es?',
+          whatIsItLead: 'TOP no es un evento. Es un despertar.',
+          whatIsItText: 'Es una experiencia inmersiva de 4 días diseñada para confrontar lo que ha sido quebrado, desmantelar viejos patrones y reconstruir al hombre que Dios te creó para ser.',
+          whoYouBecomeTitle: 'En Quién te Conviertes',
+          whoYouBecomeSubtitle: 'Cuando Dios restaura a un hombre, todo a su alrededor cambia.',
+          benefit1: 'Su matrimonio se fortalece.',
+          benefit2: 'Su familia se siente más segura.',
+          benefit3: 'Su propósito se vuelve claro.',
+          benefit4: 'Su fuerza interior se enciende de nuevo.',
+          check1: 'Líder espiritual',
+          check2: 'Protector',
+          check3: 'Hombre disciplinado',
+          check4: 'Hombre de Dios',
+          check5: 'Mejor esposo',
+          check6: 'Mejor padre',
+          check7: 'Hombre de propósito',
+          check8: 'Guerrero',
+          rebirthLine1: 'Esto No Es un Retiro',
+          rebirthLine2: 'Esto es renacimiento.',
+          rebirthText: 'Hombres reales. Historias reales. Transformaciones reales.',
+          ctaTitle: '¿Estás Listo?',
+          ctaText: 'Tu familia necesita un hombre más fuerte. Tus hermanos te están esperando. <br><strong class="text-main">Dios te está llamando a avanzar.</strong>',
+          checkoutEnglish: 'Registro en Inglés',
+          checkoutPortuguese: 'Registro en Portugués',
+          checkoutSpanish: 'Registro en Español',
+          policiesTitle: 'Políticas Importantes',
+          policy1: '<strong>Cancelaciones:</strong> Los pedidos pueden cancelarse hasta 7 días después de la compra, siempre que falten al menos 48 horas para el inicio del evento.',
+          policy2: '<strong>Acceso:</strong> Los boletos se envían directamente por correo electrónico y también están disponibles en la sección "Mis Compras" de tu cuenta de Ticket and Go.'
+        }
+      };
+
+      const languageSelect = document.getElementById('language-select');
+      const languageLabel = document.getElementById('language-select-label');
+
+      function normalizeLanguage(lang) {
+        if (!lang) return 'en';
+        const lower = lang.toLowerCase();
+
+        if (lower.startsWith('pt')) return 'pt-BR';
+        if (lower.startsWith('es')) return 'es';
+        return 'en';
+      }
+
+      function setLanguage(lang) {
+        const selectedLang = translations[lang] ? lang : 'en';
+        const dict = translations[selectedLang];
+
+        document.documentElement.lang = selectedLang;
+        document.title = dict.pageTitle;
+        languageLabel.textContent = dict.languageLabel;
+        languageSelect.value = selectedLang;
+
+        root.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (dict[key] !== undefined) {
+            el.innerHTML = dict[key];
+          }
+        });
+
+        try {
+          localStorage.setItem('top1536_lang', selectedLang);
+        } catch (e) {}
+      }
+
+      function getInitialLanguage() {
+        try {
+          const saved = localStorage.getItem('top1536_lang');
+          if (saved && translations[saved]) return saved;
+        } catch (e) {}
+
+        return normalizeLanguage(navigator.language || navigator.userLanguage);
+      }
+
+      languageSelect.addEventListener('change', function () {
+        setLanguage(this.value);
+      });
+
+      function scrollReveal() {
+        const targets = root.querySelectorAll('.animate-slide-up, .animate-fade-in');
+        if (!('IntersectionObserver' in window)) {
+          targets.forEach(el => { el.style.opacity = 1; });
+          return;
+        }
+
+        targets.forEach(el => { el.style.animationPlayState = 'paused'; });
+
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.animationPlayState = 'running';
+              obs.unobserve(entry.target);
             }
+          });
+        }, { threshold: 0.1 });
 
-            // Initialize animations
-            scrollReveal();
-        })();
-    </script>
+        targets.forEach(el => observer.observe(el));
+      }
 
+      setLanguage(getInitialLanguage());
+      scrollReveal();
+    })();
+  </script>
 </body>
-
 </html>
