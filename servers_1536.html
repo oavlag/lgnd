@@ -1,0 +1,848 @@
+<style>
+#top1536-pro, #top1536-pro * { box-sizing: border-box; }
+
+#top1536-pro {
+  --bg-dark: #0f1115;
+  --bg-card: rgba(30, 33, 40, .6);
+  --bg-card-hover: rgba(40, 44, 53, .8);
+  --text-main: #f0f2f5;
+  --text-muted: #a0a8b5;
+  --accent-gold: #d4af37;
+  --accent-gold-hover: #e5c158;
+  --success-green: #25D366;
+  --success-hover: #128C7E;
+  --pink-light: #FF85B3;
+  --pink-dark: #E03C7A;
+  --error-red: #ff4b4b;
+  --error-bg: rgba(255, 75, 75, .1);
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --blur-strength: 16px;
+  --border-subtle: 1px solid rgba(255, 255, 255, .08);
+  --shadow-soft: 0 8px 32px rgba(0, 0, 0, .4);
+  --shadow-glow: 0 0 20px rgba(212, 175, 55, .2);
+  --border-radius: 16px;
+  --transition: all .3s cubic-bezier(.25, .8, .25, 1);
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-family: var(--font-body);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Page wrapper */
+#top1536-pro .page {
+  position: relative;
+  background: var(--bg-dark);
+  padding: 20px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* Orbs */
+#top1536-pro .background-elements {
+  position: absolute; inset: 0;
+  z-index: 0; overflow: hidden; pointer-events: none;
+}
+#top1536-pro .glow {
+  position: absolute; border-radius: 50%;
+  filter: blur(80px); opacity: .15;
+}
+#top1536-pro .glow-1 { top: -10%; left: -10%; width: 500px; height: 500px; background: var(--accent-gold); }
+#top1536-pro .glow-2 { bottom: 20%; right: -5%; width: 400px; height: 400px; background: #4a5b82; }
+#top1536-pro .glow-3 { top: 40%; left: 40%; width: 600px; height: 600px; background: rgba(255, 133, 179, .3); opacity: .08; }
+
+/* Container */
+#top1536-pro .container {
+  position: relative; z-index: 1;
+  max-width: 860px; margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex; flex-direction: column; gap: 2rem;
+}
+
+/* Typography */
+#top1536-pro h1, #top1536-pro h2, #top1536-pro h3, #top1536-pro h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+#top1536-pro p { margin: 0; }
+#top1536-pro .text-accent { color: var(--accent-gold); }
+#top1536-pro .text-muted { color: var(--text-muted); }
+#top1536-pro .text-pink { color: var(--pink-light); }
+#top1536-pro .text-center { text-align: center; }
+
+/* Cards */
+#top1536-pro .glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--blur-strength));
+  -webkit-backdrop-filter: blur(var(--blur-strength));
+  border: var(--border-subtle);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+#top1536-pro .glass-card:hover {
+  transform: translateY(-2px);
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-glow);
+}
+#top1536-pro .glass-card.minimal { padding: 1.5rem; }
+
+/* Buttons */
+#top1536-pro .btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: .75rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  user-select: none;
+}
+#top1536-pro .btn:active { transform: scale(.98); }
+
+#top1536-pro .btn-primary {
+  background: linear-gradient(135deg, var(--accent-gold), #b8912b);
+  color: #111;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, .3);
+}
+#top1536-pro .btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(212, 175, 55, .5);
+  transform: translateY(-2px);
+}
+#top1536-pro .btn-success {
+  background: var(--success-green);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, .3);
+}
+#top1536-pro .btn-success:hover {
+  background: var(--success-hover);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, .5);
+  transform: translateY(-2px);
+}
+#top1536-pro .btn-pink {
+  background: linear-gradient(135deg, var(--pink-dark), var(--pink-light));
+  color: #fff;
+}
+#top1536-pro .btn-pink:hover {
+  box-shadow: 0 6px 20px rgba(224, 60, 122, .4);
+  transform: translateY(-2px);
+}
+#top1536-pro .block { display: block; width: 100%; }
+
+/* Hero */
+#top1536-pro .section-hero {
+  text-align: center;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+#top1536-pro .section-hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+}
+#top1536-pro .badge {
+  display: inline-block;
+  background: rgba(212, 175, 55, .1);
+  color: var(--accent-gold);
+  padding: .5rem 1rem;
+  border-radius: 20px;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(212, 175, 55, .3);
+}
+#top1536-pro .hero-title {
+  font-size: 2.5rem;
+  margin-bottom: .5rem;
+  text-transform: uppercase;
+}
+#top1536-pro .hero-title .highlight {
+  background: linear-gradient(to right, var(--accent-gold), #eee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#top1536-pro .hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  margin-bottom: 2rem;
+}
+#top1536-pro .hero-content {
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, .2);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+/* Language selector */
+#top1536-pro .lang-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -.5rem;
+}
+#top1536-pro .lang-select-wrap {
+  position: relative;
+  z-index: 3;
+}
+#top1536-pro .lang-select {
+  background: rgba(255,255,255,.08);
+  color: var(--text-main);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 10px;
+  padding: .75rem 1rem;
+  font-family: var(--font-body);
+  font-size: .95rem;
+  outline: none;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+#top1536-pro .lang-select option {
+  color: #111;
+}
+
+/* Grid */
+#top1536-pro .info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+@media (max-width: 768px) {
+  #top1536-pro .info-grid { grid-template-columns: 1fr; }
+  #top1536-pro .hero-title { font-size: 2rem; }
+  #top1536-pro .lang-bar { justify-content: center; }
+}
+
+/* Headers */
+#top1536-pro .card-header {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+#top1536-pro .card-header.align-center { justify-content: center; }
+#top1536-pro .card-header h2 { font-size: 1.25rem; letter-spacing: .5px; }
+#top1536-pro .icon { font-size: 1.5rem; color: var(--accent-gold); }
+
+/* Details */
+#top1536-pro .details-list {
+  list-style: none;
+  display: flex; flex-direction: column;
+  gap: .75rem;
+  margin: 0; padding: 0;
+}
+#top1536-pro .details-list li {
+  font-size: .95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+}
+#top1536-pro .label {
+  font-weight: 600;
+  color: var(--text-muted);
+  min-width: 90px;
+}
+
+/* Checklist */
+#top1536-pro .checklist {
+  list-style: none;
+  display: flex; flex-direction: column;
+  gap: 1rem;
+  margin: 0; padding: 0;
+}
+#top1536-pro .checklist li {
+  background: rgba(0, 0, 0, .2);
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: .95rem;
+  display: flex; align-items: center;
+  gap: 1rem;
+  transition: var(--transition);
+}
+#top1536-pro .checklist li:hover {
+  background: rgba(255, 255, 255, .05);
+  transform: translateX(5px);
+}
+#top1536-pro .checklist li i {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+/* Alerts */
+#top1536-pro .alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: rgba(212, 175, 55, .1);
+  border-left: 4px solid var(--accent-gold);
+  font-size: .95rem;
+}
+#top1536-pro .alert i {
+  color: var(--accent-gold);
+  font-size: 1.25rem;
+  margin-top: 2px;
+}
+#top1536-pro .error-box {
+  background: var(--error-bg);
+  border-left-color: var(--error-red);
+}
+#top1536-pro .error-box i { color: var(--error-red); }
+
+/* Sections */
+#top1536-pro .section-full {
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--blur-strength));
+  border: var(--border-subtle);
+  border-radius: var(--border-radius);
+  padding: 2.5rem 2rem;
+}
+#top1536-pro .highlight-card {
+  background: linear-gradient(145deg, rgba(37, 211, 102, .1), rgba(30, 33, 40, .6));
+  border: 1px solid rgba(37, 211, 102, .3);
+}
+#top1536-pro .secondary-card {
+  background: linear-gradient(145deg, rgba(224, 60, 122, .1), rgba(30, 33, 40, .6));
+  border: 1px solid rgba(224, 60, 122, .3);
+}
+
+/* WhatsApp layout */
+#top1536-pro .whatsapp-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+@media (max-width: 600px) {
+  #top1536-pro .whatsapp-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+}
+#top1536-pro .whatsapp-icon {
+  font-size: 3rem;
+  color: var(--success-green);
+  background: rgba(37, 211, 102, .15);
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#top1536-pro .whatsapp-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+/* Policies */
+#top1536-pro .policy-list {
+  margin: 0 0 0 1.5rem;
+  color: var(--text-muted);
+  padding: 0;
+}
+#top1536-pro .policy-list li { margin-bottom: .5rem; }
+#top1536-pro .policy-list strong { color: var(--text-main); }
+
+/* Contact */
+#top1536-pro .contact-box {
+  background: rgba(0, 0, 0, .3);
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-size: .95rem;
+}
+#top1536-pro .contact-box a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--accent-gold);
+}
+
+/* Footer */
+#top1536-pro .footer {
+  text-align: center;
+  padding: 3rem 1rem 1rem;
+}
+#top1536-pro .quote-box {
+  margin-bottom: 2rem;
+  position: relative;
+  padding: 1.5rem;
+}
+#top1536-pro .quote-box::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  color: rgba(255, 255, 255, .05);
+  font-family: serif;
+  line-height: 1;
+}
+#top1536-pro blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin: 0 0 .5rem 0;
+  position: relative;
+  z-index: 1;
+}
+#top1536-pro cite {
+  font-size: .9rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+#top1536-pro .final-words {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+#top1536-pro .brand {
+  font-family: var(--font-heading);
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: .85rem;
+  margin-top: .5rem;
+}
+
+/* Utils */
+#top1536-pro .mt-2 { margin-top: .5rem; }
+#top1536-pro .mt-3 { margin-top: 1rem; }
+#top1536-pro .mt-4 { margin-top: 1.5rem; }
+#top1536-pro .mb-4 { margin-bottom: 1.5rem; }
+
+/* Animations */
+@keyframes top1536FadeIn { from{opacity:0} to{opacity:1} }
+@keyframes top1536SlideUp { from{opacity:0; transform:translateY(30px)} to{opacity:1; transform:translateY(0)} }
+
+#top1536-pro .animate-fade-in { animation: top1536FadeIn 1s cubic-bezier(.25, .8, .25, 1) forwards; }
+#top1536-pro .animate-slide-up { opacity: 0; animation: top1536SlideUp .8s cubic-bezier(.25, .8, .25, 1) forwards; }
+
+/* Link focus */
+#top1536-pro a { color: inherit; }
+#top1536-pro a:focus,
+#top1536-pro select:focus {
+  outline: 2px solid rgba(212, 175, 55, .4);
+  outline-offset: 3px;
+}
+</style>
+
+<div id="top1536-pro">
+  <div class="page">
+    <div class="background-elements" aria-hidden="true">
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="glow glow-3"></div>
+    </div>
+
+    <div class="container">
+
+      <div class="lang-bar">
+        <div class="lang-select-wrap">
+          <select id="top1536-language" class="lang-select" aria-label="Language selector">
+            <option value="pt-BR">Português (Brasil)</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+      </div>
+
+      <header class="section-hero glass-card animate-fade-in">
+        <div class="badge" data-i18n="badge">Registration Confirmed!</div>
+        <h1 class="hero-title" data-i18n-html="heroTitle">WELCOME TO <span class="highlight">TOP 1536</span></h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">It’s a privilege to have you with us.</p>
+        <div class="hero-content">
+          <p data-i18n="heroText1">To have a truly transformative experience, follow these instructions carefully.</p>
+          <p class="mt-2"><strong data-i18n="heroText2">Your success starts today — with clarity and action!</strong></p>
+        </div>
+      </header>
+
+      <div class="info-grid">
+        <section class="info-card glass-card animate-slide-up" style="animation-delay: 0.1s;">
+          <div class="card-header">
+            <i class="fa-regular fa-calendar-check icon"></i>
+            <h2 data-i18n="eventInfoTitle">Event Information</h2>
+          </div>
+          <ul class="details-list">
+            <li><span class="label" data-i18n="topLabel">TOP:</span> <span>1536</span></li>
+            <li><span class="label" data-i18n="datesLabel">Dates:</span> <span data-i18n="datesValue">Apr 30 – May 03, 2026</span></li>
+            <li><span class="label" data-i18n="checkinLabel">Check-in:</span> <span data-i18n="checkinValue">Apr 30, 2026 at 3:00 PM</span></li>
+            <li><span class="label" data-i18n="checkoutLabel">Check-out:</span> <span data-i18n="checkoutValue">May 03, 2026 at 4:00 PM</span></li>
+            <li><span class="label" data-i18n="locationLabel">Location:</span> <span data-i18n="locationValue">Videira Atlanta Church, 1296 Gresham Rd NE, Marietta, GA 30062 📍</span></li>
+          </ul>
+        </section>
+
+        <section class="info-card glass-card animate-slide-up" style="animation-delay: 0.2s;">
+          <div class="card-header">
+            <i class="fa-regular fa-id-card icon"></i>
+            <h2 data-i18n="checkinDayTitle">On Check-in Day</h2>
+          </div>
+          <ul class="checklist alt-checklist">
+            <li><i class="fa-solid fa-file-signature text-accent"></i> <span data-i18n="checkinItem1">Signed waiver (liability form)</span></li>
+            <li><i class="fa-solid fa-id-badge text-accent"></i> <span data-i18n="checkinItem2">Copy of an official ID document</span></li>
+            <li><i class="fa-solid fa-qrcode text-accent"></i> <span data-i18n="checkinItem3">Printed registration form with QR Code</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="section-full glass-card animate-slide-up" style="animation-delay: 0.3s;">
+        <div class="card-header align-center">
+          <i class="fa-solid fa-backpack icon"></i>
+          <h2 data-i18n="bringTitle">What to bring</h2>
+        </div>
+
+        <div class="alert box">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <div>
+            <strong data-i18n="attentionLabel">Attention:</strong>
+            <span data-i18n-html="bringAlertText"> Double-check the required items.<br><small>Images in the list (when applicable) are ILLUSTRATIVE.</small></span>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <p data-i18n="bringText">Everything you need is on the official list.</p>
+
+          <a class="btn btn-primary mt-2"
+             href="https://www.subir.top/list-sen-en.html"
+             target="_blank"
+             rel="noopener">
+            <i class="fa-solid fa-download"></i>
+            <span data-i18n="packingListBtn">View packing list</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section-full highlight-card animate-slide-up" style="animation-delay: 0.4s;">
+        <div class="whatsapp-content">
+          <div class="whatsapp-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <div class="whatsapp-text">
+            <h2 data-i18n="serversGroupTitle">Servers Group (WhatsApp)</h2>
+            <p data-i18n="serversGroupText">Participation is mandatory to receive announcements.</p>
+          </div>
+          <a class="btn btn-success"
+             href="https://chat.whatsapp.com/Jat10zuviAAIvHesnE8rTE"
+             target="_blank"
+             rel="noopener">
+             <span data-i18n="joinGroupBtn">Join the Group</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section-full secondary-card animate-slide-up" style="animation-delay: 0.5s;">
+        <div class="card-header">
+          <i class="fa-solid fa-heart icon text-pink"></i>
+          <h2 data-i18n="wivesGroupTitle">Server's Wives Group</h2>
+        </div>
+        <p data-i18n="wivesGroupText">Share the link with your wife, fiancée, or mother.</p>
+        <div class="alert box error-box mt-3 mb-4">
+          <i class="fa-solid fa-ban"></i>
+          <div><strong data-i18n="noticeLabel">Notice:</strong> <span data-i18n="wivesNotice">Women only (men cannot join).</span></div>
+        </div>
+        <a class="btn btn-pink block text-center"
+           href="https://chat.whatsapp.com/H9F0SQUxZFF0sfx51Hc202"
+           target="_blank"
+           rel="noopener">
+           <span data-i18n="wivesGroupBtn">Women’s Group</span>
+        </a>
+      </section>
+
+      <section class="info-card glass-card minimal animate-slide-up" style="animation-delay: 0.6s;">
+        <div class="card-header">
+          <i class="fa-solid fa-circle-xmark icon"></i>
+          <h2 data-i18n="cancelTitle">Cancellations & Transfers</h2>
+        </div>
+        <ul class="policy-list mt-3">
+          <li data-i18n-html="cancelPolicy1"><strong>Health reasons:</strong> Accepted with a medical note up to 20 days before the event.</li>
+          <li data-i18n-html="cancelPolicy2"><strong>Transfer/change edition:</strong> Only if 30+ days remain.</li>
+          <li data-i18n-html="cancelPolicy3"><strong>Less than 30 days:</strong> No changes or refunds.</li>
+        </ul>
+        <div class="contact-box mt-4">
+          <p>
+            <i class="fa-regular fa-envelope"></i>
+            <span data-i18n="contactText">All requests must be handled by email:</span><br>
+            <a class="text-accent" href="mailto:legendariosatl@gmail.com">legendariosatl@gmail.com</a>
+          </p>
+          <p class="mt-2">
+            <i class="fa-brands fa-instagram"></i>
+            <span data-i18n="instagramText">Next editions:</span>
+            <a class="text-accent" href="https://instagram.com/legendariosatl" target="_blank" rel="noopener">@legendariosatl</a>
+          </p>
+        </div>
+      </section>
+
+      <footer class="footer animate-fade-in" style="animation-delay: 0.8s;">
+        <div class="quote-box">
+          <blockquote data-i18n="quote1">"Greater love has no one than this: to lay down one’s life for one’s friends."</blockquote>
+          <cite data-i18n="cite1">— John 15:13</cite>
+        </div>
+        <div class="quote-box">
+          <blockquote data-i18n="quote2">"But we have this treasure in jars of clay to show that this all-surpassing power is from God and not from us."</blockquote>
+          <cite data-i18n="cite2">— 2 Corinthians 4:7</cite>
+        </div>
+        <div class="final-words">
+          <p><i class="fa-solid fa-sparkles text-accent"></i> <span data-i18n="finalWords">We are fragile vessels, but Jesus will be glorified through us.</span></p>
+          <h3 class="mt-4" data-i18n="seeYouSoon">See you soon!</h3>
+          <p class="brand" data-i18n="brand">Eagle Path Team</p>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const root = document.getElementById('top1536-pro');
+  if(!root) return;
+
+  const translations = {
+    "en": {
+      badge: "Registration Confirmed!",
+      heroTitle: 'WELCOME TO <span class="highlight">TOP 1536</span>',
+      heroSubtitle: "It’s a privilege to have you with us.",
+      heroText1: "To have a truly transformative experience, follow these instructions carefully.",
+      heroText2: "Your success starts today — with clarity and action!",
+
+      eventInfoTitle: "Event Information",
+      topLabel: "TOP:",
+      datesLabel: "Dates:",
+      checkinLabel: "Check-in:",
+      checkoutLabel: "Check-out:",
+      locationLabel: "Location:",
+      datesValue: "Apr 30 – May 03, 2026",
+      checkinValue: "Apr 30, 2026 at 3:00 PM",
+      checkoutValue: "May 03, 2026 at 4:00 PM",
+      locationValue: "Videira Atlanta Church, 1296 Gresham Rd NE, Marietta, GA 30062 📍",
+
+      checkinDayTitle: "On Check-in Day",
+      checkinItem1: "Signed waiver (liability form)",
+      checkinItem2: "Copy of an official ID document",
+      checkinItem3: "Printed registration form with QR Code",
+
+      bringTitle: "What to bring",
+      attentionLabel: "Attention:",
+      bringAlertText: ' Double-check the required items.<br><small>Images in the list (when applicable) are ILLUSTRATIVE.</small>',
+      bringText: "Everything you need is on the official list.",
+      packingListBtn: "View packing list",
+
+      serversGroupTitle: "Servers Group (WhatsApp)",
+      serversGroupText: "Participation is mandatory to receive announcements.",
+      joinGroupBtn: "Join the Group",
+
+      wivesGroupTitle: "Server's Wives Group",
+      wivesGroupText: "Share the link with your wife, fiancée, or mother.",
+      noticeLabel: "Notice:",
+      wivesNotice: "Women only (men cannot join).",
+      wivesGroupBtn: "Women’s Group",
+
+      cancelTitle: "Cancellations & Transfers",
+      cancelPolicy1: "<strong>Health reasons:</strong> Accepted with a medical note up to 20 days before the event.",
+      cancelPolicy2: "<strong>Transfer/change edition:</strong> Only if 30+ days remain.",
+      cancelPolicy3: "<strong>Less than 30 days:</strong> No changes or refunds.",
+      contactText: "All requests must be handled by email:",
+      instagramText: "Next editions:",
+
+      quote1: '"Greater love has no one than this: to lay down one’s life for one’s friends."',
+      cite1: "— John 15:13",
+      quote2: '"But we have this treasure in jars of clay to show that this all-surpassing power is from God and not from us."',
+      cite2: "— 2 Corinthians 4:7",
+      finalWords: "We are fragile vessels, but Jesus will be glorified through us.",
+      seeYouSoon: "See you soon!",
+      brand: "Eagle Path Team"
+    },
+
+    "pt-BR": {
+      badge: "Inscrição Confirmada!",
+      heroTitle: 'BEM-VINDO AO <span class="highlight">TOP 1536</span>',
+      heroSubtitle: "É um privilégio ter você conosco.",
+      heroText1: "Para ter uma experiência verdadeiramente transformadora, siga estas instruções com atenção.",
+      heroText2: "Seu sucesso começa hoje — com clareza e ação!",
+
+      eventInfoTitle: "Informações do Evento",
+      topLabel: "TOP:",
+      datesLabel: "Datas:",
+      checkinLabel: "Check-in:",
+      checkoutLabel: "Check-out:",
+      locationLabel: "Local:",
+      datesValue: "30 de abril – 03 de maio de 2026",
+      checkinValue: "30 de abril de 2026 às 3:00 PM",
+      checkoutValue: "03 de maio de 2026 às 4:00 PM",
+      locationValue: "Videira Atlanta Church, 1296 Gresham Rd NE, Marietta, GA 30062 📍",
+
+      checkinDayTitle: "No Dia do Check-in",
+      checkinItem1: "Termo assinado (waiver / liability form)",
+      checkinItem2: "Cópia de um documento oficial com foto",
+      checkinItem3: "Ficha de inscrição impressa com QR Code",
+
+      bringTitle: "O que levar",
+      attentionLabel: "Atenção:",
+      bringAlertText: ' Confira novamente os itens obrigatórios.<br><small>As imagens da lista, quando houver, são ILUSTRATIVAS.</small>',
+      bringText: "Tudo o que você precisa está na lista oficial.",
+      packingListBtn: "Ver lista de bagagem",
+
+      serversGroupTitle: "Grupo dos Servidores (WhatsApp)",
+      serversGroupText: "A participação é obrigatória para receber os avisos.",
+      joinGroupBtn: "Entrar no Grupo",
+
+      wivesGroupTitle: "Grupo das Esposas dos Servidores",
+      wivesGroupText: "Compartilhe o link com sua esposa, noiva ou mãe.",
+      noticeLabel: "Aviso:",
+      wivesNotice: "Somente mulheres (homens não podem entrar).",
+      wivesGroupBtn: "Grupo das Mulheres",
+
+      cancelTitle: "Cancelamentos e Transferências",
+      cancelPolicy1: "<strong>Motivos de saúde:</strong> Aceitos com atestado médico até 20 dias antes do evento.",
+      cancelPolicy2: "<strong>Transferência / troca de edição:</strong> Somente se restarem 30 dias ou mais.",
+      cancelPolicy3: "<strong>Menos de 30 dias:</strong> Não há alterações nem reembolso.",
+      contactText: "Todas as solicitações devem ser feitas por e-mail:",
+      instagramText: "Próximas edições:",
+
+      quote1: '"Ninguém tem maior amor do que este: de dar alguém a própria vida em favor dos seus amigos."',
+      cite1: "— João 15:13",
+      quote2: '"Temos, porém, este tesouro em vasos de barro, para que a excelência do poder seja de Deus e não de nós."',
+      cite2: "— 2 Coríntios 4:7",
+      finalWords: "Somos vasos frágeis, mas Jesus será glorificado através de nós.",
+      seeYouSoon: "Até breve!",
+      brand: "Equipe Eagle Path"
+    },
+
+    "es": {
+      badge: "¡Inscripción Confirmada!",
+      heroTitle: 'BIENVENIDO A <span class="highlight">TOP 1536</span>',
+      heroSubtitle: "Es un privilegio tenerte con nosotros.",
+      heroText1: "Para tener una experiencia verdaderamente transformadora, sigue estas instrucciones cuidadosamente.",
+      heroText2: "¡Tu éxito empieza hoy — con claridad y acción!",
+
+      eventInfoTitle: "Información del Evento",
+      topLabel: "TOP:",
+      datesLabel: "Fechas:",
+      checkinLabel: "Check-in:",
+      checkoutLabel: "Check-out:",
+      locationLabel: "Ubicación:",
+      datesValue: "30 de abril – 03 de mayo de 2026",
+      checkinValue: "30 de abril de 2026 a las 3:00 PM",
+      checkoutValue: "03 de mayo de 2026 a las 4:00 PM",
+      locationValue: "Videira Atlanta Church, 1296 Gresham Rd NE, Marietta, GA 30062 📍",
+
+      checkinDayTitle: "El Día del Check-in",
+      checkinItem1: "Exención firmada (formulario de responsabilidad)",
+      checkinItem2: "Copia de un documento oficial de identidad",
+      checkinItem3: "Formulario de inscripción impreso con código QR",
+
+      bringTitle: "Qué llevar",
+      attentionLabel: "Atención:",
+      bringAlertText: ' Verifica nuevamente los artículos requeridos.<br><small>Las imágenes de la lista, cuando correspondan, son ILUSTRATIVAS.</small>',
+      bringText: "Todo lo que necesitas está en la lista oficial.",
+      packingListBtn: "Ver lista de equipaje",
+
+      serversGroupTitle: "Grupo de Servidores (WhatsApp)",
+      serversGroupText: "La participación es obligatoria para recibir avisos.",
+      joinGroupBtn: "Unirse al Grupo",
+
+      wivesGroupTitle: "Grupo de Esposas de los Servidores",
+      wivesGroupText: "Comparte el enlace con tu esposa, prometida o madre.",
+      noticeLabel: "Aviso:",
+      wivesNotice: "Solo mujeres (los hombres no pueden entrar).",
+      wivesGroupBtn: "Grupo de Mujeres",
+
+      cancelTitle: "Cancelaciones y Transferencias",
+      cancelPolicy1: "<strong>Razones de salud:</strong> Se aceptan con certificado médico hasta 20 días antes del evento.",
+      cancelPolicy2: "<strong>Transferencia / cambio de edición:</strong> Solo si faltan 30 días o más.",
+      cancelPolicy3: "<strong>Menos de 30 días:</strong> No hay cambios ni reembolsos.",
+      contactText: "Todas las solicitudes deben tramitarse por correo electrónico:",
+      instagramText: "Próximas ediciones:",
+
+      quote1: '"Nadie tiene mayor amor que este: que uno ponga su vida por sus amigos."',
+      cite1: "— Juan 15:13",
+      quote2: '"Pero tenemos este tesoro en vasos de barro, para que la excelencia del poder sea de Dios y no de nosotros."',
+      cite2: "— 2 Corintios 4:7",
+      finalWords: "Somos vasos frágiles, pero Jesús será glorificado a través de nosotros.",
+      seeYouSoon: "¡Nos vemos pronto!",
+      brand: "Equipo Eagle Path"
+    }
+  };
+
+  const select = document.getElementById("top1536-language");
+
+  function normalizeLanguage(lang){
+    if(!lang) return "en";
+    const lower = lang.toLowerCase();
+    if(lower.startsWith("pt")) return "pt-BR";
+    if(lower.startsWith("es")) return "es";
+    return "en";
+  }
+
+  function applyLanguage(lang){
+    const dict = translations[lang] || translations.en;
+
+    root.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if(dict[key] !== undefined) el.textContent = dict[key];
+    });
+
+    root.querySelectorAll("[data-i18n-html]").forEach(el => {
+      const key = el.getAttribute("data-i18n-html");
+      if(dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+
+    try {
+      localStorage.setItem("top1536_lang", lang);
+    } catch(e) {}
+  }
+
+  function getInitialLanguage(){
+    try {
+      const saved = localStorage.getItem("top1536_lang");
+      if(saved && translations[saved]) return saved;
+    } catch(e) {}
+    return normalizeLanguage(navigator.language || navigator.userLanguage);
+  }
+
+  if(select){
+    const initialLang = getInitialLanguage();
+    select.value = initialLang;
+    applyLanguage(initialLang);
+
+    select.addEventListener("change", function(){
+      applyLanguage(this.value);
+    });
+  }
+
+  function scrollReveal(){
+    const targets = root.querySelectorAll('.animate-slide-up, .animate-fade-in');
+    if(!('IntersectionObserver' in window)){
+      targets.forEach(el => { el.style.opacity = 1; });
+      return;
+    }
+    targets.forEach(el => { el.style.animationPlayState = 'paused'; });
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.animationPlayState = 'running';
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    targets.forEach(el => observer.observe(el));
+  }
+
+  scrollReveal();
+})();
+</script>
