@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Waiver</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: #0f1115;
+      font-family: 'Inter', sans-serif;
+      color: #f0f2f5;
+      overflow: hidden;
+    }
+
+    .waiver-page {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: #0f1115;
+      overflow: hidden;
+    }
+
+    .glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: .16;
+      pointer-events: none;
+    }
+
+    .glow-1 {
+      top: -120px;
+      left: -120px;
+      width: 480px;
+      height: 480px;
+      background: #d4af37;
+    }
+
+    .glow-2 {
+      bottom: -100px;
+      right: -80px;
+      width: 420px;
+      height: 420px;
+      background: #4a5b82;
+    }
+
+    .glow-3 {
+      top: 35%;
+      left: 45%;
+      width: 520px;
+      height: 520px;
+      background: rgba(255, 133, 179, .28);
+      opacity: .08;
+    }
+
+    .waiver-card {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 720px;
+      padding: 4rem 2rem;
+      text-align: center;
+      background: rgba(30, 33, 40, .65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-top: 4px solid #d4af37;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .45);
+      animation: fadeIn .9s ease forwards;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 2rem;
+      padding: .65rem 1.3rem;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, .15);
+      border: 1px solid rgba(212, 175, 55, .4);
+      color: #d4af37;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .85rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.05;
+      text-transform: uppercase;
+      background: linear-gradient(to right, #d4af37, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      margin: 0 auto 2.5rem;
+      max-width: 520px;
+      color: #a0a8b5;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+      width: 100%;
+      max-width: 360px;
+      min-height: 60px;
+      padding: 1rem 1.5rem;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #d4af37, #b8912b);
+      color: #111;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: .7px;
+      text-decoration: none;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, .4);
+      transition: all .3s cubic-bezier(.25, .8, .25, 1);
+      animation: pulseGlow 2s infinite;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, #e5c158, #d4af37);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, .6);
+    }
+
+    .btn:active {
+      transform: scale(.98);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, .42);
+      }
+      70% {
+        box-shadow: 0 0 0 16px rgba(212, 175, 55, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .waiver-card {
+        padding: 3rem 1.4rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="waiver-page">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+
+    <section class="waiver-card">
+      <div class="badge">Required Document</div>
+
+      <h1>Click for Sign Waiver</h1>
+
+      <p>Please click the button below to open and sign your waiver securely.</p>
+
+      <a
+        class="btn"
+        href="https://app.zapsign.com.br/verificar/doc/1cbe0ded-72cb-4876-965f-43d6cdcb3297"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-solid fa-file-signature"></i>
+        Click for Sign Waiver
+      </a>
+    </section>
+  </main>
+</body>
+</html>
