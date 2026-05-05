@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legendários - TOP 1677 | Instruções</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    #top1677-instructions,
+    #top1677-instructions * { box-sizing: border-box; }
+
+    #top1677-instructions {
+      --bg-dark: #070707;
+      --bg-card: rgba(18, 18, 18, .78);
+      --bg-card-hover: rgba(30, 30, 30, .88);
+      --text-main: #f4eee5;
+      --text-muted: #b7aa9b;
+      --accent-orange: #ff4a16;
+      --accent-orange-dark: #b92a08;
+      --accent-cream: #f0dfc7;
+      --metal: #6f6457;
+      --success-green: #25D366;
+      --font-heading: 'Montserrat', sans-serif;
+      --font-condensed: 'Oswald', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --blur-strength: 14px;
+      --border-subtle: 1px solid rgba(255, 255, 255, .10);
+      --border-orange: 1px solid rgba(255, 74, 22, .35);
+      --shadow-soft: 0 18px 55px rgba(0, 0, 0, .55);
+      --shadow-fire: 0 0 35px rgba(255, 74, 22, .25);
+      --border-radius: 18px;
+      --transition: all .28s cubic-bezier(.25, .8, .25, 1);
+
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      font-family: var(--font-body);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      background: #070707;
+    }
+
+    #top1677-instructions .page {
+      position: relative;
+      background:
+        radial-gradient(circle at 15% 5%, rgba(255,74,22,.22), transparent 30%),
+        radial-gradient(circle at 85% 30%, rgba(255,74,22,.16), transparent 28%),
+        linear-gradient(180deg, rgba(0,0,0,.30), rgba(0,0,0,.95)),
+        repeating-linear-gradient(135deg, rgba(255,255,255,.035) 0 1px, transparent 1px 9px),
+        #070707;
+      padding: 20px;
+      overflow: hidden;
+      min-height: 100vh;
+    }
+
+    #top1677-instructions .background-elements {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    #top1677-instructions .ember {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background: var(--accent-orange);
+      box-shadow: 0 0 12px var(--accent-orange);
+      opacity: .45;
+      animation: emberRise 7s linear infinite;
+    }
+
+    #top1677-instructions .ember:nth-child(1){ left: 10%; bottom: -10%; animation-delay: 0s; }
+    #top1677-instructions .ember:nth-child(2){ left: 35%; bottom: -8%; animation-delay: 1.5s; }
+    #top1677-instructions .ember:nth-child(3){ left: 60%; bottom: -12%; animation-delay: 3s; }
+    #top1677-instructions .ember:nth-child(4){ left: 82%; bottom: -9%; animation-delay: 4.5s; }
+
+    @keyframes emberRise {
+      0% { transform: translateY(0) scale(1); opacity: 0; }
+      12% { opacity: .7; }
+      100% { transform: translateY(-850px) scale(2.8); opacity: 0; }
+    }
+
+    #top1677-instructions .container {
+      position: relative;
+      z-index: 1;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    #top1677-instructions h1,
+    #top1677-instructions h2,
+    #top1677-instructions h3 {
+      font-family: var(--font-heading);
+      margin: 0;
+      line-height: 1.12;
+      text-transform: uppercase;
+    }
+
+    #top1677-instructions p { margin: 0; line-height: 1.6; }
+    #top1677-instructions a { color: inherit; }
+
+    #top1677-instructions .text-accent { color: var(--accent-orange); }
+    #top1677-instructions .text-muted { color: var(--text-muted); }
+    #top1677-instructions .text-center { text-align: center; }
+
+    #top1677-instructions .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(var(--blur-strength));
+      -webkit-backdrop-filter: blur(var(--blur-strength));
+      border: var(--border-subtle);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #top1677-instructions .glass-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(255,74,22,.18), transparent 32%, rgba(240,223,199,.08));
+      opacity: .65;
+    }
+
+    #top1677-instructions .glass-card > * { position: relative; z-index: 1; }
+
+    #top1677-instructions .glass-card:hover {
+      transform: translateY(-2px);
+      background: var(--bg-card-hover);
+      box-shadow: var(--shadow-fire);
+      border-color: rgba(255, 74, 22, .32);
+    }
+
+    #top1677-instructions .section-hero {
+      text-align: center;
+      padding: 3.5rem 2rem 3rem;
+      border: var(--border-orange);
+    }
+
+    #top1677-instructions .section-hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 70%;
+      height: 4px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, transparent, var(--accent-orange), transparent);
+      box-shadow: 0 0 22px rgba(255,74,22,.9);
+      z-index: 2;
+    }
+
+    #top1677-instructions .badge {
+      display: inline-block;
+      border: 1px solid rgba(255, 74, 22, .45);
+      background: rgba(255, 74, 22, .12);
+      color: var(--accent-cream);
+      padding: .55rem 1rem;
+      border-radius: 999px;
+      font-family: var(--font-condensed);
+      font-size: .95rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 1.3rem;
+    }
+
+    #top1677-instructions .hero-title {
+      font-size: clamp(2.3rem, 7vw, 5.1rem);
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--accent-cream);
+      text-shadow: 0 4px 0 rgba(0,0,0,.65), 0 0 28px rgba(255,74,22,.22);
+    }
+
+    #top1677-instructions .hero-title .highlight {
+      display: inline-block;
+      color: var(--accent-orange);
+      -webkit-text-stroke: 1px rgba(240,223,199,.25);
+    }
+
+    #top1677-instructions .hero-subtitle {
+      margin-top: .8rem;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+
+    #top1677-instructions .instruction-card {
+      border-left: 5px solid var(--accent-orange);
+    }
+
+    #top1677-instructions .card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,.11);
+    }
+
+    #top1677-instructions .card-number {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-dark));
+      color: #111;
+      font-family: var(--font-heading);
+      font-weight: 900;
+      box-shadow: 0 0 20px rgba(255,74,22,.4);
+    }
+
+    #top1677-instructions .card-header h2 {
+      font-size: clamp(1.35rem, 4vw, 2rem);
+      color: var(--accent-cream);
+    }
+
+    #top1677-instructions .group-title {
+      margin: 1.35rem 0 .75rem;
+      font-family: var(--font-condensed);
+      color: var(--accent-orange);
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    #top1677-instructions .action-list,
+    #top1677-instructions .details-list,
+    #top1677-instructions .policy-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .85rem;
+    }
+
+    #top1677-instructions .action-list li,
+    #top1677-instructions .details-list li,
+    #top1677-instructions .policy-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .85rem;
+      background: rgba(0,0,0,.26);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 12px;
+      padding: 1rem;
+      line-height: 1.5;
+    }
+
+    #top1677-instructions .action-list i,
+    #top1677-instructions .details-list i,
+    #top1677-instructions .policy-list i {
+      color: var(--accent-orange);
+      width: 22px;
+      text-align: center;
+      padding-top: 3px;
+      flex: 0 0 22px;
+    }
+
+    #top1677-instructions .label {
+      color: var(--text-muted);
+      font-weight: 800;
+      display: block;
+      margin-bottom: .15rem;
+      text-transform: uppercase;
+      font-size: .78rem;
+      letter-spacing: .8px;
+    }
+
+    #top1677-instructions .btn-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .8rem;
+      margin-top: .85rem;
+    }
+
+    #top1677-instructions .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .65rem;
+      min-height: 54px;
+      padding: .95rem 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 74, 22, .45);
+      background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-dark));
+      color: #120806;
+      font-family: var(--font-heading);
+      font-size: .92rem;
+      font-weight: 900;
+      letter-spacing: .4px;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 8px 22px rgba(255, 74, 22, .22);
+      transition: var(--transition);
+    }
+
+    #top1677-instructions .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 13px 30px rgba(255, 74, 22, .34);
+      filter: brightness(1.08);
+    }
+
+    #top1677-instructions .btn-whatsapp {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      border-color: rgba(37,211,102,.55);
+      color: #fff;
+    }
+
+    #top1677-instructions .btn-soft {
+      background: rgba(255,255,255,.05);
+      color: var(--accent-cream);
+      border-color: rgba(255,255,255,.15);
+      box-shadow: none;
+    }
+
+    #top1677-instructions .note {
+      margin-top: 1rem;
+      color: var(--text-muted);
+      font-size: .94rem;
+    }
+
+    #top1677-instructions .footer {
+      text-align: center;
+      color: var(--text-muted);
+      padding: 1.4rem .5rem 0;
+      font-family: var(--font-condensed);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    @keyframes top1677FadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes top1677SlideUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+    #top1677-instructions .animate-fade-in { animation: top1677FadeIn .9s cubic-bezier(.25,.8,.25,1) forwards; }
+    #top1677-instructions .animate-slide-up { opacity: 0; animation: top1677SlideUp .8s cubic-bezier(.25,.8,.25,1) forwards; }
+
+    #top1677-instructions a:focus {
+      outline: 2px solid rgba(255, 74, 22, .55);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 760px) {
+      #top1677-instructions .page { padding: 12px; }
+      #top1677-instructions .container { padding: 1rem .4rem; gap: 1.25rem; }
+      #top1677-instructions .glass-card { padding: 1.35rem; }
+      #top1677-instructions .section-hero { padding: 2.5rem 1.2rem; }
+      #top1677-instructions .card-header { align-items: flex-start; }
+      #top1677-instructions .btn-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body style="margin:0; padding:0; background:#070707;">
+
+  <div id="top1677-instructions">
+    <div class="page">
+      <div class="background-elements" aria-hidden="true">
+        <span class="ember"></span>
+        <span class="ember"></span>
+        <span class="ember"></span>
+        <span class="ember"></span>
+      </div>
+
+      <div class="container">
+        <header class="section-hero glass-card animate-fade-in">
+          <div class="badge">Track Eagle Path</div>
+          <h1 class="hero-title">TOP <span class="highlight">1677</span></h1>
+          <p class="hero-subtitle">Instruções importantes para sua jornada</p>
+        </header>
+
+        <section class="instruction-card glass-card animate-slide-up" style="animation-delay:.1s;">
+          <div class="card-header">
+            <span class="card-number">1</span>
+            <h2>Antes do TOP</h2>
+          </div>
+
+          <h3 class="group-title">Assinar eletronicamente esses 2 documentos</h3>
+          <div class="btn-row">
+            <a class="btn btn-soft" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-file-signature"></i> Link 1</a>
+            <a class="btn btn-soft" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-file-signature"></i> Link 2</a>
+          </div>
+
+          <h3 class="group-title">Comprar os itens para o TOP</h3>
+          <a class="btn" href="https://www.subir.top/list-sen-en.html" target="_blank" rel="noopener"><i class="fa-solid fa-list-check"></i> Link da lista</a>
+
+          <h3 class="group-title">Entrar no grupo de WhatsApp</h3>
+          <a class="btn btn-whatsapp" href="https://chat.whatsapp.com/CsfIUCuBnZr4PP3rT2s8F4?mode=gi_t" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Link do WhatsApp 1</a>
+
+          <h3 class="group-title">Esposa entrar no grupo de WhatsApp</h3>
+          <a class="btn btn-whatsapp" href="https://chat.whatsapp.com/JwZgPbOqAGx0wS4STw7Ume?mode=gi_t" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Link do WhatsApp 2</a>
+
+          <p class="note">Observação: substitua os botões “Link 1” e “Link 2” pelos links oficiais dos documentos quando estiverem disponíveis.</p>
+        </section>
+
+        <section class="instruction-card glass-card animate-slide-up" style="animation-delay:.2s;">
+          <div class="card-header">
+            <span class="card-number">2</span>
+            <h2>No dia do TOP</h2>
+          </div>
+
+          <ul class="details-list">
+            <li>
+              <i class="fa-regular fa-clock"></i>
+              <div><span class="label">Check-in</span>Jun 25, 2026 at 3:00 PM</div>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <div><span class="label">Location</span>Vine Atlanta Church, 1296 Gresham Rd NE, Marietta, GA 30062 📍</div>
+            </li>
+          </ul>
+
+          <h3 class="group-title">Trazer</h3>
+          <ul class="action-list">
+            <li><i class="fa-solid fa-money-bill-wave"></i><div>$20 cash</div></li>
+            <li><i class="fa-regular fa-id-card"></i><div>Documento oficial de identificação: passaporte, ID ou Driver License</div></li>
+            <li><i class="fa-solid fa-backpack"></i><div>Mochila com todos os itens da lista</div></li>
+          </ul>
+
+          <div class="btn-row">
+            <a class="btn" href="https://www.subir.top/list-sen-en.html" target="_blank" rel="noopener"><i class="fa-solid fa-list-check"></i> Abrir lista de itens</a>
+          </div>
+        </section>
+
+        <section class="instruction-card glass-card animate-slide-up" style="animation-delay:.3s;">
+          <div class="card-header">
+            <span class="card-number">3</span>
+            <h2>Política de cancelamento</h2>
+          </div>
+
+          <ul class="policy-list">
+            <li><i class="fa-solid fa-notes-medical"></i><div><strong>Health reasons:</strong> Accepted with a medical note up to 20 days before the event.</div></li>
+            <li><i class="fa-solid fa-right-left"></i><div><strong>Transfer/change edition:</strong> Only if 30+ days remain.</div></li>
+            <li><i class="fa-solid fa-ban"></i><div><strong>Less than 30 days:</strong> No changes or refunds.</div></li>
+            <li><i class="fa-regular fa-envelope"></i><div><strong>All requests must be handled by email:</strong> <a class="text-accent" href="mailto:legendariosatl@gmail.com">legendariosatl@gmail.com</a></div></li>
+          </ul>
+        </section>
+
+        <footer class="footer animate-fade-in" style="animation-delay:.45s;">
+          Legendários • TOP 1677 • Track Eagle Path
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const root = document.getElementById('top1677-instructions');
+      if (!root) return;
+
+      const targets = root.querySelectorAll('.animate-slide-up, .animate-fade-in');
+      if (!('IntersectionObserver' in window)) {
+        targets.forEach(el => { el.style.opacity = 1; });
+        return;
+      }
+
+      targets.forEach(el => { el.style.animationPlayState = 'paused'; });
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      targets.forEach(el => observer.observe(el));
+    })();
+  </script>
+</body>
+</html>
