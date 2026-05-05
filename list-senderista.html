@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Senderista Packing List | Eagle Path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+#packing1677, #packing1677 * { box-sizing: border-box; }
+
+#packing1677 {
+  --bg-dark: #0b0c0f;
+  --bg-panel: rgba(20, 22, 27, .82);
+  --bg-card: rgba(30, 33, 40, .64);
+  --bg-card-hover: rgba(43, 47, 56, .86);
+  --text-main: #f4f1ec;
+  --text-muted: #b4aa9f;
+  --accent: #ff4b16;
+  --accent-2: #ff7a1a;
+  --accent-gold: #d4af37;
+  --danger: #ff3b30;
+  --success: #25D366;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --border-subtle: 1px solid rgba(255,255,255,.09);
+  --border-fire: 1px solid rgba(255, 75, 22, .28);
+  --shadow-soft: 0 18px 50px rgba(0,0,0,.48);
+  --shadow-fire: 0 0 28px rgba(255,75,22,.22);
+  --radius: 18px;
+  --transition: all .28s cubic-bezier(.25,.8,.25,1);
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background: radial-gradient(circle at 20% 0%, rgba(255,75,22,.18), transparent 34%),
+              radial-gradient(circle at 90% 20%, rgba(212,175,55,.11), transparent 30%),
+              var(--bg-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+#packing1677 .page {
+  position: relative;
+  padding: 22px;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+  background-size: 42px 42px;
+  overflow: hidden;
+}
+
+#packing1677 .background-elements { position:absolute; inset:0; pointer-events:none; overflow:hidden; z-index:0; }
+#packing1677 .glow { position:absolute; border-radius:50%; filter: blur(90px); opacity:.2; }
+#packing1677 .glow-1 { width:520px; height:520px; background:var(--accent); top:-140px; left:-120px; }
+#packing1677 .glow-2 { width:460px; height:460px; background:var(--accent-gold); right:-130px; top:22%; opacity:.13; }
+#packing1677 .glow-3 { width:650px; height:650px; background:rgba(255,75,22,.55); left:34%; bottom:-250px; opacity:.09; }
+
+#packing1677 .container {
+  position:relative; z-index:1;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  display:flex;
+  flex-direction:column;
+  gap:1.45rem;
+}
+
+#packing1677 h1, #packing1677 h2, #packing1677 h3 {
+  font-family: var(--font-heading);
+  line-height:1.08;
+  margin:0;
+  text-transform: uppercase;
+  letter-spacing:.5px;
+}
+#packing1677 p { margin:0; line-height:1.65; }
+#packing1677 a { color:inherit; }
+#packing1677 a:focus, #packing1677 button:focus { outline:2px solid rgba(255,75,22,.5); outline-offset:3px; }
+
+#packing1677 .lang-switcher {
+  display:flex;
+  justify-content:flex-end;
+  gap:.5rem;
+  margin-bottom:.25rem;
+}
+#packing1677 .lang-btn {
+  background: rgba(255,75,22,.12);
+  border:1px solid rgba(255,75,22,.3);
+  color:var(--text-muted);
+  padding:.45rem .85rem;
+  border-radius:999px;
+  font-family:var(--font-heading);
+  font-size:.75rem;
+  font-weight:800;
+  letter-spacing:1px;
+  cursor:pointer;
+  transition:var(--transition);
+}
+#packing1677 .lang-btn:hover, #packing1677 .lang-btn.active {
+  color:#fff;
+  background:linear-gradient(135deg, rgba(255,75,22,.85), rgba(255,122,26,.65));
+  border-color:rgba(255,122,26,.9);
+  box-shadow:var(--shadow-fire);
+}
+
+#packing1677 .glass-card {
+  background: linear-gradient(145deg, rgba(255,255,255,.05), rgba(14,16,20,.7));
+  border: var(--border-subtle);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: var(--transition);
+  overflow:hidden;
+}
+#packing1677 .glass-card:hover { transform:translateY(-2px); border-color:rgba(255,75,22,.26); box-shadow:var(--shadow-soft), var(--shadow-fire); }
+
+#packing1677 .hero {
+  text-align:center;
+  padding:3.4rem 2rem 3rem;
+  position:relative;
+  border-top:4px solid var(--accent);
+}
+#packing1677 .badge {
+  display:inline-flex; align-items:center; gap:.55rem;
+  background:rgba(255,75,22,.13);
+  color:var(--accent-2);
+  border:1px solid rgba(255,75,22,.38);
+  border-radius:999px;
+  padding:.55rem 1rem;
+  font-family:var(--font-heading);
+  font-size:.82rem;
+  font-weight:800;
+  letter-spacing:1.5px;
+  margin-bottom:1.25rem;
+}
+#packing1677 .hero h1 {
+  font-size: clamp(2.35rem, 7vw, 4.4rem);
+  color:#fff;
+  text-shadow:0 8px 28px rgba(0,0,0,.55);
+}
+#packing1677 .hero .highlight {
+  display:block;
+  color:var(--accent);
+  background:linear-gradient(100deg, var(--accent), var(--accent-2), #f1d07b);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+#packing1677 .hero p {
+  margin-top:1rem;
+  color:var(--text-muted);
+  font-size:1.1rem;
+  font-weight:600;
+}
+
+#packing1677 .section {
+  padding:1.55rem;
+}
+#packing1677 .section-header {
+  display:flex; align-items:center; gap:1rem;
+  padding-bottom:1rem;
+  margin-bottom:1.15rem;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+#packing1677 .section-header .icon {
+  width:46px; height:46px; border-radius:14px;
+  display:inline-flex; align-items:center; justify-content:center;
+  color:#111;
+  background:linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow:0 10px 24px rgba(255,75,22,.25);
+  flex-shrink:0;
+}
+#packing1677 .section-header h2 { font-size:1.18rem; color:#fff; }
+
+#packing1677 ul { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:.72rem; }
+#packing1677 li {
+  display:flex;
+  gap:.72rem;
+  align-items:flex-start;
+  color:var(--text-muted);
+  line-height:1.55;
+  background:rgba(0,0,0,.22);
+  border:1px solid rgba(255,255,255,.05);
+  border-radius:12px;
+  padding:.85rem .95rem;
+}
+#packing1677 li::before {
+  content:'\f00c';
+  font-family:'Font Awesome 6 Free';
+  font-weight:900;
+  color:var(--accent-2);
+  margin-top:.1rem;
+  flex-shrink:0;
+}
+#packing1677 li a {
+  color:var(--accent-2);
+  font-weight:800;
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,122,26,.45);
+}
+#packing1677 li a:hover { color:#fff; }
+
+#packing1677 .warning {
+  background:linear-gradient(145deg, rgba(255,59,48,.18), rgba(20,22,27,.76));
+  border:1px solid rgba(255,59,48,.38);
+  border-top:4px solid var(--danger);
+}
+#packing1677 .warning .section-header .icon { background:linear-gradient(135deg, #ff3b30, #ff7a1a); color:#fff; }
+#packing1677 .warning li::before { content:'\f071'; color:#ff6b5f; }
+#packing1677 .warning .intro { color:#fff; font-weight:800; margin-bottom:1rem; }
+
+#packing1677 .info-card { border:var(--border-fire); }
+#packing1677 .footer {
+  text-align:center;
+  color:var(--text-muted);
+  font-family:var(--font-heading);
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-size:.82rem;
+  padding:1.5rem .5rem 0;
+}
+
+#packing1677 .animate-fade-in { animation: fadeIn .9s ease both; }
+#packing1677 .animate-slide-up { opacity:0; animation: slideUp .7s cubic-bezier(.25,.8,.25,1) both; }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes slideUp { from{opacity:0; transform:translateY(24px)} to{opacity:1; transform:translateY(0)} }
+
+@media (max-width: 680px) {
+  #packing1677 .page { padding:14px; }
+  #packing1677 .container { padding:1rem .4rem 2rem; }
+  #packing1677 .lang-switcher { justify-content:center; }
+  #packing1677 .hero { padding:2.6rem 1rem 2.3rem; }
+  #packing1677 .section { padding:1.15rem; }
+  #packing1677 .section-header { align-items:flex-start; }
+  #packing1677 .section-header h2 { font-size:1.02rem; }
+}
+</style>
+</head>
+<body style="margin:0;padding:0;background:#0b0c0f;">
+<div id="packing1677">
+  <div class="page">
+    <div class="background-elements" aria-hidden="true">
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="glow glow-3"></div>
+    </div>
+
+    <div class="container">
+      <div class="lang-switcher animate-fade-in">
+        <button class="lang-btn" data-lang="pt" onclick="setLang('pt')">🇧🇷 PT</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">🇺🇸 EN</button>
+        <button class="lang-btn" data-lang="es" onclick="setLang('es')">🇪🇸 ES</button>
+      </div>
+
+      <header class="hero glass-card animate-fade-in">
+        <div class="badge"><i class="fa-solid fa-mountain-sun"></i> <span data-i18n="badge">Eagle Path • Senderista</span></div>
+        <h1><span data-i18n="title">WHAT TO</span> <span class="highlight" data-i18n="title_highlight">PACK?</span></h1>
+        <p data-i18n="subtitle">Follow the Senderista Packing List</p>
+      </header>
+
+      <section class="section glass-card animate-slide-up" style="animation-delay:.05s;">
+        <div class="section-header"><div class="icon"><i class="fa-solid fa-backpack"></i></div><h2 data-i18n="s1_title">1. What should the backpack be like?</h2></div>
+        <ul>
+          <li data-i18n="s1_1">Your backpack should have a capacity of approximately 45 liters / Example: <a href="https://amzn.to/4uzc266" target="_blank" rel="noopener noreferrer">Amazon link</a></li>
+          <li data-i18n="s1_2">The total weight of the backpack should be approximately 14kg (31 lbs), including tent, sleeping bag, clothes and water</li>
+          <li data-i18n="s1_3">Bring a waterproof cover for the backpack (plastic bag or rain cover)</li>
+          <li data-i18n="s1_4">Your backpack is individual</li>
+          <li data-i18n="s1_5">Keep documents protected from water (Ziplock bags)</li>
+        </ul>
+      </section>
+
+      <section class="section glass-card animate-slide-up" style="animation-delay:.1s;">
+        <div class="section-header"><div class="icon"><i class="fa-regular fa-id-card"></i></div><h2 data-i18n="s2_title">2. What documents should I bring?</h2></div>
+        <ul>
+          <li data-i18n="s2_1">Copy of identification with photo (Passport for foreigners)</li>
+          <li data-i18n="s2_2">$20 in cash</li>
+          <li data-i18n="s2_3">Health insurance card (if available, printed copy)</li>
+          <li data-i18n="s2_4">Liability waiver fully completed and signed – unless already signed online</li>
+        </ul>
+      </section>
+
+      <section class="section glass-card animate-slide-up" style="animation-delay:.15s;">
+        <div class="section-header"><div class="icon"><i class="fa-solid fa-shirt"></i></div><h2 data-i18n="s3_title">3. What clothes should I bring?</h2></div>
+        <ul>
+          <li data-i18n="s3_1">Pants for hiking or sports activities (do NOT bring jeans)</li>
+          <li data-i18n="s3_2">Sports shorts / swim shorts</li>
+          <li data-i18n="s3_3">Short sleeve t-shirts</li>
+          <li data-i18n="s3_4">Long sleeve t-shirts</li>
+          <li data-i18n="s3_5">Cap or hat</li>
+          <li data-i18n="s3_6">Underwear</li>
+          <li data-i18n="s3_7">Jacket for low temperatures (preferably waterproof)</li>
+          <li data-i18n="s3_8">Sports socks for hiking (approximately 3 pairs)</li>
+        </ul>
+      </section>
+
+      <section class="section glass-card animate-slide-up" style="animation-delay:.2s;">
+        <div class="section-header"><div class="icon"><i class="fa-solid fa-shoe-prints"></i></div><h2 data-i18n="s4_title">4. What shoes should I bring?</h2></div>
+        <ul><li data-i18n="s4_1">Sneakers or hiking boots</li></ul>
+      </section>
+
+      <section class="section glass-card animate-slide-up" style="animation-delay:.25s;">
+        <div class="section-header"><div class="icon"><i class="fa-solid fa-campground"></i></div><h2 data-i18n="s5_title">5. What should I bring to sleep?</h2></div>
+        <ul>
+          <li data-i18n="s5_1">A camping tent (for individual use), recommended for up to 2 people / Example: <a href="https://amzn.to/4s47umy" target="_blank" rel="noopener noreferrer">Amazon link</a></li>
+          <li data-i18n="s5_2">Sleeping bag for low temperatures / Example: <a href="https://amzn.to/4sG8PzX" target="_blank" rel="noopener noreferrer">Amazon link</a></li>
+          <li data-i18n="s5_3">2 Emergency thermal blankets (aluminized) / Example: <a href="https://amzn.to/4buLwDf" target="_blank" rel="noopener noreferrer">Amazon link</a></li>
+          <li><span data-i18n="s5_4">Portable mattresses (Yogamat) / Example: <a href="https://amzn.to/46QyJZj" target="_blank" rel="noopener noreferrer">Amazon link</a></span><br><strong data-i18n="s5_note">Note:</strong> <span data-i18n="s5_note_text">this is not the same as an emergency thermal blanket</span></li>
+        </ul>
+      </section>
+
+      <section class="section glass-card animate-slide-up" style="animation-delay:.3s;">
+        <div class="section-header"><div class="icon"><i class="fa-solid fa-mug-hot"></i></div><h2 data-i18n="s6_title">6. How will I cook? What should I bring?</h2></div>
+        <ul>
+          <li data-i18n="s6_1">1 aluminum mug to boil water / Example: <a href="https://amzn.to/46KeV9W" target="_blank" rel="noopener noreferrer">Amazon link</a></li>
+          <li data-i18n="s6_2">1 plastic spoon and 1 plastic fork (no metal allowed)</li>
+          <li data-i18n="s6_3">Plastic water bottle – 32oz</li>
+          <li data-i18n="s6_4">Do NOT bring any food</li>
+        </ul>
+      </section>
+
+      <section class="section glass-card animate-slide-up" style="animation-delay:.35s;">
+        <div class="section-header"><div class="icon"><i class="fa-solid fa-kit-medical"></i></div><h2 data-i18n="s7_title">7. Personal hygiene items</h2></div>
+        <ul>
+          <li data-i18n="s7_1">2 face towels</li>
+          <li data-i18n="s7_2">Wet wipes</li>
+          <li data-i18n="s7_3">Band-aids</li>
+          <li data-i18n="s7_4">Vaseline, talcum powder or diaper rash ointment</li>
+          <li data-i18n="s7_5">Mosquito and tick repellent</li>
+          <li data-i18n="s7_6">Sunscreen</li>
+          <li data-i18n="s7_7">Toothbrush and Toothpaste</li>
+          <li data-i18n="s7_8">Deodorant</li>
+          <li data-i18n="s7_9">Other personal hygiene items if necessary</li>
+        </ul>
+        <p style="margin-top:1rem;color:var(--accent-2);font-weight:800;" data-i18n="s7_env">Remember: respect the environment!</p>
+      </section>
+
+      <section class="section glass-card warning animate-slide-up" style="animation-delay:.4s;">
+        <div class="section-header"><div class="icon"><i class="fa-solid fa-triangle-exclamation"></i></div><h2 data-i18n="mandatory_title">MANDATORY ITEMS</h2></div>
+        <p class="intro" data-i18n="mandatory_intro">Without the items below you will NOT be able to participate in the TOP:</p>
+        <ul>
+          <li data-i18n="m1">1 rain-resistant camping tent for INDIVIDUAL use</li>
+          <li data-i18n="m2">2 emergency / thermal blankets (aluminized) minimum size 2.10m x 1.40m</li>
+          <li data-i18n="m3">1 plastic tarp minimum size 6ft x 6ft</li>
+          <li data-i18n="m4">1 waterproof jacket or raincoat</li>
+          <li data-i18n="m5">1 flashlight</li>
+          <li data-i18n="m6">Portable mattress (Yogamat)</li>
+          <li data-i18n="m7">4 hand and feet warmers (&quot;Hand Warmers - Toe Warmers&quot;. E.g. &quot;HotHands&quot;)</li>
+          <li data-i18n="m8">Plastic water bottle, 32oz</li>
+          <li data-i18n="m9">Snake Gaiters Leg Guards/Snake Chaps (protection against snake bites). Cannot be made of Velcro, must have a protective lock, for example, zipper or quick release</li>
+          <li data-i18n="m10">Bible (bring it in a container that prevents it from getting wet)</li>
+          <li data-i18n="m11">In some cases, we may require a medical certificate of health. If this certificate is required, it will become a mandatory item for the participant.</li>
+          <li data-i18n="m12">Sharp blades and any other type of weapon are prohibited</li>
+        </ul>
+      </section>
+
+      <section class="section glass-card info-card animate-slide-up" style="animation-delay:.45s;">
+        <div class="section-header"><div class="icon"><i class="fa-solid fa-circle-info"></i></div><h2 data-i18n="info_title">Important Information</h2></div>
+        <ul>
+          <li data-i18n="info1">During the entire event you will NOT be able to communicate with people outside the event</li>
+          <li data-i18n="info2">Please notify your family in advance</li>
+          <li data-i18n="info3">Questions? Contact via WhatsApp: +1 (470) 630-8861</li>
+        </ul>
+      </section>
+
+      <section class="section glass-card animate-slide-up" style="animation-delay:.5s;">
+        <div class="section-header"><div class="icon"><i class="fa-solid fa-utensils"></i></div><h2 data-i18n="dinner_title">Celebration Dinner</h2></div>
+        <ul>
+          <li data-i18n="dinner1">The day after our return (Monday) at 7pm we will have an exclusive dinner for everyone who completed the hike.</li>
+          <li data-i18n="dinner2">You will receive your personalized cap with your participant number.</li>
+          <li data-i18n="dinner3">Participants coming from outside the city are exempt from the dinner.</li>
+          <li><strong data-i18n="dinner_addr_label">Address:</strong>&nbsp; 1296 Gresham Rd, Marietta, GA 30062 — <span data-i18n="dinner_church">Vine Church</span></li>
+        </ul>
+      </section>
+
+      <footer class="footer animate-fade-in">Eagle Path • Atlanta GA • EST. 2024</footer>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const i18n = {
+    en: {
+      badge: "Eagle Path • Senderista",
+      title: "WHAT TO", title_highlight: "PACK?", subtitle: "Follow the Senderista Packing List",
+      s1_title: "1. What should the backpack be like?",
+      s1_1: 'Your backpack should have a capacity of approximately 45 liters / Example: <a href="https://amzn.to/4uzc266" target="_blank" rel="noopener noreferrer">Amazon link</a>',
+      s1_2: "The total weight of the backpack should be approximately 14kg (31 lbs), including tent, sleeping bag, clothes and water",
+      s1_3: "Bring a waterproof cover for the backpack (plastic bag or rain cover)", s1_4: "Your backpack is individual", s1_5: "Keep documents protected from water (Ziplock bags)",
+      s2_title: "2. What documents should I bring?", s2_1: "Copy of identification with photo (Passport for foreigners)", s2_2: "$20 in cash", s2_3: "Health insurance card (if available, printed copy)", s2_4: "Liability waiver fully completed and signed – unless already signed online",
+      s3_title: "3. What clothes should I bring?", s3_1: "Pants for hiking or sports activities (do NOT bring jeans)", s3_2: "Sports shorts / swim shorts", s3_3: "Short sleeve t-shirts", s3_4: "Long sleeve t-shirts", s3_5: "Cap or hat", s3_6: "Underwear", s3_7: "Jacket for low temperatures (preferably waterproof)", s3_8: "Sports socks for hiking (approximately 3 pairs)",
+      s4_title: "4. What shoes should I bring?", s4_1: "Sneakers or hiking boots",
+      s5_title: "5. What should I bring to sleep?", s5_1: 'A camping tent (for individual use), recommended for up to 2 people / Example: <a href="https://amzn.to/4s47umy" target="_blank" rel="noopener noreferrer">Amazon link</a>', s5_2: 'Sleeping bag for low temperatures / Example: <a href="https://amzn.to/4sG8PzX" target="_blank" rel="noopener noreferrer">Amazon link</a>', s5_3: '2 Emergency thermal blankets (aluminized) / Example: <a href="https://amzn.to/4buLwDf" target="_blank" rel="noopener noreferrer">Amazon link</a>', s5_4: 'Portable mattresses (Yogamat) / Example: <a href="https://amzn.to/46QyJZj" target="_blank" rel="noopener noreferrer">Amazon link</a>', s5_note: "Note:", s5_note_text: "this is not the same as an emergency thermal blanket",
+      s6_title: "6. How will I cook? What should I bring?", s6_1: '1 aluminum mug to boil water / Example: <a href="https://amzn.to/46KeV9W" target="_blank" rel="noopener noreferrer">Amazon link</a>', s6_2: "1 plastic spoon and 1 plastic fork (no metal allowed)", s6_3: "Plastic water bottle – 32oz", s6_4: "Do NOT bring any food",
+      s7_title: "7. Personal hygiene items", s7_1: "2 face towels", s7_2: "Wet wipes", s7_3: "Band-aids", s7_4: "Vaseline, talcum powder or diaper rash ointment", s7_5: "Mosquito and tick repellent", s7_6: "Sunscreen", s7_7: "Toothbrush and Toothpaste", s7_8: "Deodorant", s7_9: "Other personal hygiene items if necessary", s7_env: "Remember: respect the environment!",
+      mandatory_title: "MANDATORY ITEMS", mandatory_intro: "Without the items below you will NOT be able to participate in the TOP:", m1: "1 rain-resistant camping tent for INDIVIDUAL use", m2: "2 emergency / thermal blankets (aluminized) minimum size 2.10m x 1.40m", m3: "1 plastic tarp minimum size 6ft x 6ft", m4: "1 waterproof jacket or raincoat", m5: "1 flashlight", m6: "Portable mattress (Yogamat)", m7: '4 hand and feet warmers ("Hand Warmers - Toe Warmers". E.g. "HotHands")', m8: "Plastic water bottle, 32oz", m9: "Snake Gaiters Leg Guards/Snake Chaps (protection against snake bites). Cannot be made of Velcro, must have a protective lock, for example, zipper or quick release", m10: "Bible (bring it in a container that prevents it from getting wet)", m11: "In some cases, we may require a medical certificate of health. If this certificate is required, it will become a mandatory item for the participant.", m12: "Sharp blades and any other type of weapon are prohibited",
+      info_title: "Important Information", info1: "During the entire event you will NOT be able to communicate with people outside the event", info2: "Please notify your family in advance", info3: "Questions? Contact via WhatsApp: +1 (470) 630-8861",
+      dinner_title: "Celebration Dinner", dinner1: "The day after our return (Monday) at 7pm we will have an exclusive dinner for everyone who completed the hike.", dinner2: "You will receive your personalized cap with your participant number.", dinner3: "Participants coming from outside the city are exempt from the dinner.", dinner_addr_label: "Address:", dinner_church: "Vine Church"
+    },
+    pt: {
+      badge: "Eagle Path • Senderista", title: "O QUE", title_highlight: "LEVAR?", subtitle: "Siga a Lista de Itens do Senderista",
+      s1_title: "1. Como deve ser a mochila?", s1_1: 'Sua mochila deve ter capacidade de aproximadamente 45 litros / Exemplo: <a href="https://amzn.to/4uzc266" target="_blank" rel="noopener noreferrer">Link Amazon</a>', s1_2: "O peso total da mochila deve ser de aproximadamente 14kg, incluindo barraca, saco de dormir, roupas e água", s1_3: "Traga uma capa impermeável para a mochila (sacola plástica ou capa de chuva)", s1_4: "Sua mochila é individual", s1_5: "Mantenha os documentos protegidos da água (sacos Ziplock)",
+      s2_title: "2. Quais documentos devo trazer?", s2_1: "Cópia do documento de identidade com foto (Passaporte para estrangeiros)", s2_2: "$20 em dinheiro", s2_3: "Cartão do plano de saúde (se disponível, cópia impressa)", s2_4: "Termo de responsabilidade completamente preenchido e assinado – exceto se já assinado online",
+      s3_title: "3. Quais roupas devo trazer?", s3_1: "Calça para caminhada ou atividades esportivas (NÃO traga jeans)", s3_2: "Shorts esportivo / shorts de banho", s3_3: "Camisetas de manga curta", s3_4: "Camisetas de manga longa", s3_5: "Boné ou chapéu", s3_6: "Roupas íntimas", s3_7: "Jaqueta para baixas temperaturas (de preferência impermeável)", s3_8: "Meias esportivas para caminhada (aproximadamente 3 pares)",
+      s4_title: "4. Quais calçados devo trazer?", s4_1: "Tênis ou botas de trilha",
+      s5_title: "5. O que devo trazer para dormir?", s5_1: 'Uma barraca de camping (para uso individual), recomendada para até 2 pessoas / Exemplo: <a href="https://amzn.to/4s47umy" target="_blank" rel="noopener noreferrer">Link Amazon</a>', s5_2: 'Saco de dormir para baixas temperaturas / Exemplo: <a href="https://amzn.to/4sG8PzX" target="_blank" rel="noopener noreferrer">Link Amazon</a>', s5_3: '2 cobertores térmicos de emergência (aluminizados) / Exemplo: <a href="https://amzn.to/4buLwDf" target="_blank" rel="noopener noreferrer">Link Amazon</a>', s5_4: 'Colchonete portátil (Yogamat) / Exemplo: <a href="https://amzn.to/46QyJZj" target="_blank" rel="noopener noreferrer">Link Amazon</a>', s5_note: "Nota:", s5_note_text: "este não é o mesmo que o cobertor térmico de emergência",
+      s6_title: "6. Como vou cozinhar? O que devo trazer?", s6_1: '1 caneca de alumínio para ferver água / Exemplo: <a href="https://amzn.to/46KeV9W" target="_blank" rel="noopener noreferrer">Link Amazon</a>', s6_2: "1 colher de plástico e 1 garfo de plástico (metal não é permitido)", s6_3: "Garrafa de água plástica – 32oz", s6_4: "NÃO traga nenhum alimento",
+      s7_title: "7. Itens de higiene pessoal", s7_1: "2 toalhas de rosto", s7_2: "Lenços umedecidos", s7_3: "Curativos (band-aids)", s7_4: "Vaselina, talco ou pomada para assadura", s7_5: "Repelente de mosquitos e carrapatos", s7_6: "Protetor solar", s7_7: "Escova e pasta de dente", s7_8: "Desodorante", s7_9: "Outros itens de higiene pessoal, se necessário", s7_env: "Lembre-se: respeite o meio ambiente!",
+      mandatory_title: "ITENS OBRIGATÓRIOS", mandatory_intro: "Sem os itens abaixo você NÃO poderá participar do TOP:", m1: "1 barraca de camping resistente à chuva para uso INDIVIDUAL", m2: "2 cobertores de emergência / térmicos (aluminizados) tamanho mínimo 2,10m x 1,40m", m3: "1 lona plástica tamanho mínimo 1,80m x 1,80m (6ft x 6ft)", m4: "1 jaqueta impermeável ou capa de chuva", m5: "1 lanterna", m6: "Colchonete portátil (Yogamat)", m7: '4 aquecedores de mãos e pés ("Hand Warmers - Toe Warmers". Ex: "HotHands")', m8: "Garrafa de água plástica, 32oz", m9: 'Perneiras contra cobra / "Snake Gaiters" (proteção contra picadas de cobra). Não pode ser de velcro, deve ter trava de proteção, por exemplo, zíper ou engate rápido', m10: "Bíblia (leve em um recipiente que evite que molhe)", m11: "Em alguns casos, poderemos exigir um atestado médico de saúde. Se esse atestado for exigido, ele se tornará um item obrigatório para o participante.", m12: "Lâminas afiadas e qualquer outro tipo de arma são proibidos",
+      info_title: "Informações Importantes", info1: "Durante todo o evento você NÃO poderá se comunicar com pessoas de fora do evento", info2: "Avise sua família com antecedência", info3: "Dúvidas? Entre em contato via WhatsApp: +1 (470) 630-8861",
+      dinner_title: "Jantar de Celebração", dinner1: "No dia seguinte ao nosso retorno (segunda-feira) às 19h teremos um jantar exclusivo para todos que completaram a trilha.", dinner2: "Você receberá seu boné personalizado com seu número de participante.", dinner3: "Participantes vindos de fora da cidade estão isentos do jantar.", dinner_addr_label: "Endereço:", dinner_church: "Igreja Videira"
+    },
+    es: {
+      badge: "Eagle Path • Senderista", title: "¿QUÉ", title_highlight: "LLEVAR?", subtitle: "Sigue la Lista de Empaque del Senderista",
+      s1_title: "1. ¿Cómo debe ser la mochila?", s1_1: 'Tu mochila debe tener una capacidad de aproximadamente 45 litros / Ejemplo: <a href="https://amzn.to/4uzc266" target="_blank" rel="noopener noreferrer">Enlace Amazon</a>', s1_2: "El peso total de la mochila debe ser de aproximadamente 14kg (31 lbs), incluyendo carpa, bolsa de dormir, ropa y agua", s1_3: "Lleva una cubierta impermeable para la mochila (bolsa plástica o cubierta para lluvia)", s1_4: "Tu mochila es individual", s1_5: "Mantén los documentos protegidos del agua (bolsas Ziplock)",
+      s2_title: "2. ¿Qué documentos debo llevar?", s2_1: "Copia de identificación con foto (Pasaporte para extranjeros)", s2_2: "$20 en efectivo", s2_3: "Tarjeta de seguro médico (si está disponible, copia impresa)", s2_4: "Formulario de exención de responsabilidad completamente diligenciado y firmado – a menos que ya haya sido firmado en línea",
+      s3_title: "3. ¿Qué ropa debo llevar?", s3_1: "Pantalón para senderismo o actividades deportivas (NO lleves jeans)", s3_2: "Shorts deportivos / shorts de baño", s3_3: "Camisetas de manga corta", s3_4: "Camisetas de manga larga", s3_5: "Gorra o sombrero", s3_6: "Ropa interior", s3_7: "Chaqueta para bajas temperaturas (preferiblemente impermeable)", s3_8: "Medias deportivas para senderismo (aproximadamente 3 pares)",
+      s4_title: "4. ¿Qué calzado debo llevar?", s4_1: "Tenis o botas de senderismo",
+      s5_title: "5. ¿Qué debo llevar para dormir?", s5_1: 'Una carpa de camping (para uso individual), recomendada para hasta 2 personas / Ejemplo: <a href="https://amzn.to/4s47umy" target="_blank" rel="noopener noreferrer">Enlace Amazon</a>', s5_2: 'Bolsa de dormir para bajas temperaturas / Ejemplo: <a href="https://amzn.to/4sG8PzX" target="_blank" rel="noopener noreferrer">Enlace Amazon</a>', s5_3: '2 mantas térmicas de emergencia (aluminizadas) / Ejemplo: <a href="https://amzn.to/4buLwDf" target="_blank" rel="noopener noreferrer">Enlace Amazon</a>', s5_4: 'Colchoneta portátil (Yogamat) / Ejemplo: <a href="https://amzn.to/46QyJZj" target="_blank" rel="noopener noreferrer">Enlace Amazon</a>', s5_note: "Nota:", s5_note_text: "esto no es lo mismo que una manta térmica de emergencia",
+      s6_title: "6. ¿Cómo voy a cocinar? ¿Qué debo llevar?", s6_1: '1 taza de aluminio para hervir agua / Ejemplo: <a href="https://amzn.to/46KeV9W" target="_blank" rel="noopener noreferrer">Enlace Amazon</a>', s6_2: "1 cuchara plástica y 1 tenedor plástico (no se permite metal)", s6_3: "Botella de agua plástica – 32oz", s6_4: "NO lleves ningún alimento",
+      s7_title: "7. Artículos de higiene personal", s7_1: "2 toallas faciales", s7_2: "Toallitas húmedas", s7_3: "Curitas / Band-aids", s7_4: "Vaselina, talco o pomada para rozaduras", s7_5: "Repelente de mosquitos y garrapatas", s7_6: "Protector solar", s7_7: "Cepillo y pasta de dientes", s7_8: "Desodorante", s7_9: "Otros artículos de higiene personal si es necesario", s7_env: "¡Recuerda: respeta el medio ambiente!",
+      mandatory_title: "ARTÍCULOS OBLIGATORIOS", mandatory_intro: "Sin los artículos a continuación NO podrás participar en el TOP:", m1: "1 carpa de camping resistente a la lluvia para uso INDIVIDUAL", m2: "2 mantas de emergencia / térmicas (aluminizadas) tamaño mínimo 2.10m x 1.40m", m3: "1 lona plástica tamaño mínimo 1.80m x 1.80m (6ft x 6ft)", m4: "1 chaqueta impermeable o chubasquero", m5: "1 linterna", m6: "Colchoneta portátil (Yogamat)", m7: '4 calentadores de manos y pies ("Hand Warmers - Toe Warmers". Ej: "HotHands")', m8: "Botella de agua plástica, 32oz", m9: "Polainas anti-serpiente / Snake Gaiters (protección contra mordeduras de serpiente). No puede ser de velcro, debe tener un cierre de seguridad, por ejemplo, cremallera o cierre rápido", m10: "Biblia (llévala en un recipiente que evite que se moje)", m11: "En algunos casos, podemos requerir un certificado médico de salud. Si se requiere este certificado, se convertirá en un artículo obligatorio para el participante.", m12: "Las hojas afiladas y cualquier otro tipo de arma están prohibidas",
+      info_title: "Información Importante", info1: "Durante todo el evento NO podrás comunicarte con personas fuera del evento", info2: "Por favor notifica a tu familia con anticipación", info3: "¿Preguntas? Contáctanos vía WhatsApp: +1 (470) 630-8861",
+      dinner_title: "Cena de Celebración", dinner1: "El día después de nuestro regreso (lunes) a las 7pm tendremos una cena exclusiva para todos los que completaron la caminata.", dinner2: "Recibirás tu gorra personalizada con tu número de participante.", dinner3: "Los participantes que vienen de fuera de la ciudad están exentos de la cena.", dinner_addr_label: "Dirección:", dinner_church: "Iglesia Viña"
+    }
+  };
+
+  const htmlKeys = new Set(['s1_1','s5_1','s5_2','s5_3','s5_4','s6_1']);
+
+  function applyLang(lang){
+    const dict = i18n[lang] || i18n.en;
+    document.querySelectorAll('#packing1677 [data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if(dict[key] === undefined) return;
+      if(htmlKeys.has(key)) el.innerHTML = dict[key];
+      else el.textContent = dict[key];
+    });
+    document.querySelectorAll('#packing1677 .lang-btn').forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-lang') === lang));
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+    try { localStorage.setItem('packing1677_lang', lang); } catch(e) {}
+  }
+
+  function detectLang(){
+    try { const saved = localStorage.getItem('packing1677_lang'); if(saved && i18n[saved]) return saved; } catch(e) {}
+    const nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    if(nav.startsWith('pt')) return 'pt';
+    if(nav.startsWith('es')) return 'es';
+    return 'en';
+  }
+
+  window.setLang = applyLang;
+
+  function scrollReveal(){
+    const root = document.getElementById('packing1677');
+    const targets = root.querySelectorAll('.animate-slide-up, .animate-fade-in');
+    if(!('IntersectionObserver' in window)){ targets.forEach(el => el.style.opacity = 1); return; }
+    targets.forEach(el => { el.style.animationPlayState = 'paused'; });
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.style.animationPlayState = 'running'; obs.unobserve(entry.target); }
+      });
+    }, { threshold:.1 });
+    targets.forEach(el => observer.observe(el));
+  }
+
+  applyLang(detectLang());
+  scrollReveal();
+})();
+</script>
+</body>
+</html>
