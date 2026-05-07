@@ -15,19 +15,17 @@
     }
 
     #top1677-liquid {
-      --bg: #050506;
-      --glass: rgba(255, 255, 255, .08);
-      --glass-strong: rgba(255, 255, 255, .13);
-      --glass-border: rgba(255, 255, 255, .20);
-      --text: #f7f3ee;
-      --muted: rgba(247, 243, 238, .68);
-      --soft: rgba(247, 243, 238, .48);
-      --orange: #ff5a1f;
-      --orange-2: #ff8a3d;
-      --cream: #f3dfc1;
-      --whatsapp: #25D366;
-      --shadow: 0 30px 90px rgba(0, 0, 0, .55);
-      --blur: 28px;
+      --bg: #020203;
+      --glass: rgba(10, 10, 12, .78);
+      --glass-border: rgba(255, 255, 255, .16);
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, .76);
+      --soft: rgba(255, 255, 255, .58);
+      --orange: #ff4a16;
+      --orange-2: #ff9a4d;
+      --cream: #ffe2bd;
+      --shadow: 0 34px 100px rgba(0, 0, 0, .75);
+      --blur: 26px;
       --radius: 28px;
 
       width: 100%;
@@ -49,10 +47,10 @@
       min-height: 100vh;
       padding: 28px 18px;
       background:
-        radial-gradient(circle at 12% 12%, rgba(255, 90, 31, .38), transparent 28%),
-        radial-gradient(circle at 88% 18%, rgba(255, 168, 99, .22), transparent 28%),
-        radial-gradient(circle at 50% 100%, rgba(255, 90, 31, .20), transparent 36%),
-        linear-gradient(180deg, #070707 0%, #0d0b09 48%, #050506 100%);
+        radial-gradient(circle at 12% 12%, rgba(255, 74, 22, .32), transparent 25%),
+        radial-gradient(circle at 88% 18%, rgba(255, 154, 77, .16), transparent 26%),
+        radial-gradient(circle at 50% 100%, rgba(255, 74, 22, .15), transparent 34%),
+        linear-gradient(180deg, #020203 0%, #070707 45%, #020203 100%);
     }
 
     #top1677-liquid .page::before {
@@ -61,41 +59,85 @@
       inset: 0;
       pointer-events: none;
       background:
-        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
       background-size: 54px 54px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.75), transparent 75%);
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.85), transparent 78%);
     }
 
     #top1677-liquid .orb {
       position: absolute;
       border-radius: 50%;
-      filter: blur(14px);
-      opacity: .75;
+      filter: blur(18px);
+      opacity: .8;
       pointer-events: none;
       animation: floatOrb 10s ease-in-out infinite alternate;
     }
 
     #top1677-liquid .orb.one {
-      width: 280px;
-      height: 280px;
-      left: -90px;
+      width: 300px;
+      height: 300px;
+      left: -110px;
       top: 130px;
-      background: rgba(255, 90, 31, .28);
+      background: rgba(255, 74, 22, .30);
     }
 
     #top1677-liquid .orb.two {
-      width: 220px;
-      height: 220px;
-      right: -80px;
+      width: 240px;
+      height: 240px;
+      right: -90px;
       top: 380px;
-      background: rgba(243, 223, 193, .15);
+      background: rgba(255, 226, 189, .12);
       animation-delay: 1.5s;
     }
 
     @keyframes floatOrb {
       from { transform: translate3d(0, 0, 0) scale(1); }
       to { transform: translate3d(24px, -34px, 0) scale(1.08); }
+    }
+
+    /* LANGUAGE SWITCHER */
+
+    #top1677-liquid .lang-switcher {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      z-index: 50;
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 10px 40px rgba(0,0,0,.35);
+    }
+
+    #top1677-liquid .lang-btn {
+      width: 46px;
+      height: 46px;
+      border: none;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 1.45rem;
+      background: rgba(255,255,255,.08);
+      transition: all .25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
+    #top1677-liquid .lang-btn:hover {
+      transform: translateY(-2px) scale(1.06);
+      background: rgba(255,255,255,.14);
+      box-shadow: 0 8px 25px rgba(255,255,255,.08);
+    }
+
+    #top1677-liquid .lang-btn.active {
+      background: linear-gradient(135deg, var(--orange-2), var(--orange));
+      box-shadow: 0 0 25px rgba(255,74,22,.35);
     }
 
     #top1677-liquid .container {
@@ -113,7 +155,7 @@
       overflow: hidden;
       border-radius: var(--radius);
       background:
-        linear-gradient(135deg, rgba(255,255,255,.16), rgba(255,255,255,.055)),
+        linear-gradient(135deg, rgba(255,255,255,.105), rgba(255,255,255,.035)),
         var(--glass);
       border: 1px solid var(--glass-border);
       box-shadow: var(--shadow);
@@ -128,8 +170,8 @@
       pointer-events: none;
       border-radius: inherit;
       background:
-        linear-gradient(135deg, rgba(255,255,255,.34), transparent 24%),
-        radial-gradient(circle at 20% 0%, rgba(255,255,255,.20), transparent 34%);
+        linear-gradient(135deg, rgba(255,255,255,.22), transparent 25%),
+        radial-gradient(circle at 20% 0%, rgba(255,255,255,.14), transparent 34%);
       opacity: .55;
     }
 
@@ -150,8 +192,8 @@
       margin-bottom: 18px;
       padding: 9px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, .10);
-      border: 1px solid rgba(255, 255, 255, .18);
+      background: rgba(255, 255, 255, .09);
+      border: 1px solid rgba(255, 255, 255, .20);
       color: var(--cream);
       font-size: .78rem;
       font-weight: 800;
@@ -165,16 +207,20 @@
       line-height: .96;
       letter-spacing: -.07em;
       font-weight: 900;
+      color: #fff;
+      text-shadow:
+        0 0 30px rgba(255, 74, 22, .20),
+        0 12px 40px rgba(0, 0, 0, .72);
     }
 
     #top1677-liquid .hero .top-number {
       display: inline-block;
       margin-top: 6px;
-      background: linear-gradient(135deg, var(--cream), var(--orange-2), var(--orange));
+      background: linear-gradient(135deg, #fff2dd, var(--orange-2), var(--orange));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      text-shadow: 0 0 45px rgba(255, 90, 31, .22);
+      filter: drop-shadow(0 0 22px rgba(255, 74, 22, .34));
     }
 
     #top1677-liquid .hero p {
@@ -183,16 +229,11 @@
       color: var(--muted);
       font-size: clamp(1rem, 2.2vw, 1.25rem);
       line-height: 1.6;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     #top1677-liquid .card {
       padding: clamp(22px, 4vw, 34px);
-    }
-
-    #top1677-liquid .card > * {
-      position: relative;
-      z-index: 1;
     }
 
     #top1677-liquid .card-head {
@@ -201,20 +242,21 @@
       gap: 14px;
       padding-bottom: 18px;
       margin-bottom: 22px;
-      border-bottom: 1px solid rgba(255, 255, 255, .12);
+      border-bottom: 1px solid rgba(255, 255, 255, .13);
+      position: relative;
+      z-index: 2;
     }
 
     #top1677-liquid .number {
       width: 46px;
       height: 46px;
-      flex: 0 0 46px;
       border-radius: 16px;
       display: grid;
       place-items: center;
-      color: #150806;
+      color: #130604;
       font-weight: 900;
       background: linear-gradient(135deg, var(--cream), var(--orange));
-      box-shadow: 0 14px 34px rgba(255, 90, 31, .26);
+      box-shadow: 0 14px 34px rgba(255, 74, 22, .35);
     }
 
     #top1677-liquid h2 {
@@ -222,23 +264,33 @@
       font-size: clamp(1.35rem, 4vw, 2rem);
       letter-spacing: -.04em;
       font-weight: 900;
+      color: #fff;
     }
 
-    #top1677-liquid .step {
+    #top1677-liquid .step,
+    #top1677-liquid .details {
       display: grid;
       gap: 14px;
-      margin-top: 16px;
+      position: relative;
+      z-index: 2;
     }
 
-    #top1677-liquid .item {
+    #top1677-liquid .details {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #top1677-liquid .item,
+    #top1677-liquid .details li {
       display: grid;
       grid-template-columns: 44px 1fr;
       gap: 14px;
-      align-items: start;
       padding: 16px;
       border-radius: 22px;
-      background: rgba(255, 255, 255, .07);
-      border: 1px solid rgba(255, 255, 255, .12);
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.13);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
     }
 
     #top1677-liquid .icon {
@@ -247,8 +299,8 @@
       display: grid;
       place-items: center;
       border-radius: 16px;
-      background: rgba(255, 90, 31, .13);
-      border: 1px solid rgba(255, 90, 31, .25);
+      background: rgba(255, 74, 22, .16);
+      border: 1px solid rgba(255, 74, 22, .34);
       color: var(--orange-2);
       font-size: 1.05rem;
     }
@@ -256,10 +308,10 @@
     #top1677-liquid .item-title {
       display: block;
       margin-bottom: 10px;
-      color: var(--text);
+      color: #fff;
       font-size: 1rem;
       line-height: 1.45;
-      font-weight: 750;
+      font-weight: 800;
     }
 
     #top1677-liquid .label {
@@ -280,54 +332,31 @@
       min-height: 48px;
       padding: 13px 18px;
       border-radius: 999px;
-      color: #170905;
+      color: #140604;
       font-weight: 900;
       font-size: .86rem;
       letter-spacing: .04em;
       text-transform: uppercase;
       background: linear-gradient(135deg, var(--cream), var(--orange-2), var(--orange));
-      box-shadow: 0 14px 32px rgba(255, 90, 31, .24);
-      border: 1px solid rgba(255, 255, 255, .18);
-      transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+      box-shadow: 0 16px 36px rgba(255, 74, 22, .28);
+      border: 1px solid rgba(255, 255, 255, .20);
+      transition: all .25s ease;
     }
 
     #top1677-liquid .btn:hover {
       transform: translateY(-2px);
-      filter: brightness(1.08);
-      box-shadow: 0 18px 40px rgba(255, 90, 31, .34);
+      filter: brightness(1.1);
     }
 
     #top1677-liquid .btn.whatsapp {
       background: linear-gradient(135deg, #39e782, #25D366, #128C7E);
       color: #fff;
-      box-shadow: 0 14px 32px rgba(37, 211, 102, .22);
     }
 
     #top1677-liquid .btn.light {
-      background: rgba(255, 255, 255, .11);
+      background: rgba(255, 255, 255, .10);
       color: var(--cream);
       box-shadow: none;
-      border: 1px solid rgba(255, 255, 255, .18);
-    }
-
-    #top1677-liquid .details {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 12px;
-    }
-
-    #top1677-liquid .details li {
-      display: grid;
-      grid-template-columns: 44px 1fr;
-      gap: 14px;
-      padding: 16px;
-      border-radius: 22px;
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.12);
-      line-height: 1.5;
-      font-weight: 650;
     }
 
     #top1677-liquid .section-title {
@@ -337,15 +366,8 @@
       font-weight: 900;
       letter-spacing: .13em;
       text-transform: uppercase;
-    }
-
-    #top1677-liquid .policy strong {
-      color: var(--cream);
-    }
-
-    #top1677-liquid .email {
-      color: var(--orange-2);
-      font-weight: 800;
+      position: relative;
+      z-index: 2;
     }
 
     #top1677-liquid footer {
@@ -356,15 +378,26 @@
       text-transform: uppercase;
       font-size: .72rem;
       padding: 18px 0 0;
+      position: relative;
+      z-index: 2;
     }
 
     @media (max-width: 680px) {
-      #top1677-liquid .page {
-        padding: 14px;
+
+      #top1677-liquid .lang-switcher {
+        top: 14px;
+        left: 14px;
+        padding: 8px;
       }
 
-      #top1677-liquid .card-head {
-        align-items: flex-start;
+      #top1677-liquid .lang-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 1.2rem;
+      }
+
+      #top1677-liquid .page {
+        padding: 14px;
       }
 
       #top1677-liquid .item,
@@ -375,7 +408,6 @@
       #top1677-liquid .icon {
         width: 38px;
         height: 38px;
-        border-radius: 14px;
       }
 
       #top1677-liquid .btn {
@@ -385,190 +417,196 @@
   </style>
 </head>
 
-<body style="margin:0; padding:0; background:#050506;">
+<body style="margin:0; padding:0; background:#020203;">
 
-  <div id="top1677-liquid">
-    <main class="page">
-      <span class="orb one"></span>
-      <span class="orb two"></span>
+<div id="top1677-liquid">
 
-      <div class="container">
+  <main class="page">
 
-        <header class="hero glass">
-          <div class="eyebrow">
-            <i class="fa-solid fa-compass"></i>
-            Track Eagle Path
-          </div>
+    <!-- LANGUAGE SWITCHER -->
+    <div class="lang-switcher">
+      <button class="lang-btn active">🇧🇷</button>
+      <button class="lang-btn">🇺🇸</button>
+      <button class="lang-btn">🇪🇸</button>
+    </div>
 
-          <h1>
-            Bem-vindo ao<br>
-            <span class="top-number">TOP 1677</span>
-          </h1>
+    <span class="orb one"></span>
+    <span class="orb two"></span>
 
-          <p>
-            Sua jornada começa hoje!<br>
-            Siga atentamente essas instruções.
-          </p>
-        </header>
+    <div class="container">
 
-        <section class="card glass">
-          <div class="card-head">
-            <span class="number">1</span>
-            <h2>Antes do TOP</h2>
-          </div>
+      <header class="hero glass">
+        <div class="eyebrow">
+          <i class="fa-solid fa-compass"></i>
+          Track Eagle Path
+        </div>
 
-          <div class="step">
+        <h1>
+          Bem-vindo ao<br>
+          <span class="top-number">TOP 1677</span>
+        </h1>
 
-            <div class="item">
-              <div class="icon">
-                <i class="fa-solid fa-file-signature"></i>
-              </div>
-              <div>
-                <span class="item-title">Assinar eletronicamente este formulário</span>
-                <a class="btn light" href="https://app.zapsign.com.br/verificar/doc/d13fcb0e-de71-4f38-afe5-96a08783522f" target="_blank" rel="noopener">
-                  <i class="fa-solid fa-file-lines"></i>
-                  Documento
-                </a>
-              </div>
+        <p>
+          Sua jornada começa hoje!<br>
+          Siga atentamente essas instruções.
+        </p>
+      </header>
+
+      <section class="card glass">
+
+        <div class="card-head">
+          <span class="number">1</span>
+          <h2>Antes do TOP</h2>
+        </div>
+
+        <div class="step">
+
+          <div class="item">
+            <div class="icon">
+              <i class="fa-solid fa-file-signature"></i>
             </div>
 
-            <div class="item">
-              <div class="icon">
+            <div>
+              <span class="item-title">
+                Assinar eletronicamente este formulário
+              </span>
+
+              <a class="btn light"
+                 href="https://app.zapsign.com.br/verificar/doc/d13fcb0e-de71-4f38-afe5-96a08783522f"
+                 target="_blank">
+                <i class="fa-solid fa-file-lines"></i>
+                Documento
+              </a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="icon">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+
+            <div>
+              <span class="item-title">
+                Entrar no grupo de WhatsApp para receber avisos importantes
+              </span>
+
+              <a class="btn whatsapp"
+                 href="https://chat.whatsapp.com/IsJd6uzEDX39eYIZZhDr6p?mode=gi_t"
+                 target="_blank">
                 <i class="fa-brands fa-whatsapp"></i>
-              </div>
-              <div>
-                <span class="item-title">Entrar no grupo de WhatsApp para receber avisos importantes</span>
-                <a class="btn whatsapp" href="https://chat.whatsapp.com/IsJd6uzEDX39eYIZZhDr6p?mode=gi_t" target="_blank" rel="noopener">
-                  <i class="fa-brands fa-whatsapp"></i>
-                  WhatsApp participantes
-                </a>
-              </div>
+                WhatsApp participantes
+              </a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="icon">
+              <i class="fa-solid fa-heart"></i>
             </div>
 
-            <div class="item">
-              <div class="icon">
-                <i class="fa-solid fa-heart"></i>
-              </div>
-              <div>
-                <span class="item-title">Peça à sua esposa para entrar no grupo de WhatsApp das esposas</span>
-                <a class="btn whatsapp" href="https://app.zapsign.com.br/verificar/doc/d13fcb0e-de71-4f38-afe5-96a08783522f" target="_blank" rel="noopener">
-                  <i class="fa-brands fa-whatsapp"></i>
-                  WhatsApp esposas
-                </a>
-              </div>
+            <div>
+              <span class="item-title">
+                Peça à sua esposa para entrar no grupo de WhatsApp das esposas
+              </span>
+
+              <a class="btn whatsapp"
+                 href="https://chat.whatsapp.com/EwYPUoER3plC3RO7jCr8mE?mode=gi_t"
+                 target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                WhatsApp esposas
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="card glass">
+
+        <div class="card-head">
+          <span class="number">2</span>
+          <h2>No dia do TOP</h2>
+        </div>
+
+        <ul class="details">
+
+          <li>
+            <div class="icon">
+              <i class="fa-regular fa-clock"></i>
             </div>
 
-          </div>
-        </section>
+            <div>
+              <span class="label">Check-in</span>
+              Jun 25, 2026 at 3:00 PM
+            </div>
+          </li>
 
-        <section class="card glass">
-          <div class="card-head">
-            <span class="number">2</span>
-            <h2>No dia do TOP</h2>
-          </div>
+          <li>
+            <div class="icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
 
-          <ul class="details">
-            <li>
-              <div class="icon">
-                <i class="fa-regular fa-clock"></i>
-              </div>
-              <div>
-                <span class="label">Check-in</span>
-                Jun 25, 2026 at 3:00 PM
-              </div>
-            </li>
+            <div>
+              <span class="label">Location</span>
+              Vine Atlanta Church, 1296 Gresham Rd NE, Marietta, GA 30062 📍
+            </div>
+          </li>
 
-            <li>
-              <div class="icon">
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
-              <div>
-                <span class="label">Location</span>
-                Vine Atlanta Church, 1296 Gresham Rd NE, Marietta, GA 30062 📍
-              </div>
-            </li>
-          </ul>
+        </ul>
 
-          <h3 class="section-title">Trazer</h3>
+        <h3 class="section-title">Trazer</h3>
 
-          <ul class="details">
-            <li>
-              <div class="icon">
-                <i class="fa-solid fa-money-bill-wave"></i>
-              </div>
-              <div>$20 cash</div>
-            </li>
+        <ul class="details">
 
-            <li>
-              <div class="icon">
-                <i class="fa-regular fa-id-card"></i>
-              </div>
-              <div>Documento oficial de identificação: passaporte, ID ou Driver License</div>
-            </li>
+          <li>
+            <div class="icon">
+              <i class="fa-solid fa-money-bill-wave"></i>
+            </div>
 
-            <li>
-              <div class="icon">
-                <i class="fa-solid fa-suitcase-rolling"></i>
-              </div>
-              <div>Mochila com todos os itens da lista</div>
-            </li>
-          </ul>
+            <div>$20 cash</div>
+          </li>
 
-          <div style="margin-top:16px;">
-            <a class="btn" href="https://www.subir.top/list-sen-en.html" target="_blank" rel="noopener">
-              <i class="fa-solid fa-list-check"></i>
-              Abrir lista de itens
-            </a>
-          </div>
-        </section>
+          <li>
+            <div class="icon">
+              <i class="fa-regular fa-id-card"></i>
+            </div>
 
-        <section class="card glass policy">
-          <div class="card-head">
-            <span class="number">3</span>
-            <h2>Política de cancelamento</h2>
-          </div>
+            <div>
+              Documento oficial de identificação:
+              passaporte, ID ou Driver License
+            </div>
+          </li>
 
-          <ul class="details">
-            <li>
-              <div class="icon">
-                <i class="fa-solid fa-notes-medical"></i>
-              </div>
-              <div><strong>Health reasons:</strong> Accepted with a medical note up to 20 days before the event.</div>
-            </li>
+          <li>
+            <div class="icon">
+              <i class="fa-solid fa-suitcase-rolling"></i>
+            </div>
 
-            <li>
-              <div class="icon">
-                <i class="fa-solid fa-right-left"></i>
-              </div>
-              <div><strong>Transfer/change edition:</strong> Only if 30+ days remain.</div>
-            </li>
+            <div>
+              Mochila com todos os itens da lista
+            </div>
+          </li>
 
-            <li>
-              <div class="icon">
-                <i class="fa-solid fa-ban"></i>
-              </div>
-              <div><strong>Less than 30 days:</strong> No changes or refunds.</div>
-            </li>
+        </ul>
 
-            <li>
-              <div class="icon">
-                <i class="fa-regular fa-envelope"></i>
-              </div>
-              <div>
-                <strong>All requests must be handled by email:</strong>
-                <a class="email" href="mailto:legendariosatl@gmail.com">legendariosatl@gmail.com</a>
-              </div>
-            </li>
-          </ul>
-        </section>
+        <div style="margin-top:16px; position:relative; z-index:2;">
+          <a class="btn"
+             href="https://www.subir.top/list-sen-en.html"
+             target="_blank">
+            <i class="fa-solid fa-list-check"></i>
+            Abrir lista de itens
+          </a>
+        </div>
 
-        <footer>
-          Legendários • TOP 1677 • Track Eagle Path
-        </footer>
+      </section>
 
-      </div>
-    </main>
-  </div>
+      <footer>
+        Legendários • TOP 1677 • Track Eagle Path
+      </footer>
+
+    </div>
+  </main>
+</div>
 
 </body>
 </html>
