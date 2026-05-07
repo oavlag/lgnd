@@ -1,3 +1,6 @@
+<!-- Seletor menor, canto superior direito, com auto-detect + tradução real + política de cancelamento -->
+<!-- Cole como página completa -->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,10 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-    #top1677-liquid,
-    #top1677-liquid * {
-      box-sizing: border-box;
-    }
+    #top1677-liquid, #top1677-liquid * { box-sizing: border-box; }
 
     #top1677-liquid {
       --bg: #020203;
@@ -37,10 +37,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    #top1677-liquid a {
-      color: inherit;
-      text-decoration: none;
-    }
+    #top1677-liquid a { color: inherit; text-decoration: none; }
 
     #top1677-liquid .page {
       position: relative;
@@ -63,6 +60,47 @@
         linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
       background-size: 54px 54px;
       mask-image: linear-gradient(to bottom, rgba(0,0,0,.85), transparent 78%);
+    }
+
+    #top1677-liquid .lang-switcher {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 50;
+      display: flex;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 10px 40px rgba(0,0,0,.35);
+    }
+
+    #top1677-liquid .lang-btn {
+      width: 34px;
+      height: 34px;
+      border: none;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 1rem;
+      background: rgba(255,255,255,.08);
+      transition: all .25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
+    #top1677-liquid .lang-btn:hover {
+      transform: translateY(-1px) scale(1.04);
+      background: rgba(255,255,255,.14);
+    }
+
+    #top1677-liquid .lang-btn.active {
+      background: linear-gradient(135deg, var(--orange-2), var(--orange));
+      box-shadow: 0 0 20px rgba(255,74,22,.35);
     }
 
     #top1677-liquid .orb {
@@ -96,50 +134,6 @@
       to { transform: translate3d(24px, -34px, 0) scale(1.08); }
     }
 
-    /* LANGUAGE SWITCHER */
-
-    #top1677-liquid .lang-switcher {
-      position: absolute;
-      top: 22px;
-      left: 22px;
-      z-index: 50;
-      display: flex;
-      gap: 10px;
-      padding: 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.12);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 10px 40px rgba(0,0,0,.35);
-    }
-
-    #top1677-liquid .lang-btn {
-      width: 46px;
-      height: 46px;
-      border: none;
-      cursor: pointer;
-      border-radius: 50%;
-      font-size: 1.45rem;
-      background: rgba(255,255,255,.08);
-      transition: all .25s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255,255,255,.10);
-    }
-
-    #top1677-liquid .lang-btn:hover {
-      transform: translateY(-2px) scale(1.06);
-      background: rgba(255,255,255,.14);
-      box-shadow: 0 8px 25px rgba(255,255,255,.08);
-    }
-
-    #top1677-liquid .lang-btn.active {
-      background: linear-gradient(135deg, var(--orange-2), var(--orange));
-      box-shadow: 0 0 25px rgba(255,74,22,.35);
-    }
-
     #top1677-liquid .container {
       position: relative;
       z-index: 2;
@@ -147,7 +141,7 @@
       margin: 0 auto;
       display: grid;
       gap: 22px;
-      padding: 18px 0 40px;
+      padding: 56px 0 40px;
     }
 
     #top1677-liquid .glass {
@@ -180,9 +174,10 @@
       text-align: center;
     }
 
-    #top1677-liquid .hero > * {
+    #top1677-liquid .hero > *,
+    #top1677-liquid .card > * {
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     #top1677-liquid .eyebrow {
@@ -208,12 +203,10 @@
       letter-spacing: -.07em;
       font-weight: 900;
       color: #fff;
-      text-shadow:
-        0 0 30px rgba(255, 74, 22, .20),
-        0 12px 40px rgba(0, 0, 0, .72);
+      text-shadow: 0 0 30px rgba(255, 74, 22, .20), 0 12px 40px rgba(0, 0, 0, .72);
     }
 
-    #top1677-liquid .hero .top-number {
+    #top1677-liquid .top-number {
       display: inline-block;
       margin-top: 6px;
       background: linear-gradient(135deg, #fff2dd, var(--orange-2), var(--orange));
@@ -232,9 +225,7 @@
       font-weight: 700;
     }
 
-    #top1677-liquid .card {
-      padding: clamp(22px, 4vw, 34px);
-    }
+    #top1677-liquid .card { padding: clamp(22px, 4vw, 34px); }
 
     #top1677-liquid .card-head {
       display: flex;
@@ -243,13 +234,12 @@
       padding-bottom: 18px;
       margin-bottom: 22px;
       border-bottom: 1px solid rgba(255, 255, 255, .13);
-      position: relative;
-      z-index: 2;
     }
 
     #top1677-liquid .number {
       width: 46px;
       height: 46px;
+      flex: 0 0 46px;
       border-radius: 16px;
       display: grid;
       place-items: center;
@@ -271,8 +261,6 @@
     #top1677-liquid .details {
       display: grid;
       gap: 14px;
-      position: relative;
-      z-index: 2;
     }
 
     #top1677-liquid .details {
@@ -291,6 +279,9 @@
       background: rgba(255,255,255,.055);
       border: 1px solid rgba(255,255,255,.13);
       box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+      color: #fff;
+      line-height: 1.5;
+      font-weight: 700;
     }
 
     #top1677-liquid .icon {
@@ -366,8 +357,11 @@
       font-weight: 900;
       letter-spacing: .13em;
       text-transform: uppercase;
-      position: relative;
-      z-index: 2;
+    }
+
+    #top1677-liquid .email {
+      color: var(--orange-2);
+      font-weight: 900;
     }
 
     #top1677-liquid footer {
@@ -378,26 +372,26 @@
       text-transform: uppercase;
       font-size: .72rem;
       padding: 18px 0 0;
-      position: relative;
-      z-index: 2;
     }
 
     @media (max-width: 680px) {
+      #top1677-liquid .page { padding: 14px; }
 
       #top1677-liquid .lang-switcher {
-        top: 14px;
-        left: 14px;
-        padding: 8px;
+        top: 12px;
+        right: 12px;
+        padding: 5px;
+        gap: 5px;
       }
 
       #top1677-liquid .lang-btn {
-        width: 42px;
-        height: 42px;
-        font-size: 1.2rem;
+        width: 31px;
+        height: 31px;
+        font-size: .92rem;
       }
 
-      #top1677-liquid .page {
-        padding: 14px;
+      #top1677-liquid .container {
+        padding-top: 52px;
       }
 
       #top1677-liquid .item,
@@ -420,14 +414,12 @@
 <body style="margin:0; padding:0; background:#020203;">
 
 <div id="top1677-liquid">
-
   <main class="page">
 
-    <!-- LANGUAGE SWITCHER -->
-    <div class="lang-switcher">
-      <button class="lang-btn active">🇧🇷</button>
-      <button class="lang-btn">🇺🇸</button>
-      <button class="lang-btn">🇪🇸</button>
+    <div class="lang-switcher" aria-label="Language selector">
+      <button class="lang-btn" data-lang="pt" type="button" aria-label="Português">🇧🇷</button>
+      <button class="lang-btn" data-lang="en" type="button" aria-label="English">🇺🇸</button>
+      <button class="lang-btn" data-lang="es" type="button" aria-label="Español">🇪🇸</button>
     </div>
 
     <span class="orb one"></span>
@@ -442,99 +434,67 @@
         </div>
 
         <h1>
-          Bem-vindo ao<br>
+          <span data-i18n="heroWelcome">Bem-vindo ao</span><br>
           <span class="top-number">TOP 1677</span>
         </h1>
 
         <p>
-          Sua jornada começa hoje!<br>
-          Siga atentamente essas instruções.
+          <span data-i18n="heroJourney">Sua jornada começa hoje!</span><br>
+          <span data-i18n="heroInstructions">Siga atentamente essas instruções.</span>
         </p>
       </header>
 
       <section class="card glass">
-
         <div class="card-head">
           <span class="number">1</span>
-          <h2>Antes do TOP</h2>
+          <h2 data-i18n="beforeTitle">Antes do TOP</h2>
         </div>
 
         <div class="step">
-
           <div class="item">
-            <div class="icon">
-              <i class="fa-solid fa-file-signature"></i>
-            </div>
-
+            <div class="icon"><i class="fa-solid fa-file-signature"></i></div>
             <div>
-              <span class="item-title">
-                Assinar eletronicamente este formulário
-              </span>
-
-              <a class="btn light"
-                 href="https://app.zapsign.com.br/verificar/doc/d13fcb0e-de71-4f38-afe5-96a08783522f"
-                 target="_blank">
+              <span class="item-title" data-i18n="signForm">Assinar eletronicamente este formulário</span>
+              <a class="btn light" href="https://app.zapsign.com.br/verificar/doc/d13fcb0e-de71-4f38-afe5-96a08783522f" target="_blank" rel="noopener">
                 <i class="fa-solid fa-file-lines"></i>
-                Documento
+                <span data-i18n="documentBtn">Documento</span>
               </a>
             </div>
           </div>
 
           <div class="item">
-            <div class="icon">
-              <i class="fa-brands fa-whatsapp"></i>
-            </div>
-
+            <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
             <div>
-              <span class="item-title">
-                Entrar no grupo de WhatsApp para receber avisos importantes
-              </span>
-
-              <a class="btn whatsapp"
-                 href="https://chat.whatsapp.com/IsJd6uzEDX39eYIZZhDr6p?mode=gi_t"
-                 target="_blank">
+              <span class="item-title" data-i18n="joinWhatsApp">Entrar no grupo de WhatsApp para receber avisos importantes</span>
+              <a class="btn whatsapp" href="https://chat.whatsapp.com/IsJd6uzEDX39eYIZZhDr6p?mode=gi_t" target="_blank" rel="noopener">
                 <i class="fa-brands fa-whatsapp"></i>
-                WhatsApp participantes
+                <span data-i18n="participantsBtn">WhatsApp participantes</span>
               </a>
             </div>
           </div>
 
           <div class="item">
-            <div class="icon">
-              <i class="fa-solid fa-heart"></i>
-            </div>
-
+            <div class="icon"><i class="fa-solid fa-heart"></i></div>
             <div>
-              <span class="item-title">
-                Peça à sua esposa para entrar no grupo de WhatsApp das esposas
-              </span>
-
-              <a class="btn whatsapp"
-                 href="https://chat.whatsapp.com/EwYPUoER3plC3RO7jCr8mE?mode=gi_t"
-                 target="_blank">
+              <span class="item-title" data-i18n="wifeWhatsApp">Peça à sua esposa para entrar no grupo de WhatsApp das esposas</span>
+              <a class="btn whatsapp" href="https://chat.whatsapp.com/EwYPUoER3plC3RO7jCr8mE?mode=gi_t" target="_blank" rel="noopener">
                 <i class="fa-brands fa-whatsapp"></i>
-                WhatsApp esposas
+                <span data-i18n="wivesBtn">WhatsApp esposas</span>
               </a>
             </div>
           </div>
-
         </div>
       </section>
 
       <section class="card glass">
-
         <div class="card-head">
           <span class="number">2</span>
-          <h2>No dia do TOP</h2>
+          <h2 data-i18n="dayTitle">No dia do TOP</h2>
         </div>
 
         <ul class="details">
-
           <li>
-            <div class="icon">
-              <i class="fa-regular fa-clock"></i>
-            </div>
-
+            <div class="icon"><i class="fa-regular fa-clock"></i></div>
             <div>
               <span class="label">Check-in</span>
               Jun 25, 2026 at 3:00 PM
@@ -542,62 +502,71 @@
           </li>
 
           <li>
-            <div class="icon">
-              <i class="fa-solid fa-location-dot"></i>
-            </div>
-
+            <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
             <div>
               <span class="label">Location</span>
               Vine Atlanta Church, 1296 Gresham Rd NE, Marietta, GA 30062 📍
             </div>
           </li>
-
         </ul>
 
-        <h3 class="section-title">Trazer</h3>
+        <h3 class="section-title" data-i18n="bringTitle">Trazer</h3>
 
         <ul class="details">
-
           <li>
-            <div class="icon">
-              <i class="fa-solid fa-money-bill-wave"></i>
-            </div>
-
+            <div class="icon"><i class="fa-solid fa-money-bill-wave"></i></div>
             <div>$20 cash</div>
           </li>
 
           <li>
-            <div class="icon">
-              <i class="fa-regular fa-id-card"></i>
-            </div>
-
-            <div>
-              Documento oficial de identificação:
-              passaporte, ID ou Driver License
-            </div>
+            <div class="icon"><i class="fa-regular fa-id-card"></i></div>
+            <div data-i18n="idDocument">Documento oficial de identificação: passaporte, ID ou Driver License</div>
           </li>
 
           <li>
-            <div class="icon">
-              <i class="fa-solid fa-suitcase-rolling"></i>
-            </div>
-
-            <div>
-              Mochila com todos os itens da lista
-            </div>
+            <div class="icon"><i class="fa-solid fa-suitcase-rolling"></i></div>
+            <div data-i18n="backpack">Mochila com todos os itens da lista</div>
           </li>
-
         </ul>
 
-        <div style="margin-top:16px; position:relative; z-index:2;">
-          <a class="btn"
-             href="https://www.subir.top/list-sen-en.html"
-             target="_blank">
+        <div style="margin-top:16px;">
+          <a class="btn" href="https://www.subir.top/list-sen-en.html" target="_blank" rel="noopener">
             <i class="fa-solid fa-list-check"></i>
-            Abrir lista de itens
+            <span data-i18n="openListBtn">Abrir lista de itens</span>
           </a>
         </div>
+      </section>
 
+      <section class="card glass">
+        <div class="card-head">
+          <span class="number">3</span>
+          <h2 data-i18n="cancelTitle">Política de cancelamento</h2>
+        </div>
+
+        <ul class="details">
+          <li>
+            <div class="icon"><i class="fa-solid fa-notes-medical"></i></div>
+            <div data-i18n="healthPolicy">Motivos de saúde: Aceitos com atestado médico até 20 dias antes do evento.</div>
+          </li>
+
+          <li>
+            <div class="icon"><i class="fa-solid fa-right-left"></i></div>
+            <div data-i18n="transferPolicy">Transferência/troca de edição: Permitida somente se faltarem 30 dias ou mais para o evento.</div>
+          </li>
+
+          <li>
+            <div class="icon"><i class="fa-solid fa-ban"></i></div>
+            <div data-i18n="noRefundPolicy">Menos de 30 dias: Não há alterações ou reembolsos.</div>
+          </li>
+
+          <li>
+            <div class="icon"><i class="fa-regular fa-envelope"></i></div>
+            <div>
+              <span data-i18n="emailPolicy">Todas as solicitações devem ser feitas por email:</span>
+              <a class="email" href="mailto:legendariosatl@gmail.com">legendariosatl@gmail.com</a>
+            </div>
+          </li>
+        </ul>
       </section>
 
       <footer>
@@ -607,6 +576,118 @@
     </div>
   </main>
 </div>
+
+<script>
+  (function () {
+    const translations = {
+      pt: {
+        heroWelcome: "Bem-vindo ao",
+        heroJourney: "Sua jornada começa hoje!",
+        heroInstructions: "Siga atentamente essas instruções.",
+        beforeTitle: "Antes do TOP",
+        signForm: "Assinar eletronicamente este formulário",
+        documentBtn: "Documento",
+        joinWhatsApp: "Entrar no grupo de WhatsApp para receber avisos importantes",
+        participantsBtn: "WhatsApp participantes",
+        wifeWhatsApp: "Peça à sua esposa para entrar no grupo de WhatsApp das esposas",
+        wivesBtn: "WhatsApp esposas",
+        dayTitle: "No dia do TOP",
+        bringTitle: "Trazer",
+        idDocument: "Documento oficial de identificação: passaporte, ID ou Driver License",
+        backpack: "Mochila com todos os itens da lista",
+        openListBtn: "Abrir lista de itens",
+        cancelTitle: "Política de cancelamento",
+        healthPolicy: "Motivos de saúde: Aceitos com atestado médico até 20 dias antes do evento.",
+        transferPolicy: "Transferência/troca de edição: Permitida somente se faltarem 30 dias ou mais para o evento.",
+        noRefundPolicy: "Menos de 30 dias: Não há alterações ou reembolsos.",
+        emailPolicy: "Todas as solicitações devem ser feitas por email:"
+      },
+      en: {
+        heroWelcome: "Welcome to",
+        heroJourney: "Your journey begins today!",
+        heroInstructions: "Please follow these instructions carefully.",
+        beforeTitle: "Before TOP",
+        signForm: "Electronically sign this form",
+        documentBtn: "Document",
+        joinWhatsApp: "Join the WhatsApp group to receive important updates",
+        participantsBtn: "Participants WhatsApp",
+        wifeWhatsApp: "Ask your wife to join the wives' WhatsApp group",
+        wivesBtn: "Wives WhatsApp",
+        dayTitle: "On TOP day",
+        bringTitle: "Bring",
+        idDocument: "Official identification document: passport, ID, or Driver License",
+        backpack: "Backpack with all items from the list",
+        openListBtn: "Open item list",
+        cancelTitle: "Cancellation policy",
+        healthPolicy: "Health reasons: Accepted with a medical note up to 20 days before the event.",
+        transferPolicy: "Transfer/change edition: Allowed only if 30 or more days remain before the event.",
+        noRefundPolicy: "Less than 30 days: No changes or refunds.",
+        emailPolicy: "All requests must be handled by email:"
+      },
+      es: {
+        heroWelcome: "Bienvenido al",
+        heroJourney: "¡Tu jornada comienza hoy!",
+        heroInstructions: "Sigue atentamente estas instrucciones.",
+        beforeTitle: "Antes del TOP",
+        signForm: "Firmar electrónicamente este formulario",
+        documentBtn: "Documento",
+        joinWhatsApp: "Entrar al grupo de WhatsApp para recibir avisos importantes",
+        participantsBtn: "WhatsApp participantes",
+        wifeWhatsApp: "Pídele a tu esposa que entre al grupo de WhatsApp de las esposas",
+        wivesBtn: "WhatsApp esposas",
+        dayTitle: "El día del TOP",
+        bringTitle: "Traer",
+        idDocument: "Documento oficial de identificación: pasaporte, ID o Driver License",
+        backpack: "Mochila con todos los artículos de la lista",
+        openListBtn: "Abrir lista de artículos",
+        cancelTitle: "Política de cancelación",
+        healthPolicy: "Motivos de salud: Aceptados con certificado médico hasta 20 días antes del evento.",
+        transferPolicy: "Transferencia/cambio de edición: Permitido solo si faltan 30 días o más para el evento.",
+        noRefundPolicy: "Menos de 30 días: No hay cambios ni reembolsos.",
+        emailPolicy: "Todas las solicitudes deben hacerse por email:"
+      }
+    };
+
+    const root = document.getElementById("top1677-liquid");
+    const buttons = root.querySelectorAll(".lang-btn");
+    const elements = root.querySelectorAll("[data-i18n]");
+
+    function detectBrowserLang() {
+      const lang = (navigator.language || navigator.userLanguage || "pt").toLowerCase();
+
+      if (lang.startsWith("en")) return "en";
+      if (lang.startsWith("es")) return "es";
+      return "pt";
+    }
+
+    function setLanguage(lang) {
+      const selected = translations[lang] ? lang : "pt";
+
+      elements.forEach(function (el) {
+        const key = el.getAttribute("data-i18n");
+        if (translations[selected][key]) {
+          el.textContent = translations[selected][key];
+        }
+      });
+
+      buttons.forEach(function (btn) {
+        btn.classList.toggle("active", btn.getAttribute("data-lang") === selected);
+      });
+
+      document.documentElement.lang = selected === "pt" ? "pt-BR" : selected;
+      localStorage.setItem("top1677Lang", selected);
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        setLanguage(btn.getAttribute("data-lang"));
+      });
+    });
+
+    const savedLang = localStorage.getItem("top1677Lang");
+    setLanguage(savedLang || detectBrowserLang());
+  })();
+</script>
 
 </body>
 </html>
