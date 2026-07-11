@@ -12,22 +12,22 @@
     #top1824-liquid, #top1824-liquid * { box-sizing: border-box; }
 
     #top1824-liquid {
-      --bg: #020203;
-      --glass: rgba(10, 10, 12, .78);
-      --glass-border: rgba(255, 255, 255, .16);
+      --bg: #000000;
+      --glass: #090909;
+      --glass-border: rgba(255, 106, 0, .55);
       --text: #ffffff;
-      --muted: rgba(255, 255, 255, .76);
-      --soft: rgba(255, 255, 255, .58);
-      --orange: #ff4a16;
-      --orange-2: #ff9a4d;
-      --cream: #ffe2bd;
+      --muted: rgba(255, 255, 255, .88);
+      --soft: rgba(255, 255, 255, .72);
+      --orange: #ff5a00;
+      --orange-2: #ff8a00;
+      --cream: #ffffff;
       --shadow: 0 34px 100px rgba(0, 0, 0, .75);
       --blur: 26px;
       --radius: 28px;
 
       width: 100%;
       min-height: 100vh;
-      background: var(--bg);
+      background: #000000;
       color: var(--text);
       font-family: 'Inter', sans-serif;
       overflow: hidden;
@@ -40,11 +40,7 @@
       position: relative;
       min-height: 100vh;
       padding: 28px 18px;
-      background:
-        radial-gradient(circle at 12% 12%, rgba(255, 74, 22, .32), transparent 25%),
-        radial-gradient(circle at 88% 18%, rgba(255, 154, 77, .16), transparent 26%),
-        radial-gradient(circle at 50% 100%, rgba(255, 74, 22, .15), transparent 34%),
-        linear-gradient(180deg, #020203 0%, #070707 45%, #020203 100%);
+      background: #000000;
     }
 
     #top1824-liquid .page::before {
@@ -52,11 +48,7 @@
       position: absolute;
       inset: 0;
       pointer-events: none;
-      background:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-      background-size: 54px 54px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,.85), transparent 78%);
+      background: radial-gradient(circle at 50% 0%, rgba(255, 90, 0, .12), transparent 34%);
     }
 
     #top1824-liquid .lang-switcher {
@@ -100,36 +92,7 @@
       box-shadow: 0 0 20px rgba(255,74,22,.35);
     }
 
-    #top1824-liquid .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(18px);
-      opacity: .8;
-      pointer-events: none;
-      animation: floatOrb 10s ease-in-out infinite alternate;
-    }
-
-    #top1824-liquid .orb.one {
-      width: 300px;
-      height: 300px;
-      left: -110px;
-      top: 130px;
-      background: rgba(255, 74, 22, .30);
-    }
-
-    #top1824-liquid .orb.two {
-      width: 240px;
-      height: 240px;
-      right: -90px;
-      top: 380px;
-      background: rgba(255, 226, 189, .12);
-      animation-delay: 1.5s;
-    }
-
-    @keyframes floatOrb {
-      from { transform: translate3d(0, 0, 0) scale(1); }
-      to { transform: translate3d(24px, -34px, 0) scale(1.08); }
-    }
+    #top1824-liquid .orb { display: none; }
 
     #top1824-liquid .container {
       position: relative;
@@ -145,10 +108,8 @@
       position: relative;
       overflow: hidden;
       border-radius: var(--radius);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.105), rgba(255,255,255,.035)),
-        var(--glass);
-      border: 1px solid var(--glass-border);
+      background: linear-gradient(180deg, #111111 0%, #080808 100%);
+      border: 1px solid rgba(255, 106, 0, .48);
       box-shadow: var(--shadow);
       backdrop-filter: blur(var(--blur)) saturate(160%);
       -webkit-backdrop-filter: blur(var(--blur)) saturate(160%);
@@ -186,7 +147,7 @@
       border-radius: 999px;
       background: rgba(255, 255, 255, .09);
       border: 1px solid rgba(255, 255, 255, .20);
-      color: var(--cream);
+      color: #000000;
       font-size: .78rem;
       font-weight: 800;
       letter-spacing: .12em;
@@ -206,11 +167,11 @@
     #top1824-liquid .top-number {
       display: inline-block;
       margin-top: 6px;
-      background: linear-gradient(135deg, #fff2dd, var(--orange-2), var(--orange));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      filter: drop-shadow(0 0 22px rgba(255, 74, 22, .34));
+      color: #ff6a00;
+      background: none;
+      -webkit-background-clip: initial;
+      background-clip: initial;
+      filter: none;
     }
 
     #top1824-liquid .hero p {
@@ -273,8 +234,8 @@
       gap: 14px;
       padding: 16px;
       border-radius: 22px;
-      background: rgba(255,255,255,.055);
-      border: 1px solid rgba(255,255,255,.13);
+      background: #111111;
+      border: 1px solid rgba(255,255,255,.18);
       box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
       color: #fff;
       line-height: 1.5;
@@ -287,9 +248,9 @@
       display: grid;
       place-items: center;
       border-radius: 16px;
-      background: rgba(255, 74, 22, .16);
-      border: 1px solid rgba(255, 74, 22, .34);
-      color: var(--orange-2);
+      background: rgba(255, 90, 0, .18);
+      border: 1px solid rgba(255, 106, 0, .60);
+      color: #ff8a00;
       font-size: 1.05rem;
     }
 
@@ -320,14 +281,14 @@
       min-height: 48px;
       padding: 13px 18px;
       border-radius: 999px;
-      color: #140604;
+      color: #000000;
       font-weight: 900;
       font-size: .86rem;
       letter-spacing: .04em;
       text-transform: uppercase;
-      background: linear-gradient(135deg, var(--cream), var(--orange-2), var(--orange));
-      box-shadow: 0 16px 36px rgba(255, 74, 22, .28);
-      border: 1px solid rgba(255, 255, 255, .20);
+      background: #ff6a00;
+      box-shadow: 0 6px 14px rgba(255, 90, 0, .18);
+      border: 1px solid #ff8a00;
       transition: all .25s ease;
     }
 
@@ -337,19 +298,21 @@
     }
 
     #top1824-liquid .btn.whatsapp {
-      background: linear-gradient(135deg, #39e782, #25D366, #128C7E);
-      color: #fff;
+      background: #ff6a00;
+      color: #000000;
+      box-shadow: 0 6px 14px rgba(255, 90, 0, .18);
+      border-color: #ff8a00;
     }
 
     #top1824-liquid .btn.light {
-      background: rgba(255, 255, 255, .10);
-      color: var(--cream);
+      background: #ffffff;
+      color: #000000;
       box-shadow: none;
     }
 
     #top1824-liquid .section-title {
       margin: 24px 0 12px;
-      color: var(--cream);
+      color: #000000;
       font-size: .85rem;
       font-weight: 900;
       letter-spacing: .13em;
@@ -357,7 +320,7 @@
     }
 
     #top1824-liquid .email {
-      color: var(--orange-2);
+      color: #ff8a00;
       font-weight: 900;
     }
 
@@ -405,10 +368,70 @@
         width: 100%;
       }
     }
+  
+    #top1824-liquid .logo-eyebrow {
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+    }
+
+    #top1824-liquid .logo-eyebrow img {
+      display: block;
+      width: min(240px, 64vw);
+      max-height: 96px;
+      object-fit: contain;
+    }
+
+    #top1824-liquid .hero {
+      background: linear-gradient(180deg, #111111 0%, #050505 100%);
+      border: 1px solid rgba(255, 106, 0, .65);
+    }
+
+    #top1824-liquid .card {
+      background: #0a0a0a;
+      border: 1px solid rgba(255, 106, 0, .42);
+      box-shadow: 0 24px 70px rgba(0,0,0,.72);
+    }
+
+    #top1824-liquid .card-head {
+      border-bottom: 1px solid rgba(255, 106, 0, .34);
+    }
+
+    #top1824-liquid .number {
+      color: #000000;
+      background: linear-gradient(135deg, #ffb000, #ff6a00);
+      box-shadow: 0 12px 28px rgba(255, 90, 0, .34);
+    }
+
+    #top1824-liquid .item,
+    #top1824-liquid .details li {
+      background: #121212;
+      border: 1px solid rgba(255,255,255,.16);
+    }
+
+    #top1824-liquid .item:hover,
+    #top1824-liquid .details li:hover {
+      border-color: rgba(255, 106, 0, .55);
+      transform: translateY(-1px);
+      transition: .2s ease;
+    }
+
+    #top1824-liquid .btn.light {
+      background: #ff6a00;
+      color: #000000;
+      border-color: #ff8a00;
+      box-shadow: 0 6px 14px rgba(255, 90, 0, .18);
+    }
+
+    #top1824-liquid .email {
+      color: #ff8a00;
+    }
+
   </style>
 </head>
 
-<body style="margin:0; padding:0; background:#020203;">
+<body style="margin:0; padding:0; background:#000000;">
 
 <div id="top1824-liquid">
   <main class="page">
@@ -425,9 +448,8 @@
     <div class="container">
 
       <header class="hero glass">
-        <div class="eyebrow">
-          <i class="fa-solid fa-compass"></i>
-          Track Eagle Path
+        <div class="eyebrow logo-eyebrow">
+          <img src="https://raw.githubusercontent.com/oavlag/lgnd/images/Eagle_Path_Logo.png" alt="Eagle Path Logo">
         </div>
 
         <h1>
