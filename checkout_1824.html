@@ -428,6 +428,65 @@
       color: #ff8a00;
     }
 
+  
+    #top1824-liquid .item-action-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    #top1824-liquid .item-action-row .item-title {
+      margin-bottom: 0;
+      flex: 1 1 auto;
+    }
+
+    #top1824-liquid .item-action-row .btn {
+      flex: 0 0 auto;
+    }
+
+    #top1824-liquid .btn {
+      min-height: 36px;
+      padding: 8px 12px;
+      gap: 6px;
+      font-size: .72rem;
+      letter-spacing: .025em;
+      box-shadow: 0 3px 8px rgba(255, 90, 0, .14);
+    }
+
+    #top1824-liquid .btn.whatsapp,
+    #top1824-liquid .btn.light {
+      box-shadow: 0 3px 8px rgba(255, 90, 0, .14);
+    }
+
+    @media (max-width: 680px) {
+      #top1824-liquid .item-action-row {
+        align-items: center;
+        flex-direction: row;
+      }
+
+      #top1824-liquid .item-action-row .btn {
+        width: auto;
+        max-width: 46%;
+        white-space: normal;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #top1824-liquid .item-action-row {
+        gap: 8px;
+      }
+
+      #top1824-liquid .item-action-row .btn {
+        max-width: 44%;
+        padding: 7px 9px;
+        font-size: .65rem;
+      }
+    }
+
   </style>
 </head>
 
@@ -449,7 +508,7 @@
 
       <header class="hero glass">
         <div class="eyebrow logo-eyebrow">
-          <img src="https://raw.githubusercontent.com/oavlag/lgnd/images/Eagle_Path_Logo.png" alt="Eagle Path Logo">
+          <img src="https://www.subir.top/Eagle_Path_Logo.png" alt="Eagle Path Logo">
         </div>
 
         <h1>
@@ -472,7 +531,7 @@
         <div class="step">
           <div class="item">
             <div class="icon"><i class="fa-solid fa-file-signature"></i></div>
-            <div>
+            <div class="item-action-row">
               <span class="item-title" data-i18n="signForm">Assinar eletronicamente este formulário</span>
               <a class="btn light" href="https://app.zapsign.com.br/verificar/doc/d13fcb0e-de71-4f38-afe5-96a08783522f" target="_blank" rel="noopener">
                 <i class="fa-solid fa-file-lines"></i>
@@ -483,7 +542,7 @@
 
           <div class="item">
             <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
-            <div>
+            <div class="item-action-row">
               <span class="item-title" data-i18n="joinWhatsApp">Entrar no grupo de WhatsApp para receber avisos importantes</span>
               <a class="btn whatsapp" href="https://chat.whatsapp.com/DT5g0YGElrO0RueNuXhJBL?s=sw&p=i&ilr=1&amv=1" target="_blank" rel="noopener">
                 <i class="fa-brands fa-whatsapp"></i>
@@ -494,7 +553,7 @@
 
           <div class="item">
             <div class="icon"><i class="fa-solid fa-heart"></i></div>
-            <div>
+            <div class="item-action-row">
               <span class="item-title" data-i18n="wifeWhatsApp">Peça à sua esposa para entrar no grupo de WhatsApp das esposas</span>
               <a class="btn whatsapp" href="https://chat.whatsapp.com/FFw1ZIcQ9EzFfVqkzfdzn0?s=sw&p=i&ilr=1&amv=1" target="_blank" rel="noopener">
                 <i class="fa-brands fa-whatsapp"></i>
@@ -544,16 +603,15 @@
 
           <li>
             <div class="icon"><i class="fa-solid fa-suitcase-rolling"></i></div>
-            <div data-i18n="backpack">Mochila com todos os itens da lista</div>
+            <div class="item-action-row">
+              <span class="item-title" data-i18n="backpack">Mochila com todos os itens da lista</span>
+              <a class="btn" href="https://www.subir.top/list-sen-en.html" target="_blank" rel="noopener">
+                <i class="fa-solid fa-list-check"></i>
+                <span data-i18n="openListBtn">Abrir lista de itens</span>
+              </a>
+            </div>
           </li>
         </ul>
-
-        <div style="margin-top:16px;">
-          <a class="btn" href="https://www.subir.top/list-sen-en.html" target="_blank" rel="noopener">
-            <i class="fa-solid fa-list-check"></i>
-            <span data-i18n="openListBtn">Abrir lista de itens</span>
-          </a>
-        </div>
       </section>
 
       <section class="card glass">
