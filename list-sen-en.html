@@ -16,15 +16,15 @@
 
   #packing-liquid {
     --bg: #020203;
-    --glass: rgba(10, 10, 12, .78);
-    --glass-border: rgba(255, 255, 255, .16);
+    --glass: rgba(5, 5, 5, .90);
+    --glass-border: rgba(255, 255, 255, .28);
     --text: #ffffff;
-    --muted: rgba(255,255,255,.76);
-    --soft: rgba(255,255,255,.58);
-    --orange: #ff4a16;
-    --orange-2: #ff9a4d;
-    --cream: #ffe2bd;
-    --green: #22c55e;
+    --muted: rgba(255,255,255,.88);
+    --soft: rgba(255,255,255,.72);
+    --orange: #ff4d00;
+    --orange-2: #ff7a00;
+    --cream: #ffffff;
+    --green: #ff7a00;
     --red: #ef4444;
     --shadow: 0 34px 100px rgba(0,0,0,.75);
     --blur: 26px;
@@ -49,11 +49,7 @@
     position: relative;
     min-height: 100vh;
     padding: 28px 18px;
-    background:
-      radial-gradient(circle at 12% 12%, rgba(255,74,22,.30), transparent 25%),
-      radial-gradient(circle at 88% 18%, rgba(34,197,94,.14), transparent 25%),
-      radial-gradient(circle at 50% 100%, rgba(255,74,22,.14), transparent 34%),
-      linear-gradient(180deg, #020203 0%, #070707 45%, #020203 100%);
+    background: #000000;
   }
 
   #packing-liquid .page::before {
@@ -113,9 +109,8 @@
     position: absolute;
     border-radius: 50%;
     filter: blur(18px);
-    opacity: .8;
+    display: none;
     pointer-events: none;
-    animation: floatOrb 10s ease-in-out infinite alternate;
   }
 
   #packing-liquid .orb.one {
@@ -131,7 +126,7 @@
     height: 240px;
     right: -90px;
     top: 420px;
-    background: rgba(34,197,94,.14);
+    background: rgba(255,122,0,.22);
     animation-delay: 1.5s;
   }
 
@@ -243,7 +238,7 @@
     place-items: center;
     color: #130604;
     font-weight: 900;
-    background: linear-gradient(135deg, var(--cream), var(--orange));
+    background: linear-gradient(135deg, #ffffff 0%, #ff7a00 45%, #ff4d00 100%);
     box-shadow: 0 14px 34px rgba(255,74,22,.35);
   }
 
@@ -291,6 +286,29 @@
     font-weight: 900;
   }
 
+  #packing-liquid .grouped-info-content {
+    display: grid;
+    gap: 0;
+  }
+
+  #packing-liquid .grouped-info-content p {
+    margin: 0;
+    padding: 11px 0;
+    color: #ffffff;
+    line-height: 1.55;
+    font-weight: 650;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+  }
+
+  #packing-liquid .grouped-info-content p:first-child {
+    padding-top: 0;
+  }
+
+  #packing-liquid .grouped-info-content p:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
   #packing-liquid .warning {
     border-color: rgba(239,68,68,.34);
     background:
@@ -327,6 +345,91 @@
     padding: 18px 0 0;
   }
 
+
+  /* Example links */
+  #packing-liquid li.product-row {
+    display: block;
+    padding: 0;
+    overflow: hidden;
+    background: #080808;
+    border: 1px solid rgba(255,122,0,.48);
+  }
+
+  #packing-liquid li.product-row::before { display: none; }
+
+  #packing-liquid .product-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px;
+  }
+
+  #packing-liquid .product-content {
+    min-width: 0;
+  }
+
+  #packing-liquid .product-content h3 {
+    margin: 0 0 7px;
+    color: #ffffff;
+    font-size: clamp(1.05rem, 3vw, 1.35rem);
+    line-height: 1.25;
+    letter-spacing: -.025em;
+    font-weight: 900;
+  }
+
+  #packing-liquid .product-content p {
+    margin: 0;
+    color: rgba(255,255,255,.86);
+    line-height: 1.55;
+    font-weight: 650;
+  }
+
+  #packing-liquid .product-note {
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: .88rem;
+    line-height: 1.45;
+    font-weight: 750;
+  }
+
+  #packing-liquid .buy-button {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 0 16px;
+    border-radius: 12px;
+    color: #000000 !important;
+    font-size: .82rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    background: #ff6a00;
+    border: 1px solid #ff8a2b;
+    box-shadow: 0 8px 24px rgba(255,106,0,.28);
+    transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+  }
+
+  #packing-liquid .buy-button:hover {
+    transform: translateY(-2px);
+    background: #ff8a00;
+    box-shadow: 0 12px 30px rgba(255,106,0,.4);
+  }
+
+  @media (max-width: 720px) {
+    #packing-liquid .product-card {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    #packing-liquid .buy-button {
+      width: 100%;
+    }
+  }
+
   @media (max-width: 680px) {
     #packing-liquid .page { padding: 14px; }
 
@@ -356,6 +459,30 @@
       height: 30px;
     }
   }
+
+  #packing-liquid .logo-eyebrow {
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+  }
+
+  #packing-liquid .logo-eyebrow img {
+    display: block;
+    width: min(220px, 58vw);
+    max-height: 90px;
+    object-fit: contain;
+  }
+
+  #packing-liquid li.no-check {
+    grid-template-columns: 1fr;
+  }
+
+  #packing-liquid li.no-check::before {
+    display: none;
+    content: none;
+  }
+
 </style>
 </head>
 
@@ -376,9 +503,8 @@
     <div class="container">
 
       <header class="hero glass">
-        <div class="eyebrow">
-          <i class="fa-solid fa-person-hiking"></i>
-          Eagle Path
+        <div class="eyebrow logo-eyebrow">
+          <img src="https://raw.githubusercontent.com/oavlag/lgnd/images/Eagle_Path_Logo.png" alt="Eagle Path Logo">
         </div>
         <h1 data-i18n="title">WHAT TO PACK?</h1>
         <p data-i18n="subtitle">Follow the Senderista Packing List</p>
@@ -387,11 +513,15 @@
       <section class="card glass">
         <div class="card-head"><span class="number">1</span><h2 data-i18n="s1_title"></h2></div>
         <ul>
-          <li data-i18n="s1_1"></li>
-          <li data-i18n="s1_2"></li>
-          <li data-i18n="s1_3"></li>
-          <li data-i18n="s1_4"></li>
-          <li data-i18n="s1_5"></li>
+          <li class="product-row" data-product="backpack" data-i18n="s1_1"></li>
+          <li class="grouped-info no-check">
+            <div class="grouped-info-content">
+              <p data-i18n="s1_2"></p>
+              <p data-i18n="s1_3"></p>
+              <p data-i18n="s1_4"></p>
+              <p data-i18n="s1_5"></p>
+            </div>
+          </li>
         </ul>
       </section>
 
@@ -427,19 +557,19 @@
       <section class="card glass">
         <div class="card-head"><span class="number">5</span><h2 data-i18n="s5_title"></h2></div>
         <ul>
-          <li data-i18n="s5_1"></li>
-          <li data-i18n="s5_2"></li>
-          <li data-i18n="s5_3"></li>
-          <li data-i18n="s5_4"></li>
+          <li class="product-row" data-product="tent" data-i18n="s5_1"></li>
+          <li class="product-row" data-product="sleepingbag" data-i18n="s5_2"></li>
+          <li class="product-row" data-product="blankets" data-i18n="s5_3"></li>
+          <li class="product-row" data-product="yogamat" data-i18n="s5_4"></li>
         </ul>
       </section>
 
       <section class="card glass">
         <div class="card-head"><span class="number">6</span><h2 data-i18n="s6_title"></h2></div>
         <ul>
-          <li data-i18n="s6_1"></li>
+          <li class="product-row" data-product="mug" data-i18n="s6_1"></li>
+          <li class="product-row" data-product="bottle" data-i18n="s6_3"></li>
           <li data-i18n="s6_2"></li>
-          <li data-i18n="s6_3"></li>
           <li data-i18n="s6_4"></li>
         </ul>
       </section>
@@ -516,18 +646,18 @@
     en: {
       title: "WHAT TO PACK?",
       subtitle: "Follow the Senderista Packing List",
-      s1_title: "What should the backpack be like?",
+      s1_title: "The backpack",
       s1_1: 'Your backpack should have a capacity of approximately 45 liters / Example: <a href="https://amzn.to/4uzc266" target="_blank" rel="noopener noreferrer">Amazon link</a>',
       s1_2: "The total weight of the backpack should be approximately 14kg (31 lbs), including tent, sleeping bag, clothes and water",
       s1_3: "Bring a waterproof cover for the backpack (plastic bag or rain cover)",
       s1_4: "Your backpack is individual",
       s1_5: "Keep documents protected from water (Ziplock bags)",
-      s2_title: "What documents should I bring?",
+      s2_title: "Documents to bring?",
       s2_1: "Copy of identification with photo (Passport for foreigners)",
       s2_2: "$20 in cash",
       s2_3: "Health insurance card (if available, printed copy)",
       s2_4: "Liability waiver fully completed and signed – unless already signed online",
-      s3_title: "What clothes should I bring?",
+      s3_title: "Clothes to bring?",
       s3_1: "Pants for hiking or sports activities (do NOT bring jeans)",
       s3_2: "Sports shorts / swim shorts",
       s3_3: "Short sleeve t-shirts",
@@ -536,7 +666,7 @@
       s3_6: "Underwear",
       s3_7: "Jacket for low temperatures (preferably waterproof)",
       s3_8: "Sports socks for hiking (approximately 3 pairs)",
-      s4_title: "What shoes should I bring?",
+      s4_title: "Shoes to use?",
       s4_1: "Sneakers or hiking boots",
       s5_title: "What should I bring to sleep?",
       s5_1: 'A camping tent for individual use, recommended for up to 2 people / Example: <a href="https://amzn.to/4s47umy" target="_blank" rel="noopener noreferrer">Amazon link</a>',
@@ -586,18 +716,18 @@
     pt: {
       title: "O QUE LEVAR?",
       subtitle: "Siga a lista de itens do senderista",
-      s1_title: "Como deve ser a mochila?",
+      s1_title: "Sua mochila",
       s1_1: 'Sua mochila deve ter capacidade de aproximadamente 45 litros / Exemplo: <a href="https://amzn.to/4uzc266" target="_blank" rel="noopener noreferrer">Link Amazon</a>',
       s1_2: "O peso total da mochila deve ser de aproximadamente 14kg, incluindo barraca, saco de dormir, roupas e água",
       s1_3: "Traga uma capa impermeável para a mochila, como saco plástico ou capa de chuva",
       s1_4: "Sua mochila é individual",
       s1_5: "Mantenha os documentos protegidos da água em sacos Ziplock",
-      s2_title: "Quais documentos devo trazer?",
+      s2_title: "Documentos para trazer",
       s2_1: "Cópia do documento de identificação com foto. Passaporte para estrangeiros.",
       s2_2: "$20 em dinheiro",
       s2_3: "Cartão do plano de saúde, se disponível, cópia impressa",
       s2_4: "Termo de responsabilidade totalmente preenchido e assinado, exceto se já foi assinado online",
-      s3_title: "Quais roupas devo trazer?",
+      s3_title: "Roupas para trazer",
       s3_1: "Calça para caminhada ou atividades esportivas. NÃO traga jeans.",
       s3_2: "Shorts esportivo / shorts de banho",
       s3_3: "Camisetas de manga curta",
@@ -606,7 +736,7 @@
       s3_6: "Roupas íntimas",
       s3_7: "Jaqueta para baixas temperaturas, preferencialmente impermeável",
       s3_8: "Meias esportivas para caminhada, aproximadamente 3 pares",
-      s4_title: "Quais calçados devo trazer?",
+      s4_title: "Calçados para trazer",
       s4_1: "Tênis ou botas de trilha",
       s5_title: "O que devo trazer para dormir?",
       s5_1: 'Barraca de camping para uso individual, recomendada para até 2 pessoas / Exemplo: <a href="https://amzn.to/4s47umy" target="_blank" rel="noopener noreferrer">Link Amazon</a>',
@@ -656,7 +786,7 @@
     es: {
       title: "¿QUÉ LLEVAR?",
       subtitle: "Sigue la lista de empaque del senderista",
-      s1_title: "¿Cómo debe ser la mochila?",
+      s1_title: "La mochila",
       s1_1: 'Tu mochila debe tener una capacidad de aproximadamente 45 litros / Ejemplo: <a href="https://amzn.to/4uzc266" target="_blank" rel="noopener noreferrer">Enlace Amazon</a>',
       s1_2: "El peso total de la mochila debe ser de aproximadamente 14kg, incluyendo carpa, bolsa de dormir, ropa y agua",
       s1_3: "Lleva una cubierta impermeable para la mochila, como bolsa plástica o cubierta para lluvia",
@@ -725,6 +855,92 @@
     }
   };
 
+  const products = {
+    backpack: {
+      image: "https://github.com/oavlag/lgnd/blob/images/1A.jpg?raw=1",
+      buy: "https://amzn.to/4uzc266"
+    },
+    tent: {
+      image: "https://github.com/oavlag/lgnd/blob/images/5A.jpg?raw=1",
+      buy: "https://amzn.to/4s47umy"
+    },
+    sleepingbag: {
+      image: "https://github.com/oavlag/lgnd/blob/images/5B.jpg?raw=1",
+      buy: "https://amzn.to/4sG8PzX"
+    },
+    blankets: {
+      image: "https://github.com/oavlag/lgnd/blob/images/5C.jpg?raw=1",
+      buy: "https://amzn.to/4buLwDf"
+    },
+    yogamat: {
+      image: "https://github.com/oavlag/lgnd/blob/images/5D.jpg?raw=1",
+      buy: "https://amzn.to/46QyJZj"
+    },
+    mug: {
+      image: "https://github.com/oavlag/lgnd/blob/images/6A.jpg?raw=1",
+      buy: "https://amzn.to/46KeV9W"
+    },
+    bottle: {
+      image: "https://github.com/oavlag/lgnd/blob/images/6B.jpg?raw=1",
+      buy: "https://amzn.to/4yikus0"
+    }
+  };
+
+  const productCopy = {
+    en: {
+      backpack: ["45-liter backpack", "Your backpack should have a capacity of approximately 45 liters."],
+      tent: ["Individual camping tent", "Rain-resistant tent for individual use, recommended for up to 2 people."],
+      sleepingbag: ["Cold-weather sleeping bag", "Choose a sleeping bag designed for low temperatures."],
+      blankets: ["Emergency thermal blankets", "Bring 2 aluminized emergency thermal blankets."],
+      yogamat: ["Portable sleeping mat", "Portable mattress or Yogamat for insulation and comfort.", "This is not the same item as an emergency thermal blanket."],
+      mug: ["Aluminum mug", "Bring 1 aluminum mug suitable for boiling water."],
+      bottle: ["32 oz plastic water bottle", "Bring a durable plastic water bottle with a 32 oz capacity."]
+    },
+    pt: {
+      backpack: ["Mochila de 45 litros", "Sua mochila deve ter capacidade de aproximadamente 45 litros."],
+      tent: ["Barraca individual", "Barraca resistente à chuva para uso individual, recomendada para até 2 pessoas."],
+      sleepingbag: ["Saco de dormir", "Escolha um saco de dormir adequado para baixas temperaturas."],
+      blankets: ["Cobertores térmicos", "Leve 2 cobertores térmicos de emergência, aluminizados."],
+      yogamat: ["Colchonete portátil", "Colchonete portátil ou Yogamat para isolamento e conforto.", "Este item não é o mesmo que o cobertor térmico de emergência."],
+      mug: ["Caneca de alumínio", "Leve 1 caneca de alumínio apropriada para ferver água."],
+      bottle: ["Garrafa plástica de 32 oz", "Leve uma garrafa plástica resistente com capacidade de 32 oz."]
+    },
+    es: {
+      backpack: ["Mochila de 45 litros", "Tu mochila debe tener una capacidad aproximada de 45 litros."],
+      tent: ["Carpa individual", "Carpa resistente a la lluvia para uso individual, recomendada para hasta 2 personas."],
+      sleepingbag: ["Bolsa de dormir", "Elige una bolsa de dormir adecuada para bajas temperaturas."],
+      blankets: ["Mantas térmicas", "Lleva 2 mantas térmicas de emergencia, aluminizadas."],
+      yogamat: ["Colchoneta portátil", "Colchoneta portátil o Yogamat para aislamiento y comodidad.", "Este artículo no es lo mismo que una manta térmica de emergencia."],
+      mug: ["Taza de aluminio", "Lleva 1 taza de aluminio adecuada para hervir agua."],
+      bottle: ["Botella plástica de 32 oz", "Lleva una botella plástica resistente con capacidad de 32 oz."]
+    }
+  };
+
+  const uiCopy = {
+    en: { buy: "Example" },
+    pt: { buy: "Exemplo" },
+    es: { buy: "Ejemplo" }
+  };
+
+  function renderProduct(el, lang) {
+    const id = el.getAttribute("data-product");
+    const product = products[id];
+    const copy = productCopy[lang][id];
+    if (!product || !copy) return;
+
+    el.innerHTML = `
+      <article class="product-card">
+        <div class="product-content">
+          <h3>${copy[0]}</h3>
+          <p>${copy[1]}</p>
+          ${copy[2] ? `<div class="product-note"><i class="fa-solid fa-circle-info"></i> ${copy[2]}</div>` : ""}
+        </div>
+        <a class="buy-button" href="${product.buy}" target="_blank" rel="noopener noreferrer" aria-label="${uiCopy[lang].buy}: ${copy[0]}">
+          ${uiCopy[lang].buy}<i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </article>`;
+  }
+
   const htmlKeys = new Set(["s1_1","s5_1","s5_2","s5_3","s5_4","s6_1"]);
 
   function detectBrowserLang() {
@@ -739,7 +955,9 @@
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const key = el.getAttribute("data-i18n");
       if (!i18n[selected][key]) return;
-      if (htmlKeys.has(key)) {
+      if (el.classList.contains("product-row")) {
+        renderProduct(el, selected);
+      } else if (htmlKeys.has(key)) {
         el.innerHTML = i18n[selected][key];
       } else {
         el.textContent = i18n[selected][key];
